@@ -34,13 +34,13 @@ const Navbar = () => {
                                 <NavItem Icon={ArchiveBox} title='Inventario' to='/inventario' />
                                 <NavItem Icon={ClipboardText} title='Reportes' to='/reportes' />
                                 <NavItem Icon={FileMinus} title='Deudas' to='/deudas' />
-                                <NavItem Icon={Bookmark} title='Categorias' data-dissapearOnMobile to='/categorias' />
+                                <NavItem Icon={Bookmark} title='Categorias' to='/categorias' dissapearonmobile />
                                 <NavItem Icon={Users} title='Clientes' to='/clientes' />
-                                <NavItem Icon={Barcode} title='Productos' data-dissapearOnMobile to='/productos' />
-                                <NavItem Icon={ShoppingCartSimple} title='Ventas' data-dissapearOnMobile to='/ventas' />
-                                <NavItem Icon={Package} title='Abastecimientos' data-dissapearOnMobile to='/abastecimientos' />
-                                <NavItem Icon={IdentificationCard} title='Proveedores' data-dissapearOnMobile to='/proveedores' />
-                                <NavItem Icon={User} title='Usuarios' data-dissapearOnMobile to='/usuarios' />
+                                <NavItem Icon={Barcode} title='Productos' to='/productos' />
+                                <NavItem Icon={ShoppingCartSimple} title='Ventas' to='/ventas' dissapearonmobile />
+                                <NavItem Icon={Package} title='Abastecimientos' to='/abastecimientos' dissapearonmobile />
+                                <NavItem Icon={IdentificationCard} title='Proveedores' to='/proveedores' dissapearonmobile />
+                                <NavItem Icon={User} title='Usuarios' to='/usuarios' dissapearonmobile />
                             </Nav>
                         </NavContainer>
                     </NavWrapper>

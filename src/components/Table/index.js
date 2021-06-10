@@ -1,46 +1,84 @@
-import { useState } from 'react';
+import { useTable } from 'react-table';
+
 import Table from './Table';
+import TableFilterInput from 'components/TableFilterInput';
+import Pagination from 'components/Pagination';
 
-export default ({ data = [], loading, columns, onRowSelect }) => {
-    const dataKeys = data.length ? Object.keys(data[0]) : [];
-    const columnsToRender = columns ? columns : dataKeys;
+import debounce from 'lodash.debounce';
 
-    const [activeRowID, setActiveRowID] = useState(-1);
+const CustomTable = ({
+    data = [],
+    loading,
+    columns = [],
+    onRowSelect,
+    selectedRowID,
+    onFilter,
+    filterPlaceholder,
+    onPaginate,
+    pageCount,
+    capitalize,
+}) => {
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
 
-    const handleClick = (selectedRow) => {
-        console.log('This event listener is being called');
-        if (activeRowID === selectedRow.id) {
-            setActiveRowID(-1);
+    const handleClick = (row) => {
+        if (selectedRowID === row.id) {
             onRowSelect(null);
         } else {
-            setActiveRowID(selectedRow.id);
-            onRowSelect(selectedRow);
+            onRowSelect(row);
         }
     };
 
+    const onFilterDebounced = debounce((value) => {
+        onFilter(value);
+    }, 500);
+
     return (
         <>
-            <Table>
-                <Table.Head>
-                    <Table.TR>
-                        {columnsToRender.map((title) => {
-                            return <Table.TH>{title}</Table.TH>;
-                        })}
-                    </Table.TR>
-                </Table.Head>
-                <Table.Body>
-                    {data.map((row) => {
-                        return (
-                            <Table.TR active={activeRowID === row.id} key={row.id} onClick={() => handleClick(row)}>
-                                {dataKeys.map((column) => {
-                                    return <Table.TD>{row[column]}</Table.TD>;
-                                })}
+            <Table.FilterContainer>
+                <TableFilterInput onChange={(event) => onFilterDebounced(event.target.value)} placeholder={filterPlaceholder} autoFocus />
+            </Table.FilterContainer>
+            <Table.TableContainer>
+                <Table {...getTableProps()}>
+                    <Table.Head>
+                        {headerGroups.map((headerGroup) => (
+                            <Table.TR {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map((column) => (
+                                    <Table.TH {...column.getHeaderProps()}>{column.render('Header')}</Table.TH>
+                                ))}
                             </Table.TR>
-                        );
-                    })}
-                </Table.Body>
-            </Table>
-            {loading && <Table.LoadingContainer />}
+                        ))}
+                    </Table.Head>
+                    <Table.Body {...getTableBodyProps()}>
+                        {rows.map((row) => {
+                            prepareRow(row);
+                            return (
+                                <Table.TR
+                                    active={selectedRowID === row.original.id}
+                                    {...row.getRowProps({
+                                        onClick: () => handleClick(row.original),
+                                    })}>
+                                    {row.cells.map((cell, index) => {
+                                        return (
+                                            <Table.TD capitalize={capitalize && capitalize.includes(index)} {...cell.getCellProps()}>
+                                                {cell.render('Cell')}
+                                            </Table.TD>
+                                        );
+                                    })}
+                                </Table.TR>
+                            );
+                        })}
+                    </Table.Body>
+                </Table>
+                {data.length > 0 && (
+                    <Table.PaginationContainer>
+                        <Pagination pageCount={pageCount} onPaginate={onPaginate} />
+                    </Table.PaginationContainer>
+                )}
+            </Table.TableContainer>
+            {loading && <Table.LoadingContainer data={data.length ? 1 : 0}>Cargando...</Table.LoadingContainer>}
+            {!data.length && !loading && <Table.NoDataContainer>No hay recursos en la base de datos</Table.NoDataContainer>}
         </>
     );
 };
+
+export default CustomTable;

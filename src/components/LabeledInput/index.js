@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StyledMainWrapper, StyledInput, StyledLabel } from './styles';
 
-const LabeledInput = ({ placeholder, ...rest }) => {
+const LabeledInput = ({ children, placeholder, file, value, capitalize, errorborder, ...rest }) => {
     const [labelActive, setLabelActive] = useState(false);
 
     const handleBlur = ({ target: { value } }) => {
@@ -9,9 +9,10 @@ const LabeledInput = ({ placeholder, ...rest }) => {
     };
 
     return (
-        <StyledMainWrapper onBlur={handleBlur}>
-            <StyledInput {...rest} />
-            <StyledLabel className={labelActive ? 'active' : ''}>{placeholder}</StyledLabel>
+        <StyledMainWrapper file={file} errorborder={errorborder} onBlur={handleBlur}>
+            <StyledInput capitalize={capitalize} value={value} {...rest} />
+            <StyledLabel className={labelActive || (value && value.toString().length) ? 'active' : ''}>{placeholder}</StyledLabel>
+            {children}
         </StyledMainWrapper>
     );
 };

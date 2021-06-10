@@ -2,7 +2,7 @@ import { NavLink, NavLinkContentWrapper, IconContainer, NavLinkTextContainer, Na
 
 import { colors } from 'styles/theme';
 
-const NavItem = ({ to, Icon, title, active, ...rest }) => {
+const NavItem = ({ to, Icon, title, active, dissapearonmobile, ...rest }) => {
     const activeItem = localStorage.getItem('activeLocation');
 
     const handleClick = (elementURL) => {
@@ -10,7 +10,7 @@ const NavItem = ({ to, Icon, title, active, ...rest }) => {
     };
 
     return (
-        <NavLink to={to} onClick={() => handleClick(to)} {...rest}>
+        <NavLink to={to} onClick={() => handleClick(to)} hide={dissapearonmobile ? 1 : 0} {...rest}>
             <NavLinkContentWrapper className={activeItem === to ? 'active' : ''}>
                 <IconContainer>
                     <Icon

@@ -135,7 +135,7 @@ export const NavLink = styled(Link)`
     }
 
     ${(props) =>
-        props['data-dissapearOnMobile'] &&
+        props.hide &&
         `
         @media (max-width: ${breakpoints.mobile}){
         display: none;

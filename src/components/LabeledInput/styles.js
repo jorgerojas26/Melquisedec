@@ -7,18 +7,18 @@ export const StyledMainWrapper = styled.label`
     position: relative;
 
     justify-content: flex-end;
-    margin-bottom: 10px;
-    padding: 30px 0 10px 0;
 
     border-color: rgb(196, 207, 214);
     border: 1px solid #999;
     border-radius: 4px;
+    padding: 30px 0 10px 0;
 
     background: white;
 
     min-width: 0px;
     min-height: 0px;
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 
     overflow-wrap: break-word;
     overflow: hidden;
@@ -33,7 +33,7 @@ export const StyledMainWrapper = styled.label`
 
     :focus-within {
         box-shadow: 0 0 0 3px ${colors.secondary};
-
+        border-color: transparent;
         > label {
             font-size: 14px;
             top: 5px;
@@ -41,9 +41,31 @@ export const StyledMainWrapper = styled.label`
             color: ${colors.secondary};
         }
     }
+
+    ${(props) =>
+        props.errorborder &&
+        `
+        box-shadow: 0 0 0 3px red;
+
+    `}
+
+    ${(props) => {
+        if (props.file) {
+            return `
+            background: ${colors.shadow};
+            cursor: pointer;
+            label {
+            font-size: 12px;
+            top: 2px;
+            left: 2px;
+            }
+            `;
+        }
+    }}
 `;
 
 export const StyledInput = styled.input`
+    margin: 0;
     min-width: 0px;
     min-height: 0px;
 
@@ -52,6 +74,8 @@ export const StyledInput = styled.input`
     outline: 0;
     font-size: 18px;
     padding: 0 10px;
+
+    ${(props) => props.capitalize && { textTransform: 'capitalize' }}
 `;
 
 export const StyledLabel = styled.label`

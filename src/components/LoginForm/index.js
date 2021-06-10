@@ -1,14 +1,4 @@
-import {
-    MainWrapper,
-    MainContainer,
-    ContentContainer,
-    Main,
-    Header,
-    UsernameContainer,
-    PasswordContainer,
-    SubmitButtonContainer,
-    LogoContainer,
-} from './styles';
+import { MainWrapper, MainContainer, ContentContainer, Main, Header, InputContainer, SubmitButtonContainer, LogoContainer } from './styles';
 
 import Banner from 'components/shared/Banner';
 
@@ -33,12 +23,12 @@ const LoginForm = () => {
                     </Header>
                     <Main>
                         <form onSubmit={handleSubmit}>
-                            <UsernameContainer>
+                            <InputContainer>
                                 <LabeledInput placeholder='Usuario' autoFocus />
-                            </UsernameContainer>
-                            <PasswordContainer>
+                            </InputContainer>
+                            <InputContainer>
                                 <LabeledInput type='password' placeholder='Contraseña' />
-                            </PasswordContainer>
+                            </InputContainer>
                             <SubmitButtonContainer>
                                 <SubmitButton>Enviar</SubmitButton>
                             </SubmitButtonContainer>

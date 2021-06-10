@@ -41,18 +41,24 @@ export const LogoContainer = styled.div`
 
 export const Main = styled.div``;
 
-export const UsernameContainer = styled.div`
+export const InputContainer = styled.div`
     align-items: center;
     width: 100%;
-`;
+    margin-bottom: 10px;
 
-export const PasswordContainer = styled.div`
-    align-items: center;
-    width: 100%;
+    > small {
+        margin-top: 5px;
+        font-size: 14px;
+    }
 `;
 
 export const SubmitButtonContainer = styled.div`
+    height: 50px;
+    background: ${colors.primary};
     > button {
+        color: white;
+        font-weight: 700;
+
         :hover {
             background: ${colors.secondary};
         }

@@ -1,7 +1,24 @@
-import { StyledTable, THead, TBody, TFoot, TH, THChildrenWrapper, TR, TD, StyledLoadingContainer } from './styles.js';
+import {
+    StyledTable,
+    THead,
+    TBody,
+    TFoot,
+    TH,
+    TR,
+    TD,
+    StyledLoadingContainer,
+    StyledFilterContainer,
+    StyledNoDataContainer,
+    TableContainer,
+    PaginationContainer,
+} from './styles.js';
 
 const Table = ({ children, ...props }) => {
     return <StyledTable {...props}>{children}</StyledTable>;
+};
+
+Table.TableContainer = ({ children }) => {
+    return <TableContainer>{children}</TableContainer>;
 };
 
 Table.Head = ({ children, ...props }) => {
@@ -17,11 +34,7 @@ Table.Foot = ({ children, ...props }) => {
 };
 
 Table.TH = ({ children, ...props }) => {
-    return (
-        <TH {...props}>
-            <THChildrenWrapper>{children}</THChildrenWrapper>
-        </TH>
-    );
+    return <TH {...props}>{children}</TH>;
 };
 
 Table.TR = ({ children, ...props }) => {
@@ -32,8 +45,20 @@ Table.TD = ({ children, ...props }) => {
     return <TD {...props}>{children}</TD>;
 };
 
-Table.LoadingContainer = () => {
-    return <StyledLoadingContainer>Cargando...</StyledLoadingContainer>;
+Table.LoadingContainer = ({ children, data }) => {
+    return <StyledLoadingContainer data={data}>{children}</StyledLoadingContainer>;
+};
+
+Table.FilterContainer = ({ children }) => {
+    return <StyledFilterContainer>{children}</StyledFilterContainer>;
+};
+
+Table.NoDataContainer = ({ children }) => {
+    return <StyledNoDataContainer>{children}</StyledNoDataContainer>;
+};
+
+Table.PaginationContainer = ({ children }) => {
+    return <PaginationContainer>{children}</PaginationContainer>;
 };
 
 export default Table;

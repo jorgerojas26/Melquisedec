@@ -8,14 +8,14 @@ export const useTableFilter = (rows, pattern, columnIndexes = [0]) => {
             let keys = Object.keys(row);
 
             for (let index in columnIndexes) {
-                if (row[keys[index]].toLowerCase().includes(pattern.toLowerCase()))
-                    return true;
+                let value = '' + row[keys[index]];
+                if (value.toLowerCase().includes(pattern.toLowerCase())) return true;
             }
 
             return false;
         });
         setFilteredRows(filteredData);
-    }, [rows, pattern]);
+    }, [pattern]);
 
     return filteredRows;
 };
