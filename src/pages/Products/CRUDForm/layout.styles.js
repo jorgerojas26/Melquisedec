@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { colors, breakpoints } from 'styles/theme';
+import { colors, breakpoints } from "styles/theme";
 
 export const GeneralInfoContainer = styled.div`
     flex-direction: row;
@@ -61,7 +61,7 @@ export const VariantButtonContainer = styled.div`
     gap: 10px;
 
     button {
-        background: ${(props) => (props.color ? props.color : 'transparent')};
+        background: ${(props) => (props.color ? props.color : "transparent")};
         flex: 0 1 40px;
         border-radius: 4px;
         color: white;
@@ -74,7 +74,6 @@ export const VariantButtonContainer = styled.div`
 
 export const ProductImageContainer = styled.div`
     flex: 0 1 100%;
-
     background-image: url(${(props) => props.url});
     background-repeat: no-repeat;
     background-position-x: center;

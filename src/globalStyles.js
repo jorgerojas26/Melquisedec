@@ -19,7 +19,9 @@ const GlobalStyle = createGlobalStyle`
 		z-index: 0;
 	}
 
-
+  input:focus {
+border: none 
+}
 	body {
 		margin: 0;
 		padding: 0;

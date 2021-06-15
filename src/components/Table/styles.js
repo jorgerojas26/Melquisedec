@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { colors, breakpoints } from 'styles/theme';
+import { colors, breakpoints } from "styles/theme";
 
 export const StyledFilterContainer = styled.div`
     position: sticky;
@@ -12,6 +12,7 @@ export const StyledFilterContainer = styled.div`
 
 export const TableContainer = styled.div`
     overflow: auto;
+    scrollbar-width: none;
     max-height: calc(100% - 100px);
     @media (min-width: ${breakpoints.mobile}) {
         max-height: calc(100% - 50px);
@@ -35,7 +36,7 @@ export const StyledLoadingContainer = styled.div`
 
     ${(props) =>
         !props.data && {
-            position: 'static',
+            position: "static",
         }}
 `;
 
@@ -56,11 +57,11 @@ export const StyledTable = styled.table`
 `;
 
 export const TD = styled.td`
-    padding: 12px;
+    padding: 10px;
     font-size: 17px;
     ${(props) =>
         props.capitalize && {
-            textTransform: 'capitalize',
+            textTransform: "capitalize",
         }}
 `;
 
@@ -82,8 +83,8 @@ export const TR = styled.tr`
 
     ${(props) =>
         props.active && {
-            background: colors.primary + '!important',
-            color: 'white',
+            background: colors.primary + "!important",
+            color: "white",
         }}
 
     :nth-child(2n + 0) {

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { colors, breakpoints } from 'styles/theme';
+import { colors, breakpoints } from "styles/theme";
 
 export const Wrapper = styled.div`
     flex: 1;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
 import {
     Wrapper,
@@ -8,18 +8,17 @@ import {
     TableContainer,
     FormContainer,
     ConfirmContainer,
-} from 'components/CommonLayout/main.layout';
+} from "components/CommonLayout/main.layout";
 
-import ClientWidgets from 'components/Widgets/ClientWidgets';
-import ClientsTable from 'components/ModuleTables/ClientsTable';
-import Toolbar from 'components/Toolbar';
-import Modal from 'components/Modal';
-import ClientForm from './CRUDForm';
-import ConfirmAlert from 'components/ConfirmAlert';
-import { useEffect } from 'react';
-import { deleteClient } from 'api/clients';
-import Notification from 'components/Notification';
-import { useNotification } from 'hooks/notification';
+import ClientWidgets from "components/Widgets/ClientWidgets";
+import ClientsTable from "components/ModuleTables/ClientsTable";
+import Toolbar from "components/Toolbar";
+import Modal from "components/Modal";
+import ClientForm from "./CRUDForm";
+import ConfirmAlert from "components/ConfirmAlert";
+import { deleteClient } from "api/clients";
+import Notification from "components/Notification";
+import { useNotification } from "hooks/notification";
 
 const Clients = () => {
     const [selectedClient, setSelectedClient] = useState(null);
@@ -32,23 +31,23 @@ const Clients = () => {
     }, [selectedClient]);
 
     useEffect(() => {
-        if (CRUDAction === 'refresh') setSelectedClient(null);
+        if (CRUDAction === "refresh") setSelectedClient(null);
     }, [CRUDAction]);
 
     const handleCRUD = (event) => {
-        if (event.currentTarget.name === 'ToolbarCreate') {
-            setCRUDAction('create');
-        } else if (event.currentTarget.name === 'ToolbarEdit') {
-            setCRUDAction('edit');
-        } else if (event.currentTarget.name === 'ToolbarDelete') {
-            setCRUDAction('delete');
+        if (event.currentTarget.name === "ToolbarCreate") {
+            setCRUDAction("create");
+        } else if (event.currentTarget.name === "ToolbarEdit") {
+            setCRUDAction("edit");
+        } else if (event.currentTarget.name === "ToolbarDelete") {
+            setCRUDAction("delete");
         }
         setShowWidgets(false);
     };
 
     const handleSubmit = (submitMessage) => {
-        showNotification('success', submitMessage, 2000);
-        setCRUDAction('refresh');
+        showNotification("success", submitMessage, 2000);
+        setCRUDAction("refresh");
     };
 
     return (
@@ -65,14 +64,14 @@ const Clients = () => {
                     </ToolbarContainer>
                     <TableContainer>
                         <ClientsTable
-                            shouldRefresh={CRUDAction === 'refresh'}
+                            shouldRefresh={CRUDAction === "refresh"}
                             selectedRowID={selectedClient && selectedClient.id}
                             onClientSelect={setSelectedClient}
                             showNotification={showNotification}
                         />
                     </TableContainer>
-                    <Modal backdrop show={CRUDAction && CRUDAction !== 'refresh' ? true : false} handleClose={() => setCRUDAction(null)}>
-                        {(CRUDAction === 'create' || CRUDAction === 'edit') && (
+                    <Modal backdrop show={CRUDAction && CRUDAction !== "refresh" ? true : false} handleClose={() => setCRUDAction(null)}>
+                        {(CRUDAction === "create" || CRUDAction === "edit") && (
                             <FormContainer>
                                 <ClientForm
                                     onSubmit={handleSubmit}
@@ -82,13 +81,13 @@ const Clients = () => {
                                 />
                             </FormContainer>
                         )}
-                        {CRUDAction === 'delete' && (
+                        {CRUDAction === "delete" && (
                             <ConfirmContainer>
                                 <ConfirmAlert
                                     handleClose={() => setCRUDAction(null)}
                                     callback={async () => {
                                         await deleteClient(selectedClient.id);
-                                        setCRUDAction('refresh');
+                                        setCRUDAction("refresh");
                                         setSelectedClient(null);
                                     }}
                                 />

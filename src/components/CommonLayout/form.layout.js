@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { colors, breakpoints } from 'styles/theme';
+import { colors } from "styles/theme";
 
 export const Form = styled.form`
     display: flex;
@@ -30,7 +30,7 @@ export const TitleContainer = styled.div`
 export const BodyContainer = styled.div`
     padding: 20px;
     flex: 1;
-    max-height: 620px;
+    max-height: 450px;
     overflow-y: auto;
 
     h4 {
@@ -58,7 +58,7 @@ export const InputContainer = styled.div`
 export const ButtonContainer = styled.div`
     margin-right: 10px;
 
-    background: ${(props) => (props.color ? props.color : 'transparent')};
+    background: ${(props) => (props.color ? props.color : "transparent")};
 
     > button {
         color: white;

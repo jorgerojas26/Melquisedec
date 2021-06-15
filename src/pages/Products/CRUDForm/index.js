@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 import {
     Form,
@@ -11,30 +11,30 @@ import {
     TitleContainer,
     ErrorAlert,
     ErrorContainer,
-} from 'components/CommonLayout/form.layout';
+} from "components/CommonLayout/form.layout";
 
-import { GeneralInfoContainer, VariantsContainer, InputContainer } from './layout.styles';
+import { GeneralInfoContainer, VariantsContainer, InputContainer } from "./layout.styles";
 
-import LabeledInput from 'components/LabeledInput';
-import Button from 'components/Button';
-import { colors } from 'styles/theme';
-import { BookBookmark, XCircle, X } from 'phosphor-react';
-import { useForm } from 'hooks/useForm';
-import { createProduct, updateProduct } from 'api/products';
-import productSchema from 'validations/schemas/product';
-import VariantForm from './variantForm';
+import LabeledInput from "components/LabeledInput";
+import Button from "components/Button";
+import { colors } from "styles/theme";
+import { BookBookmark, XCircle, X } from "phosphor-react";
+import { useForm } from "hooks/useForm";
+import { createProduct, updateProduct } from "api/products";
+import productSchema from "validations/schemas/product";
+import VariantForm from "./variantForm";
 
 const ProductForm = ({ product, action, handleClose, onSubmit }) => {
     const { handleChange, handleNestedChange, handleSubmit, formData, setFormData, submitErrors, submitSuccess } = useForm({
         initialState: {
-            name: '',
-            brand: '',
+            name: "",
+            brand: "",
             product_variant: [
                 {
-                    name: '',
-                    price: '',
-                    profitPercent: '',
-                    unitValue: '',
+                    name: "",
+                    price: "",
+                    profitPercent: "",
+                    unitValue: "",
                     imagePath: null,
                 },
             ],
@@ -46,15 +46,15 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
     });
 
     useEffect(() => {
-        if (action === 'edit' && product) setFormData(product);
+        if (action === "edit" && product) setFormData(product);
     }, [product, action, setFormData]);
 
     useEffect(() => {
         if (submitSuccess) {
-            if (action === 'create') {
-                onSubmit('El producto se ha registrado con éxito');
-            } else if (action === 'edit') {
-                onSubmit('El producto se ha actualizado con éxito');
+            if (action === "create") {
+                onSubmit("El producto se ha registrado con éxito");
+            } else if (action === "edit") {
+                onSubmit("El producto se ha actualizado con éxito");
             }
         }
     }, [submitSuccess, action, onSubmit]);
@@ -77,33 +77,33 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                         <X />
                     </Button>
                 </CloseButtonContainer>
-                <TitleContainer>{action === 'create' ? 'Crear producto' : 'Editar producto'}</TitleContainer>
+                <TitleContainer>{action === "create" ? "Crear producto" : "Editar producto"}</TitleContainer>
             </HeaderContainer>
             <BodyContainer>
                 <h4>Información General</h4>
                 <GeneralInfoContainer>
                     <InputContainer>
                         <LabeledInput
-                            placeholder='Tipo'
+                            placeholder="Tipo"
                             onChange={handleChange}
-                            name='name'
+                            name="name"
                             value={formData.name}
                             autoFocus
                             capitalize
-                            errorborder={hasError('name')}
+                            errorborder={hasError("name")}
                         />
-                        {printError('name')}
+                        {printError("name")}
                     </InputContainer>
                     <InputContainer>
                         <LabeledInput
-                            placeholder='Marca'
+                            placeholder="Marca"
                             onChange={handleChange}
-                            name='brand'
+                            name="brand"
                             value={formData.brand}
                             capitalize
-                            errorborder={hasError('brand')}
+                            errorborder={hasError("brand")}
                         />
-                        {printError('brand')}
+                        {printError("brand")}
                     </InputContainer>
                 </GeneralInfoContainer>
                 <h4>Variantes</h4>
@@ -126,15 +126,15 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                 </VariantsContainer>
             </BodyContainer>
             <FooterWrapper>
-                <ErrorContainer>{printError('undefined')}</ErrorContainer>
+                <ErrorContainer>{printError("undefined")}</ErrorContainer>
                 <FooterContainer>
                     <ButtonContainer color={colors.primary}>
-                        <Button type='submit'>
+                        <Button type="submit">
                             <BookBookmark size={24} />
                             Enviar
                         </Button>
                     </ButtonContainer>
-                    <ButtonContainer color='red'>
+                    <ButtonContainer color="red">
                         <Button onClick={handleClose}>
                             <XCircle size={24} />
                             Cancelar

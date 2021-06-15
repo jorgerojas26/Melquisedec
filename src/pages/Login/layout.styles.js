@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { colors, breakpoints } from 'styles/theme';
+import styled from "styled-components";
+import { colors, breakpoints } from "styles/theme";
 
 export const MainWrapper = styled.div`
     justify-content: center;
