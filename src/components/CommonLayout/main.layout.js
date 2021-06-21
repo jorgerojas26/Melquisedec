@@ -55,7 +55,7 @@ export const FormContainer = styled.div`
         ${(props) => {
             if (props.medium) {
                 return `
-                max-width: 800px;
+                    max-width: 650px;
                 `;
             }
         }}

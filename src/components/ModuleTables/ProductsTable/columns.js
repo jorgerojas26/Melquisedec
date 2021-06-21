@@ -17,6 +17,14 @@ export const COLUMNS = [
         id: 'price',
     },
     {
+        Header: 'Precio VES',
+        accessor: 'priceVES',
+        id: 'priceVES',
+        Cell: (props) => {
+            return props.value ? props.value.toLocaleString('es-VE') : '0';
+        },
+    },
+    {
         Header: '% Ganancia',
         accessor: 'profitPercent',
     },

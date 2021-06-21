@@ -3,7 +3,8 @@ import axios from 'axios';
 axios.interceptors.response.use(
     (res) => res,
     (error) => {
-        if (error.response.status === 500) {
+        if (error.status === 500) {
+            console.log('jelouda');
             return {
                 data: {
                     error: {
@@ -12,6 +13,7 @@ axios.interceptors.response.use(
                 },
             };
         } else if (!error.response.data.error) {
+            console.log('jelouda2');
             return {
                 data: {
                     error: {
@@ -20,6 +22,7 @@ axios.interceptors.response.use(
                 },
             };
         } else {
+            console.log('jelouda3');
             return {
                 data: error.response.data,
             };

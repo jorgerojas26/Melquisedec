@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 import {
     Wrapper,
@@ -7,45 +7,46 @@ import {
     TableContainer,
     FormContainer,
     ConfirmContainer,
-} from "components/CommonLayout/main.layout";
+} from 'components/CommonLayout/main.layout';
 
-import Modal from "components/Modal";
-import Toolbar from "components/Toolbar";
-import ProductsTable from "components/ModuleTables/ProductsTable";
-import { useNotification } from "hooks/notification";
-import Notification from "components/Notification";
-import ConfirmAlert from "components/ConfirmAlert";
-import ProductForm from "./CRUDForm";
-import { deleteProductVariantApi } from "api/product_variants";
-import { useDolarValue } from "hooks/useDolarValue";
+import Modal from 'components/Modal';
+import Toolbar from 'components/Toolbar';
+import { ButtonContainer } from 'components/Toolbar/styles';
+import Button from 'components/Button';
+import { colors } from 'styles/theme';
+import { Package } from 'phosphor-react';
+import ProductsTable from 'components/ModuleTables/ProductsTable';
+import { useNotification } from 'hooks/notification';
+import Notification from 'components/Notification';
+import ConfirmAlert from 'components/ConfirmAlert';
+import ProductForm from './CRUDForm';
+import StockForm from './stockForm';
+import { deleteProductVariantApi } from 'api/product_variants';
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [CRUDAction, setCRUDAction] = useState(null);
     const { notification, showNotification } = useNotification(null);
-    const { dolarValue } = useDolarValue();
 
     useEffect(() => {
-        if (CRUDAction === "refresh") setSelectedProduct(null);
+        if (CRUDAction === 'refresh') setSelectedProduct(null);
     }, [CRUDAction]);
 
     const handleCRUD = (event) => {
-        if (!dolarValue) {
-            showNotification("error", "Debe asignar un valor al dolar", 3000);
-            return;
-        }
-        if (event.currentTarget.name === "ToolbarCreate") {
-            setCRUDAction("create");
-        } else if (event.currentTarget.name === "ToolbarEdit") {
-            setCRUDAction("edit");
-        } else if (event.currentTarget.name === "ToolbarDelete") {
-            setCRUDAction("delete");
+        if (event.currentTarget.name === 'ToolbarCreate') {
+            setCRUDAction('create');
+        } else if (event.currentTarget.name === 'ToolbarEdit') {
+            setCRUDAction('edit');
+        } else if (event.currentTarget.name === 'ToolbarDelete') {
+            setCRUDAction('delete');
+        } else if (event.currentTarget.name === 'reassignStock') {
+            setCRUDAction('reassignStock');
         }
     };
 
     const handleSubmit = (submitMessage) => {
-        showNotification("success", submitMessage, 2000);
-        setCRUDAction("refresh");
+        showNotification('success', submitMessage, 2000);
+        setCRUDAction('refresh');
     };
 
     return (
@@ -57,11 +58,18 @@ const Products = () => {
                         onCreate={handleCRUD}
                         onEdit={handleCRUD}
                         onDelete={handleCRUD}
-                    />
+                    >
+                        <ButtonContainer color={colors.brown}>
+                            <Button name='reassignStock' onClick={handleCRUD} disabled={!selectedProduct}>
+                                <Package size='24' />
+                                Reasignar Stock
+                            </Button>
+                        </ButtonContainer>
+                    </Toolbar>
                 </ToolbarContainer>
                 <TableContainer>
                     <ProductsTable
-                        shouldRefresh={CRUDAction === "refresh"}
+                        shouldRefresh={CRUDAction === 'refresh'}
                         selectedRowID={selectedProduct && selectedProduct.id}
                         onProductSelect={setSelectedProduct}
                         showNotification={showNotification}
@@ -69,12 +77,12 @@ const Products = () => {
                 </TableContainer>
                 <Modal
                     backdrop
-                    show={CRUDAction && CRUDAction !== "refresh"}
+                    show={CRUDAction && CRUDAction !== 'refresh'}
                     handleClose={() => {
                         setCRUDAction(null);
                     }}
                 >
-                    {(CRUDAction === "create" || CRUDAction === "edit") && (
+                    {(CRUDAction === 'create' || CRUDAction === 'edit') && (
                         <FormContainer medium>
                             <ProductForm
                                 product={selectedProduct && selectedProduct.product}
@@ -84,13 +92,22 @@ const Products = () => {
                             />
                         </FormContainer>
                     )}
-                    {CRUDAction === "delete" && (
+                    {CRUDAction === 'reassignStock' && (
+                        <FormContainer medium>
+                            <StockForm
+                                variant={selectedProduct && selectedProduct}
+                                handleClose={() => setCRUDAction(null)}
+                                onSubmit={handleSubmit}
+                            />
+                        </FormContainer>
+                    )}
+                    {CRUDAction === 'delete' && (
                         <ConfirmContainer>
                             <ConfirmAlert
                                 handleClose={() => setCRUDAction(null)}
                                 callback={async () => {
                                     await deleteProductVariantApi(selectedProduct.id);
-                                    setCRUDAction("refresh");
+                                    setCRUDAction('refresh');
                                     setSelectedProduct(null);
                                 }}
                             />

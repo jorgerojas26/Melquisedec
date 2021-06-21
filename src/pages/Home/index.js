@@ -23,13 +23,12 @@ import ProductsPage from "pages/Products";
 import Button from "components/Button";
 
 import { useRedirectToActiveLocation } from "hooks/redirect";
-import { useNotification } from "hooks/notification";
 import { useDolarValue } from "hooks/useDolarValue";
 
 const HomePage = () => {
     useRedirectToActiveLocation();
-    const { notification, showNotification } = useNotification();
-    const { dolarValue, setDolarValue } = useDolarValue();
+
+    const { dolarValue, notification, showNotification, updateDolarValue } = useDolarValue();
 
     const handleDolarChange = () => {
         let response = prompt("Ingrese el valor del dolar");
@@ -38,8 +37,7 @@ const HomePage = () => {
             if (isNaN(response) || response === "") {
                 showNotification("error", "El valor del dólar debe ser numérico", 3000);
             } else {
-                setDolarValue(parseInt(response));
-                localStorage.setItem("dolarValue", parseInt(response));
+                updateDolarValue(response);
             }
         }
     };

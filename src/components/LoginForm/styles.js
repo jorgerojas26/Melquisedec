@@ -50,6 +50,10 @@ export const InputContainer = styled.div`
         margin-top: 5px;
         font-size: 14px;
     }
+
+    label {
+        width: 100%;
+    }
 `;
 
 export const SubmitButtonContainer = styled.div`

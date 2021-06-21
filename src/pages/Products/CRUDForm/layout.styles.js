@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-import { colors, breakpoints } from "styles/theme";
+import styled from 'styled-components';
 
 export const GeneralInfoContainer = styled.div`
     flex-direction: row;
@@ -14,37 +12,34 @@ export const VariantsContainer = styled.div`
 `;
 
 export const InputsWrapper = styled.div`
-    flex-direction: row;
-    padding-bottom: 10px;
-    border-bottom: 1px solid ${colors.shadow};
+    display: grid;
+    grid-template-columns: 4fr 2fr 0.5fr;
+    grid-auto-columns: auto;
     gap: 10px;
-
-    @media (max-width: ${breakpoints.mobile}) {
-        flex-direction: column;
-    }
 `;
 
 export const InputsContainer = styled.div`
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 10px;
-
-    > div {
-        flex-basis: calc(50% - 10px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 8px;
+    div {
+        margin: 0;
+    }
+    label {
+        > label.active {
+            font-size: 12px;
+        }
     }
 `;
 
 export const FileInputContainer = styled.div`
-    flex: 0 1 150px;
-
     label {
-        flex: 1;
+        height: 100%;
         > label {
             overflow: hidden;
             white-space: pre-wrap;
             text-overflow: ellipsis;
-            max-width: 100%;
         }
     }
     input {
@@ -61,7 +56,7 @@ export const VariantButtonContainer = styled.div`
     gap: 10px;
 
     button {
-        background: ${(props) => (props.color ? props.color : "transparent")};
+        background: ${(props) => (props.color ? props.color : 'transparent')};
         flex: 0 1 40px;
         border-radius: 4px;
         color: white;

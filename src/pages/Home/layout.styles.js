@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { breakpoints, colors } from "styles/theme";
+import { breakpoints, colors } from 'styles/theme';
 
 export const Wrapper = styled.div`
     height: 100vh;
@@ -33,7 +33,7 @@ export const Main = styled.main`
 
     overflow: hidden;
 
-    background-image: url("../../assets/patterns/leaves-pattern.png");
+    background-image: url('../../assets/patterns/leaves-pattern.png');
 
     @media (min-width: ${breakpoints.mobile}) {
         flex-direction: column;

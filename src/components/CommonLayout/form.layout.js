@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors } from "styles/theme";
+import { colors } from 'styles/theme';
 
 export const Form = styled.form`
     display: flex;
@@ -53,12 +53,13 @@ export const FooterContainer = styled.div`
 export const InputContainer = styled.div`
     flex: 0 1 auto;
     margin-bottom: 10px;
+    z-index: 1000000000;
 `;
 
 export const ButtonContainer = styled.div`
     margin-right: 10px;
 
-    background: ${(props) => (props.color ? props.color : "transparent")};
+    background: ${(props) => (props.color ? props.color : 'transparent')};
 
     > button {
         color: white;
@@ -70,13 +71,10 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ErrorAlert = styled.span`
-    font-size: 19x;
     font-weight: 500;
     color: red;
-    padding: 5px 0;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    padding-top: 5px;
+    width: 100%;
 `;
 
 export const ErrorContainer = styled.span`

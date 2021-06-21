@@ -6,9 +6,10 @@ import { UserCirclePlus, UserCircleGear, UserCircleMinus } from 'phosphor-react'
 
 import Button from 'components/Button';
 
-const Toolbar = ({ onCreate, onEdit, onDelete, recordSelected }) => {
+const Toolbar = ({ children, onCreate, onEdit, onDelete, recordSelected }) => {
     return (
         <Container>
+            {children}
             <ButtonContainer color={colors.primary}>
                 <Button name='ToolbarCreate' onClick={onCreate}>
                     <UserCirclePlus size='24px' />

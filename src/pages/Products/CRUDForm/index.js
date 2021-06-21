@@ -32,7 +32,7 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
             product_variant: [
                 {
                     name: "",
-                    price: "",
+                    price: 0,
                     profitPercent: "",
                     unitValue: "",
                     imagePath: null,
@@ -84,7 +84,7 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                 <GeneralInfoContainer>
                     <InputContainer>
                         <LabeledInput
-                            placeholder="Tipo"
+                            placeholder="* Tipo"
                             onChange={handleChange}
                             name="name"
                             value={formData.name}

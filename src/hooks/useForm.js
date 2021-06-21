@@ -6,7 +6,7 @@ import validateSchema from 'utils/validateSchema';
 export const useForm = ({ initialState, action, createResource, editResource, schema }) => {
     const [formData, setFormData] = useState(initialState);
     const [submitting, setSubmitting] = useState(false);
-    const { errors, handleErrors } = useFormError([]);
+    const { errors, handleErrors, setErrors } = useFormError([]);
 
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -21,8 +21,11 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
     };
 
     const handleNestedChange = (selector, index, key, value) => {
-        formData[selector][index][key] = value;
-        setFormData({ ...formData });
+        let data = JSON.stringify(formData);
+        data = JSON.parse(data);
+        data[selector][index][key] = value;
+
+        setFormData({ ...data });
     };
 
     const handleNumericInput = (value, inputName) => {
@@ -43,7 +46,6 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
                 try {
                     if (action === 'create') {
                         response = await createResource(formData);
-                        console.log(response);
                     } else if (action === 'edit') {
                         response = await editResource(formData.id, formData);
                     }
@@ -71,6 +73,7 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
         formData,
         setFormData,
         submitErrors: errors,
+        setSubmitErrors: setErrors,
         submitSuccess,
     };
 };

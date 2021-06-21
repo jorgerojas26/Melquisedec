@@ -15,5 +15,5 @@ export const useFormError = (initialState) => {
         setErrors({ ...errorList });
     };
 
-    return { errors, handleErrors };
+    return { errors, handleErrors, setErrors };
 };

@@ -45,7 +45,8 @@ export const StyledMainWrapper = styled.label`
     ${(props) =>
         props.errorborder &&
         `
-        box-shadow: 0 0 0 3px red;
+        border: none;
+        box-shadow: 0 0 0 2px red;
 
     `}
 
@@ -91,4 +92,10 @@ export const StyledLabel = styled.label`
     font-size: 16px;
     font-weight: 800;
     transition: all 0.2s;
+`;
+
+export const StyledErrorBadge = styled.div`
+    position: absolute;
+    right: 3px;
+    color: red;
 `;

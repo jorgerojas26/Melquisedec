@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { StyledMainWrapper, StyledInput, StyledLabel } from './styles';
-
-const LabeledInput = ({ children, placeholder, file, value, capitalize, errorborder, ...rest }) => {
+import { StyledMainWrapper, StyledInput, StyledLabel, StyledErrorBadge } from './styles';
+import { WarningCircle } from 'phosphor-react';
+const LabeledInput = ({ children, placeholder, file, value, active, capitalize, errorborder, ...rest }) => {
     const [labelActive, setLabelActive] = useState(false);
 
     const handleBlur = ({ target: { value } }) => {
@@ -11,7 +11,7 @@ const LabeledInput = ({ children, placeholder, file, value, capitalize, errorbor
     return (
         <StyledMainWrapper file={file} errorborder={errorborder} onBlur={handleBlur}>
             <StyledInput capitalize={capitalize} value={value} {...rest} />
-            <StyledLabel className={labelActive || (value && value.toString().length) ? 'active' : ''}>{placeholder}</StyledLabel>
+            <StyledLabel className={labelActive || (value && value.toString().length) || active ? 'active' : ''}>{placeholder}</StyledLabel>
             {children}
         </StyledMainWrapper>
     );
