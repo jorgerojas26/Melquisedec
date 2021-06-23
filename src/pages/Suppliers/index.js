@@ -63,7 +63,7 @@ const Suppliers = () => {
                                 <SupplierForm
                                     onSubmit={handleSubmit}
                                     action={CRUDAction}
-                                    supplier={selectedSupplier}
+                                    supplier={CRUDAction === 'edit' && selectedSupplier}
                                     handleClose={() => setCRUDAction(null)}
                                 />
                             </FormContainer>

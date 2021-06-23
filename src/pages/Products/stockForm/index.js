@@ -11,7 +11,6 @@ import {
     FooterWrapper,
     FooterContainer,
     ButtonContainer,
-    ErrorAlert,
     ErrorContainer,
 } from 'components/CommonLayout/form.layout';
 
@@ -28,7 +27,7 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
     const [freeStock, setFreeStock] = useState(0);
     const [stockTotal, setStockTotal] = useState(0);
 
-    const { formData, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, submitSuccess } = useForm({
+    const { formData, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
         initialState: {
             id: '',
             name: '',
@@ -37,6 +36,7 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
         action: 'edit',
         editResource: updateProduct,
         schema: productSchema,
+        onSubmitSuccess: onSubmit,
     });
 
     useEffect(() => {
@@ -49,12 +49,6 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
     useEffect(() => {
         if (variant) setFormData({ ...variant.product });
     }, [variant, setFormData]);
-
-    useEffect(() => {
-        if (submitSuccess) {
-            onSubmit('Ha actualizado su stock exitosamente');
-        }
-    }, [submitSuccess, onSubmit]);
 
     const handleChange = (selector, index, key, value) => {
         if (isNaN(parseInt(value))) {
@@ -98,12 +92,6 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
         } else {
             submitErrors['freeStock'] = 'Debe asignar el stock liberado';
             setSubmitErrors({ ...submitErrors });
-        }
-    };
-
-    const printError = (path) => {
-        if (submitErrors[path]) {
-            return <ErrorAlert>{submitErrors[path]}</ErrorAlert>;
         }
     };
 

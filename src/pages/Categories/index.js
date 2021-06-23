@@ -70,7 +70,7 @@ const Categories = () => {
                                 <CategoryForm
                                     onSubmit={handleSubmit}
                                     action={CRUDAction}
-                                    category={selectedCategory}
+                                    category={CRUDAction === 'edit' && selectedCategory}
                                     handleClose={() => setCRUDAction(null)}
                                 />
                             </FormContainer>

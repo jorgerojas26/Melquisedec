@@ -85,7 +85,7 @@ const Products = () => {
                     {(CRUDAction === 'create' || CRUDAction === 'edit') && (
                         <FormContainer medium>
                             <ProductForm
-                                product={selectedProduct && selectedProduct.product}
+                                product={CRUDAction === 'edit' && selectedProduct && selectedProduct.product}
                                 action={CRUDAction}
                                 handleClose={() => setCRUDAction(null)}
                                 onSubmit={handleSubmit}

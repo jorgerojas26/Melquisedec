@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { useFormError } from 'hooks/formError';
-
+import { ErrorAlert } from 'components/CommonLayout/form.layout';
 import validateSchema from 'utils/validateSchema';
 
-export const useForm = ({ initialState, action, createResource, editResource, schema }) => {
+export const useForm = ({ initialState, action, createResource, editResource, schema, onSubmitSuccess, submitSuccessMessage }) => {
     const [formData, setFormData] = useState(initialState);
     const [submitting, setSubmitting] = useState(false);
     const { errors, handleErrors, setErrors } = useFormError([]);
-
     const [submitSuccess, setSubmitSuccess] = useState(false);
+    let successMessage = submitSuccessMessage || {
+        create: 'El recurso fue creado con éxito',
+        edit: 'El recurso fue actualizado con éxito',
+    };
 
     const handleChange = (event) => {
         let targetName = event.target.name;
@@ -31,6 +34,17 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
     const handleNumericInput = (value, inputName) => {
         formData[inputName] = value;
         setFormData({ ...formData });
+    };
+
+    const printError = (path) => {
+        if (errors[path]) {
+            return <ErrorAlert>{errors[path]}</ErrorAlert>;
+        }
+        return '';
+    };
+
+    const hasError = (path) => {
+        return errors[path];
     };
 
     const handleSubmit = async (event) => {
@@ -58,6 +72,7 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
                     handleErrors(response.error);
                 } else {
                     setSubmitSuccess(true);
+                    onSubmitSuccess && onSubmitSuccess(successMessage[action]);
                 }
                 setSubmitting(false);
             }
@@ -75,5 +90,7 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
         submitErrors: errors,
         setSubmitErrors: setErrors,
         submitSuccess,
+        printError,
+        hasError,
     };
 };

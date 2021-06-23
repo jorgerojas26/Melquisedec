@@ -4,12 +4,22 @@ import { MinusCircle, PlusCircle } from 'phosphor-react';
 
 import LabeledInput from 'components/LabeledInput';
 
-import { ErrorAlert, InputContainer } from 'components/CommonLayout/form.layout';
+import { InputContainer } from 'components/CommonLayout/form.layout';
 
 import Button from 'components/Button';
 import { InputsWrapper, InputsContainer, FileInputContainer, VariantButtonContainer, ProductImageContainer } from './layout.styles';
 
-const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index, handleNestedChange, submitErrors }) => {
+const VariantForm = ({
+    CRUDAction,
+    formData,
+    setFormData,
+    product_variant,
+    index,
+    handleNestedChange,
+    submitErrors,
+    printError,
+    hasError,
+}) => {
     const addProductVariant = () => {
         let productVariantList = [
             ...formData['product_variant'],
@@ -37,17 +47,6 @@ const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index
                 product_variant: productVariantList,
             });
         }
-    };
-
-    const printError = (path) => {
-        if (submitErrors[path]) {
-            return <ErrorAlert> {submitErrors[path]} </ErrorAlert>;
-        }
-        return '';
-    };
-
-    const hasError = (path) => {
-        return submitErrors[path];
     };
 
     return (

@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import {
     Form,
     HeaderContainer,
@@ -10,7 +8,6 @@ import {
     ButtonContainer,
     CloseButtonContainer,
     TitleContainer,
-    ErrorAlert,
     ErrorContainer,
 } from 'components/CommonLayout/form.layout';
 
@@ -23,39 +20,17 @@ import { createCategory, updateCategory } from 'api/categories';
 import categorySchema from 'validations/schemas/category';
 
 const CategoryForm = ({ category, action, handleClose, onSubmit }) => {
-    const { handleChange, handleSubmit, formData, setFormData, submitErrors, submitSuccess } = useForm({
+    const { handleChange, handleSubmit, formData, printError, hasError } = useForm({
         initialState: {
             name: '',
+            ...category,
         },
         action,
         createResource: createCategory,
         editResource: updateCategory,
         schema: categorySchema,
+        onSubmitSuccess: onSubmit,
     });
-
-    useEffect(() => {
-        if (action === 'edit' && category) setFormData(category);
-    }, [category, action, setFormData]);
-
-    useEffect(() => {
-        if (submitSuccess) {
-            if (action === 'create') {
-                onSubmit('La categoría se ha registrado con éxito');
-            } else if (action === 'edit') {
-                onSubmit('La categoría se ha actualizado con éxito');
-            }
-        }
-    }, [submitSuccess, action, onSubmit]);
-
-    const printError = (path) => {
-        if (submitErrors[path]) {
-            return <ErrorAlert>{submitErrors[path]}</ErrorAlert>;
-        }
-    };
-
-    const hasError = (path) => {
-        return submitErrors[path];
-    };
 
     return (
         <Form onSubmit={handleSubmit}>

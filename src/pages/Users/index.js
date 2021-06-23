@@ -63,7 +63,7 @@ const Users = () => {
                                 <UserForm
                                     onSubmit={handleSubmit}
                                     action={CRUDAction}
-                                    user={selectedUser}
+                                    user={CRUDAction === 'edit' && selectedUser}
                                     handleClose={() => setCRUDAction(null)}
                                 />
                             </FormContainer>

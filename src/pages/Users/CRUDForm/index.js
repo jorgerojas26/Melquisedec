@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
     Form,
     HeaderContainer,
@@ -8,7 +7,6 @@ import {
     FooterWrapper,
     FooterContainer,
     ButtonContainer,
-    ErrorAlert,
     ErrorContainer,
     InputContainer,
 } from 'components/CommonLayout/form.layout';
@@ -23,42 +21,20 @@ import { createUser, updateUser } from 'api/users';
 import userSchema from 'validations/schemas/user';
 
 const UserForm = ({ user, action, handleClose, onSubmit }) => {
-    const { handleChange, handleNumericInput, handleSubmit, formData, setFormData, submitErrors, submitSuccess } = useForm({
+    const { handleChange, handleNumericInput, handleSubmit, formData, printError, hasError } = useForm({
         initialState: {
             username: '',
-            password: '',
             permissions: '',
+            ...user,
+            password: '',
         },
         action,
         createResource: createUser,
         editResource: updateUser,
         schema: userSchema,
+        onSubmitSuccess: onSubmit,
     });
-    console.log(submitErrors);
 
-    useEffect(() => {
-        if (action === 'edit' && user) setFormData({ id: user.id, username: user.username, password: null, permissions: user.permissions });
-    }, [user, action, setFormData]);
-
-    useEffect(() => {
-        if (submitSuccess) {
-            if (action === 'create') {
-                onSubmit('El usuario se ha registrado con éxito');
-            } else if (action === 'edit') {
-                onSubmit('El usuario se ha actualizado con éxito');
-            }
-        }
-    }, [submitSuccess, action, onSubmit]);
-
-    const printError = (path) => {
-        if (submitErrors[path]) {
-            return <ErrorAlert>{submitErrors[path]}</ErrorAlert>;
-        }
-    };
-
-    const hasError = (path) => {
-        return submitErrors[path];
-    };
     return (
         <Form onSubmit={handleSubmit}>
             <HeaderContainer>

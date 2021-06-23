@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import {
     Form,
     HeaderContainer,
@@ -10,7 +8,6 @@ import {
     ButtonContainer,
     CloseButtonContainer,
     TitleContainer,
-    ErrorAlert,
     ErrorContainer,
 } from 'components/CommonLayout/form.layout';
 
@@ -24,42 +21,20 @@ import { createSupplier, updateSupplier } from 'api/suppliers';
 import supplierSchema from 'validations/schemas/supplier';
 
 const SupplierForm = ({ supplier, action, handleClose, onSubmit }) => {
-    const { handleChange, handleNumericInput, handleSubmit, formData, setFormData, submitErrors, submitSuccess } = useForm({
+    const { handleChange, handleNumericInput, handleSubmit, formData, printError, hasError } = useForm({
         initialState: {
             name: '',
             rif: '',
             address: '',
             phoneNumber: '',
+            ...supplier,
         },
         action,
         createResource: createSupplier,
         editResource: updateSupplier,
         schema: supplierSchema,
+        onSubmitSuccess: onSubmit,
     });
-
-    useEffect(() => {
-        if (action === 'edit' && supplier) setFormData(supplier);
-    }, [supplier, action, setFormData]);
-
-    useEffect(() => {
-        if (submitSuccess) {
-            if (action === 'create') {
-                onSubmit('El proveedor se ha registrado con éxito');
-            } else if (action === 'edit') {
-                onSubmit('El proveedor se ha actualizado con éxito');
-            }
-        }
-    }, [submitSuccess, action, onSubmit]);
-
-    const printError = (path) => {
-        if (submitErrors[path]) {
-            return <ErrorAlert>{submitErrors[path]}</ErrorAlert>;
-        }
-    };
-
-    const hasError = (path) => {
-        return submitErrors[path];
-    };
 
     return (
         <Form onSubmit={handleSubmit}>

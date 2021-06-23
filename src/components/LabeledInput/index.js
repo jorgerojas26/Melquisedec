@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { StyledMainWrapper, StyledInput, StyledLabel, StyledErrorBadge } from './styles';
-import { WarningCircle } from 'phosphor-react';
+import { StyledMainWrapper, StyledInput, StyledLabel } from './styles';
 const LabeledInput = ({ children, placeholder, file, value, active, capitalize, errorborder, ...rest }) => {
     const [labelActive, setLabelActive] = useState(false);
 
