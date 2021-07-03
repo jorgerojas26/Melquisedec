@@ -9,24 +9,14 @@ import { InputContainer } from 'components/CommonLayout/form.layout';
 import Button from 'components/Button';
 import { InputsWrapper, InputsContainer, FileInputContainer, VariantButtonContainer, ProductImageContainer } from './layout.styles';
 
-const VariantForm = ({
-    CRUDAction,
-    formData,
-    setFormData,
-    product_variant,
-    index,
-    handleNestedChange,
-    submitErrors,
-    printError,
-    hasError,
-}) => {
+const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index, handleNestedChange, printError, hasError }) => {
     const addProductVariant = () => {
         let productVariantList = [
             ...formData['product_variant'],
             {
                 name: '',
                 price: 0,
-                profitPercent: '',
+                profitPercent: 30,
                 unitValue: '',
                 imagePath: null,
             },
@@ -70,6 +60,7 @@ const VariantForm = ({
                         onValueChange={(values) => handleNestedChange('product_variant', index, 'price', values.floatValue)}
                         placeholder='* Precio $'
                         value={product_variant.price}
+                        defaultValue={product_variant.price}
                         allowDecimalSeparators
                         as={NumberFormatInput}
                         errorborder={hasError(`product_variant[${index}].price`)}
@@ -79,13 +70,15 @@ const VariantForm = ({
                 </InputContainer>
                 <InputContainer>
                     <LabeledInput
-                        placeholder='* % Ganancia'
-                        onValueChange={(values) => handleNestedChange('product_variant', index, 'profitPercent', values.floatValue)}
+                        placeholder='% Ganancia'
+                        //onValueChange={(values) => handleNestedChange('product_variant', index, 'profitPercent', values.floatValue)}
                         value={product_variant.profitPercent}
                         allowDecimalSeparators
                         as={NumberFormatInput}
                         errorborder={hasError(`product_variant[${index}].profitPercent`)}
                         active
+                        disabled
+                        title='No se puede editar'
                     />
                     {printError(`product_variant[${index}].profitPercent`)}
                 </InputContainer>
@@ -124,16 +117,18 @@ const VariantForm = ({
                 </VariantButtonContainer>
             )}
             {index === formData.product_variant.length - 1 && (
-                <VariantButtonContainer color='green'>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '5px' }}>
                     <VariantButtonContainer color='red'>
                         <Button onClick={() => deleteProductVariant(index)}>
                             <MinusCircle size={24} />
                         </Button>
                     </VariantButtonContainer>
-                    <Button onClick={addProductVariant}>
-                        <PlusCircle size={24} />
-                    </Button>
-                </VariantButtonContainer>
+                    <VariantButtonContainer color='green'>
+                        <Button onClick={addProductVariant}>
+                            <PlusCircle size={24} />
+                        </Button>
+                    </VariantButtonContainer>
+                </div>
             )}
         </InputsWrapper>
     );

@@ -24,7 +24,7 @@ export const createProduct = async (productData) => {
             formData.append('images', variant.imagePath);
             variantsWithImage.push(index);
         } else {
-            variantsWithImage.push(null);
+            variantsWithImage.push(-1);
         }
     });
 
@@ -54,7 +54,7 @@ export const updateProduct = async (id, productData) => {
         } else if (typeof variant.imagePath === 'string') {
             variantsWithImage.push(variant.imagePath);
         } else {
-            variantsWithImage.push(null);
+            variantsWithImage.push(-1);
         }
     });
 

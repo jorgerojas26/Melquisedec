@@ -30,7 +30,7 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                 {
                     name: '',
                     price: 0,
-                    profitPercent: '',
+                    profitPercent: 30,
                     unitValue: '',
                     imagePath: null,
                 },
@@ -54,7 +54,7 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                 </CloseButtonContainer>
                 <TitleContainer>{action === 'create' ? 'Crear producto' : 'Editar producto'}</TitleContainer>
             </HeaderContainer>
-            <BodyContainer>
+            <BodyContainer overflow={1}>
                 <h4>Información General</h4>
                 <GeneralInfoContainer>
                     <InputContainer>

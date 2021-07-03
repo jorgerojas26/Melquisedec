@@ -21,6 +21,7 @@ import SuppliersPage from 'pages/Suppliers';
 import CategoriesPage from 'pages/Categories';
 import ProductsPage from 'pages/Products';
 import Button from 'components/Button';
+import SupplyingsPage from 'pages/Supplyings';
 
 import { useRedirectToActiveLocation } from 'hooks/redirect';
 import { useDolarValue } from 'hooks/useDolarValue';
@@ -38,6 +39,7 @@ const HomePage = () => {
                 showNotification('error', 'El valor del dólar debe ser numérico', 3000);
             } else {
                 updateDolarValue(response);
+                window.location.reload();
             }
         }
     };
@@ -72,7 +74,7 @@ const HomePage = () => {
                             <Route path='/clientes' component={ClientsPage} />
                             <Route path='/productos' component={ProductsPage} />
                             <Route path='/ventas'>Hola</Route>
-                            <Route path='/abastecimientos'>Hola</Route>
+                            <Route path='/abastecimientos' component={SupplyingsPage} />
                             <Route path='/proveedores' component={SuppliersPage} />
                             <Route path='/usuarios' component={UsersPage} />
                         </Switch>

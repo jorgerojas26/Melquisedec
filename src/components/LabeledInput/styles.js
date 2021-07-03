@@ -8,10 +8,9 @@ export const StyledMainWrapper = styled.label`
 
     justify-content: flex-end;
 
-    border-color: rgb(196, 207, 214);
     border: 1px solid #999;
     border-radius: 4px;
-    padding: 30px 0 10px 0;
+    padding: 25px 0 5px 0;
 
     background: white;
 
@@ -25,19 +24,10 @@ export const StyledMainWrapper = styled.label`
     text-overflow: ellipsis;
     white-space: pre-wrap;
 
-    > label.active {
-        font-size: 14px;
-        top: 5px;
-        left: 5px;
-    }
-
     :focus-within {
-        box-shadow: 0 0 0 3px ${colors.secondary};
+        box-shadow: 0 0 0 2px ${colors.secondary};
         border-color: transparent;
         > label {
-            font-size: 14px;
-            top: 5px;
-            left: 5px;
             color: ${colors.secondary};
         }
     }
@@ -73,7 +63,7 @@ export const StyledInput = styled.input`
     height: 100%;
     border: 0;
     outline: 0;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 10px;
 
     ${(props) => props.capitalize && { textTransform: 'capitalize' }}
@@ -86,11 +76,11 @@ export const StyledLabel = styled.label`
     color: rgb(91, 112, 131);
     position: absolute;
     pointer-events: none;
-    top: 15px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
 
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 500;
     transition: all 0.2s;
 `;
 

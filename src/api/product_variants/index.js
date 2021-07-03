@@ -3,10 +3,21 @@ import axios from 'axios';
 const BASE_URL = '/api/product_variants';
 
 export const getProductVariants = async ({ page, filter }) => {
-    let pageParam = page ? `?page=${page}` : '';
+    let pageParam = page ? `?page=${page}` : '?';
     let filterParams = filter ? `&filter=${filter}` : '';
 
     const response = await axios.get(BASE_URL + pageParam + filterParams).catch((error) => error.response);
+
+    return response.data;
+};
+
+export const getRecentSupplyings = async ({ page, filter, count, product_variant_id }) => {
+    let pageParam = page ? `?page=${page}` : '?';
+    let filterParams = filter ? `&filter=${filter}` : '';
+    let countParam = count ? `&count=${count}` : '';
+    const response = await axios
+        .get(`${BASE_URL}/${product_variant_id}/supplyings${pageParam}${countParam}${filterParams}`)
+        .catch((error) => error.response);
 
     return response.data;
 };

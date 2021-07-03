@@ -26,7 +26,6 @@ import { releaseOrAssign } from 'utils/stockManipulation';
 const StockForm = ({ variant, handleClose, onSubmit }) => {
     const [freeStock, setFreeStock] = useState(0);
     const [stockTotal, setStockTotal] = useState(0);
-
     const { formData, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
         initialState: {
             id: '',
@@ -94,6 +93,7 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
             setSubmitErrors({ ...submitErrors });
         }
     };
+    console.log(submitErrors);
 
     return (
         <Form onSubmit={submitHandler}>
@@ -135,7 +135,10 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
                 </Variants>
             </BodyContainer>
             <FooterWrapper>
-                <ErrorContainer>{printError('freeStock')}</ErrorContainer>
+                <ErrorContainer>
+                    {printError('freeStock')}
+                    {printError('stockLimit')}
+                </ErrorContainer>
                 <FooterContainer>
                     <ButtonContainer color={colors.primary}>
                         <Button type='submit'>

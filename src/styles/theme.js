@@ -15,7 +15,7 @@ export const colors = {
     lightGray: '#AAB8C2',
     extraLightGray: '#E1E8ED',
     superLightGray: '#F5F8FA',
-    lightBlack: '#222930',
+    lightBlack: '#999',
     black: '#211717',
     shadow: 'rgb(101 119 134 / 20%)',
     brown: '#A25708',

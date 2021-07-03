@@ -2,15 +2,15 @@ import { useState, useMemo, useEffect } from 'react';
 
 import Table from 'components/Table';
 import { usePaginatedResource } from 'hooks/paginatedResource';
-import { getUsers } from 'api/users';
+import { getSupplyings } from 'api/supplyings';
 
 import { COLUMNS } from './columns';
 
-const UsersTable = ({ onUserSelect, selectedRowID, shouldRefresh, showNotification }) => {
+const SupplyingsTable = ({ onSupplyingSelect, selectedRowID, shouldRefresh, showNotification }) => {
     const [page, setPage] = useState(1);
     const [filter, setFilter] = useState('');
-    const memoizedColumns = useMemo(() => COLUMNS, []);
-    const { data, loading, error, fetchResource } = usePaginatedResource({ page, filter, fetching: getUsers });
+    const memoizedColumns = useMemo(() => COLUMNS || [], []);
+    const { data, loading, error, fetchResource } = usePaginatedResource({ page, filter, fetching: getSupplyings });
 
     useEffect(() => {
         if (shouldRefresh) fetchResource();
@@ -23,16 +23,17 @@ const UsersTable = ({ onUserSelect, selectedRowID, shouldRefresh, showNotificati
     return (
         <Table
             selectedRowID={selectedRowID}
-            onRowSelect={onUserSelect}
+            onRowSelect={onSupplyingSelect}
             loading={loading}
             data={data.records}
             columns={memoizedColumns}
             onFilter={setFilter}
-            filterPlaceholder='Buscar...'
+            filterPlaceholder='Buscar'
             onPaginate={setPage}
             pageCount={data.pageCount}
+            capitalize={[1, 2]}
         />
     );
 };
 
-export default UsersTable;
+export default SupplyingsTable;

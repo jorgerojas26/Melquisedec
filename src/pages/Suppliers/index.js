@@ -42,6 +42,13 @@ const Suppliers = () => {
         setCRUDAction('refresh');
     };
 
+    const handleDelete = async () => {
+        const response = await deleteSupplier(selectedSupplier.id);
+        setCRUDAction('refresh');
+        setSelectedSupplier(null);
+        return response;
+    };
+
     return (
         <Wrapper>
             <SeparatorWrapper>
@@ -71,12 +78,9 @@ const Suppliers = () => {
                         {CRUDAction === 'delete' && (
                             <ConfirmContainer>
                                 <ConfirmAlert
+                                    showNotification={showNotification}
                                     handleClose={() => setCRUDAction(null)}
-                                    callback={async () => {
-                                        await deleteSupplier(selectedSupplier.id);
-                                        setCRUDAction('refresh');
-                                        setSelectedSupplier(null);
-                                    }}
+                                    callback={handleDelete}
                                 />
                             </ConfirmContainer>
                         )}

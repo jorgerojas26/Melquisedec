@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export const usePaginatedResource = ({ page, filter, fetching }) => {
+export const usePaginatedResource = ({ page, filter, fetching, count, fetchOnMount = true }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const fetchResource = useCallback(async () => {
         setLoading(true);
-        const data = await fetching({ page, filter });
+        const data = await fetching({ page, filter, count });
         if (data.error) {
             setError({ path: null, message: data.error.message });
             setLoading(false);
@@ -15,11 +15,11 @@ export const usePaginatedResource = ({ page, filter, fetching }) => {
         }
         setData(data);
         setLoading(false);
-    }, [page, filter, fetching]);
+    }, [page, filter, fetching, count]);
 
     useEffect(() => {
-        fetchResource();
-    }, [page, filter, fetchResource]);
+        if (fetchOnMount) fetchResource();
+    }, [page, filter, fetchResource, count, fetchOnMount]);
 
     return { data, loading, error, fetchResource };
 };

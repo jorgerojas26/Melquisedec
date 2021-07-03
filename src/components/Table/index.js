@@ -34,9 +34,15 @@ const CustomTable = ({
 
     return (
         <>
-            <Table.FilterContainer>
-                <TableFilterInput onChange={(event) => onFilterDebounced(event.target.value)} placeholder={filterPlaceholder} autoFocus />
-            </Table.FilterContainer>
+            {onFilter && (
+                <Table.FilterContainer>
+                    <TableFilterInput
+                        onChange={(event) => onFilterDebounced(event.target.value)}
+                        placeholder={filterPlaceholder}
+                        autoFocus
+                    />
+                </Table.FilterContainer>
+            )}
             <Table.TableContainer>
                 <Table {...getTableProps()}>
                     <Table.Head>
@@ -55,11 +61,20 @@ const CustomTable = ({
                                 <Table.TR
                                     active={selectedRowID === row.original.id}
                                     {...row.getRowProps({
-                                        onClick: () => handleClick(row.original),
-                                    })}>
+                                        onClick: onRowSelect
+                                            ? () => {
+                                                  handleClick(row.original);
+                                              }
+                                            : null,
+                                    })}
+                                >
                                     {row.cells.map((cell, index) => {
                                         return (
-                                            <Table.TD capitalize={capitalize && capitalize.includes(index)} {...cell.getCellProps()}>
+                                            <Table.TD
+                                                title={cell.value}
+                                                capitalize={capitalize && capitalize.includes(index)}
+                                                {...cell.getCellProps()}
+                                            >
                                                 {cell.render('Cell')}
                                             </Table.TD>
                                         );
@@ -69,7 +84,7 @@ const CustomTable = ({
                         })}
                     </Table.Body>
                 </Table>
-                {data.length > 0 && (
+                {onPaginate && data.length > 0 && (
                     <Table.PaginationContainer>
                         <Pagination pageCount={pageCount} onPaginate={onPaginate} />
                     </Table.PaginationContainer>

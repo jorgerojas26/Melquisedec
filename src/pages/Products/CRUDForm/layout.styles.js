@@ -23,13 +23,9 @@ export const InputsContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     gap: 8px;
+
     div {
         margin: 0;
-    }
-    label {
-        > label.active {
-            font-size: 12px;
-        }
     }
 `;
 

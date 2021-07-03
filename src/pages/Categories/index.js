@@ -44,6 +44,13 @@ const Categories = () => {
         setCRUDAction('refresh');
     };
 
+    const handleDelete = async () => {
+        const response = await deleteCategory(selectedCategory.id);
+        setCRUDAction('refresh');
+        setSelectedCategory(null);
+        return response;
+    };
+
     return (
         <Wrapper>
             <SeparatorWrapper>
@@ -78,12 +85,9 @@ const Categories = () => {
                         {CRUDAction === 'delete' && (
                             <ConfirmContainer>
                                 <ConfirmAlert
+                                    showNotification={showNotification}
                                     handleClose={() => setCRUDAction(null)}
-                                    callback={async () => {
-                                        await deleteCategory(selectedCategory.id);
-                                        setCRUDAction('refresh');
-                                        setSelectedCategory(null);
-                                    }}
+                                    callback={handleDelete}
                                 />
                             </ConfirmContainer>
                         )}

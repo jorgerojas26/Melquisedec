@@ -50,6 +50,13 @@ const Clients = () => {
         setCRUDAction('refresh');
     };
 
+    const handleDelete = async () => {
+        const response = await deleteClient(selectedClient.id);
+        setCRUDAction('refresh');
+        setSelectedClient(null);
+        return response;
+    };
+
     return (
         <Wrapper>
             <SeparatorWrapper>
@@ -84,12 +91,9 @@ const Clients = () => {
                         {CRUDAction === 'delete' && (
                             <ConfirmContainer>
                                 <ConfirmAlert
+                                    showNotification={showNotification}
                                     handleClose={() => setCRUDAction(null)}
-                                    callback={async () => {
-                                        await deleteClient(selectedClient.id);
-                                        setCRUDAction('refresh');
-                                        setSelectedClient(null);
-                                    }}
+                                    callback={handleDelete}
                                 />
                             </ConfirmContainer>
                         )}

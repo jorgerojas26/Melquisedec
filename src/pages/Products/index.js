@@ -49,6 +49,12 @@ const Products = () => {
         setCRUDAction('refresh');
     };
 
+    const handleDelete = async () => {
+        const response = await deleteProductVariantApi(selectedProduct.id);
+        setCRUDAction('refresh');
+        setSelectedProduct(null);
+        return response;
+    };
     return (
         <Wrapper>
             <ContentContainer>
@@ -104,12 +110,9 @@ const Products = () => {
                     {CRUDAction === 'delete' && (
                         <ConfirmContainer>
                             <ConfirmAlert
+                                showNotification={showNotification}
                                 handleClose={() => setCRUDAction(null)}
-                                callback={async () => {
-                                    await deleteProductVariantApi(selectedProduct.id);
-                                    setCRUDAction('refresh');
-                                    setSelectedProduct(null);
-                                }}
+                                callback={handleDelete}
                             />
                         </ConfirmContainer>
                     )}

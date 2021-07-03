@@ -31,9 +31,11 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
         setFormData({ ...data });
     };
 
-    const handleNumericInput = (value, inputName) => {
-        formData[inputName] = value;
-        setFormData({ ...formData });
+    const handleNumericInput = (value, selector) => {
+        let data = JSON.stringify(formData);
+        data = JSON.parse(data);
+        data[selector] = value;
+        setFormData({ ...data });
     };
 
     const printError = (path) => {

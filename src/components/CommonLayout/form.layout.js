@@ -30,8 +30,9 @@ export const TitleContainer = styled.div`
 export const BodyContainer = styled.div`
     padding: 20px;
     flex: 1;
+    gap: 10px;
     max-height: 450px;
-    overflow-y: auto;
+    overflow-y: ${(props) => (props.overflow ? 'auto' : 'none')};
 
     h4 {
         margin: 0 0 5px 0;
@@ -50,10 +51,16 @@ export const FooterContainer = styled.div`
     padding: 5px 0;
 `;
 
+export const InlineContainer = styled.div`
+    flex-direction: row;
+    gap: 10px;
+
+    div {
+        max-width: 100%;
+    }
+`;
 export const InputContainer = styled.div`
     flex: 0 1 auto;
-    margin-bottom: 10px;
-    z-index: 1000000000;
 `;
 
 export const ButtonContainer = styled.div`
@@ -91,4 +98,24 @@ export const ImageContainer = styled.div`
     background-image: url(${(props) => props.url});
     background-repeat: no-repeat;
     background-size: contain;
+`;
+
+export const TableContainer = styled.div`
+    * {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    td {
+        max-width: 80px;
+    }
+
+    h4 {
+        margin-top: 10px;
+        text-align: center;
+    }
 `;

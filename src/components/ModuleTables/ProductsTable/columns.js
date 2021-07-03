@@ -1,4 +1,5 @@
-import { DateTime } from 'luxon';
+import getProductName from 'utils/getProductName';
+import formatDate from 'utils/formatDate';
 
 export const COLUMNS = [
     {
@@ -8,7 +9,7 @@ export const COLUMNS = [
     {
         Header: 'Nombre',
         accessor: (row) => {
-            return row.product.name + ' ' + row.name;
+            return getProductName(row);
         },
     },
     {
@@ -39,8 +40,8 @@ export const COLUMNS = [
     {
         Header: 'Creado',
         accessor: 'createdAt',
-        Cell: (props) => {
-            return DateTime.fromISO(props.value, { setZone: true }).toFormat('F');
+        Cell: ({ value }) => {
+            return formatDate(value);
         },
     },
 ];
