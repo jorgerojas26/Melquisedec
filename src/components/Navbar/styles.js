@@ -191,6 +191,10 @@ export const NavLinkTextContainer = styled.div`
     @media (min-width: ${breakpoints.laptop}) {
         display: inline-block;
     }
+
+    @media (max-height: ${breakpoints.tablet}) {
+        font-size: 16px;
+    }
 `;
 
 export const NavLinkText = styled.span`
@@ -221,6 +225,10 @@ export const NavLinkContentWrapper = styled.div`
         > ${NavLinkTextContainer} {
             color: ${colors.secondary};
         }
+    }
+
+    @media (max-height: ${breakpoints.mobile}) {
+        padding: 5px;
     }
 `;
 

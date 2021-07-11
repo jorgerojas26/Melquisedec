@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from 'components/Button';
+import NumericInput from 'react-number-format';
 
 import { colors } from 'styles/theme';
 
@@ -17,7 +18,7 @@ export const PlusButton = styled(Button)`
     min-width: 0;
     background: ${colors.primary};
 `;
-export const Input = styled.input`
+export const Input = styled(NumericInput)`
     max-width: 50px;
     min-width: 0;
 `;

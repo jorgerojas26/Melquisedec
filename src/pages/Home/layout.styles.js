@@ -54,7 +54,7 @@ export const MainHeader = styled.div`
         border-bottom: 2px solid white;
     }
 
-    @media (min-width: ${breakpoints.table}) {
+    @media (min-width: ${breakpoints.tablet}) {
         justify-content: space-between;
     }
 `;
@@ -66,7 +66,7 @@ export const HeaderTitleContainer = styled.div`
     height: 100%;
     justify-content: center;
 
-    @media (min-width: ${breakpoints.table}) {
+    @media (min-width: ${breakpoints.tablet}) {
         display: block;
     }
 `;

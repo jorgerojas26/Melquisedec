@@ -50,10 +50,12 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
     }, [variant, setFormData]);
 
     const handleChange = (selector, index, key, value) => {
-        if (isNaN(parseInt(value))) {
+        value = parseFloat(value);
+
+        if (isNaN(value)) {
             value = 0;
         } else {
-            value = parseInt(value);
+            value = value;
         }
 
         const product = formData.product_variant[index];
@@ -67,15 +69,18 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
 
     const ctrlClickHandler = (selector, index, key, action) => {
         const product = formData.product_variant[index];
+        const currentStock = product.stock;
+        const unitValue = product.unitValue;
         let stockToAsign = 0;
+
         if (action === 'plus') {
             stockToAsign = Math.floor(freeStock / product.unitValue) + product.stock;
         }
 
         const { newFreeStock, newProductStock } = releaseOrAssign({
             freeStock,
-            currentStock: product.stock,
-            unitValue: product.unitValue,
+            currentStock,
+            unitValue,
             value: stockToAsign,
         });
 
@@ -111,7 +116,7 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
                         <TotalStock>{`Stock total: ${stockTotal} unidades`}</TotalStock>
                         <FreeStock>
                             {'Stock liberado: '}
-                            <span>{`${freeStock} `}</span>
+                            <span>{`${freeStock.toFixed(4)} `}</span>
                             unidades
                         </FreeStock>
                     </StockInfo>

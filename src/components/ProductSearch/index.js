@@ -3,7 +3,7 @@ import SearchInput from 'components/SearchInput';
 import { getProductVariants } from 'api/product_variants';
 import getProductName from 'utils/getProductName';
 
-const ProductSearch = ({ value, autoFocus = false, onSelect }) => {
+const ProductSearch = ({ innerRef, value, autoFocus = false, onSelect }) => {
     const [selectedProduct, setSelectedProduct] = useState();
 
     useEffect(() => {
@@ -37,6 +37,7 @@ const ProductSearch = ({ value, autoFocus = false, onSelect }) => {
             value={selectedProduct}
             onSelect={handleSelect}
             autoFocus={autoFocus}
+            innerRef={innerRef}
         />
     );
 };

@@ -14,7 +14,7 @@ const Supplyings = () => {
     const [CRUDAction, setCRUDAction] = useState(null);
     const { notification, showNotification } = useNotification();
 
-    const handleCRUD = (event) => {
+    function handleCRUD(event) {
         if (event.currentTarget.name === 'ToolbarCreate') {
             setCRUDAction('create');
         } else if (event.currentTarget.name === 'ToolbarEdit') {
@@ -22,7 +22,7 @@ const Supplyings = () => {
         } else if (event.currentTarget.name === 'ToolbarDelete') {
             setCRUDAction('delete');
         }
-    };
+    }
 
     const handleSubmit = (submitMessage) => {
         showNotification('success', submitMessage, 2000);

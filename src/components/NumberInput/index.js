@@ -17,7 +17,7 @@ const NumberInput = ({ value, onChange, onCtrlClick }) => {
 
     const handleClick = () => {
         if (running.minus) {
-            if (value > 0) {
+            if (value >= 1) {
                 onChange(value - 1);
                 setRunning({ ...running, minus: true });
             }
@@ -48,7 +48,7 @@ const NumberInput = ({ value, onChange, onCtrlClick }) => {
             >
                 -
             </MinusButton>
-            <Input value={value} onChange={(event) => onChange(event.target.value)} />
+            <Input value={value} min={0} onValueChange={({ floatValue }) => onChange(floatValue)} />
             <PlusButton
                 name='plus'
                 onClick={handleCtrlClick}

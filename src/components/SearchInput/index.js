@@ -3,7 +3,7 @@ import AsyncSelect from 'react-select/async-creatable';
 import { colors } from 'styles/theme';
 import debounce from 'debounce-promise';
 
-const SearchInput = ({ value, autoFocus, onSelect, placeholder, loadOptions }) => {
+const SearchInput = ({ innerRef, value, autoFocus, onSelect, placeholder, loadOptions }) => {
     return (
         <Wrapper>
             <AsyncSelect
@@ -38,6 +38,7 @@ const SearchInput = ({ value, autoFocus, onSelect, placeholder, loadOptions }) =
                 autoFocus={autoFocus}
                 placeholder={placeholder}
                 onChange={onSelect}
+                ref={innerRef}
                 loadingMessage={() => {
                     return 'Cargando...';
                 }}

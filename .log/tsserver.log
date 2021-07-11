@@ -1,0 +1,1210 @@
+Info 0    [12:44:36.215] Starting TS Server
+Info 1    [12:44:36.215] Version: 4.3.2
+Info 2    [12:44:36.215] Arguments: /usr/local/bin/node /usr/local/bin/tsserver --logFile /home/macarrones/Projects/Melquisedec/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/58ae3810feb725c744b4f066b321fa88/tscancellation*
+Info 3    [12:44:36.216] Platform: linux NodeVersion: 14 CaseSensitive: true
+Info 4    [12:44:36.216] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [12:44:36.227] Search path: /home/macarrones/Projects/Melquisedec/src/pages/Supplyings/CRUDForm
+Info 6    [12:44:36.228] For info: /home/macarrones/Projects/Melquisedec/src/pages/Supplyings/CRUDForm/index.js :: Config file name: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 7    [12:44:36.228] Creating configuration project /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 8    [12:44:36.292] Config: /home/macarrones/Projects/Melquisedec/jsconfig.json : {
+ "rootNames": [
+  "/home/macarrones/Projects/Melquisedec/src/App.js",
+  "/home/macarrones/Projects/Melquisedec/src/globalStyles.js",
+  "/home/macarrones/Projects/Melquisedec/src/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/errorHandling.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/categories/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/clients/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/currencyRate/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/product_variants/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/products/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/suppliers/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/supplyings/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/api/users/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Button/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Button/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/CommonLayout/form.layout.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/CommonLayout/main.layout.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ConfirmAlert/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ConfirmAlert/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/LabeledInput/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/LabeledInput/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/LoginForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/LoginForm/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Modal/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Modal/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/CategoriesTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/CategoriesTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/ClientsTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/ClientsTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/ProductsTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/ProductsTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/RecentSupplyingsTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/RecentSupplyingsTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/SuppliersTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/SuppliersTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/SupplyingsTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/SupplyingsTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/UsersTable/columns.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ModuleTables/UsersTable/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Navbar/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Navbar/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Navbar/NavItem/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Notification/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Notification/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/NumberInput/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/NumberInput/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Pagination/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/ProductSearch/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/SearchInput/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/SearchInput/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/SupplierSearch/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/AccesibilityIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/AdsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/AnalyticsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/BellIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ColoredStarsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ConfigIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/DoTwittIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/DoubleArrowIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ExploreIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/GitHubLogo/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/HashtagIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/HelpIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/HomeIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/LightingIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ListIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/MessageIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/MoreOptionsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/NewsletterIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ProfileIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/SavedIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ShowIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ShowIconComplement/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/StarsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ThemesIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/ThreeDotsIcon/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Svg/TwitterLogo/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Table/Table.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Table/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Table/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/TableFilterInput/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/TableFilterInput/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Toolbar/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Toolbar/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/WidgetBox/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/WidgetBox/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Widgets/ClientWidgets/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/Widgets/ClientWidgets/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/components/shared/Banner/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/context/dolar.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/formError.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/notification.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/paginatedResource.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/redirect.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/tableFilter.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/useDolarValue.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/useForm.js",
+  "/home/macarrones/Projects/Melquisedec/src/hooks/useInterval.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Categories/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Categories/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Clients/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Clients/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Home/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Home/layout.styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Login/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Login/layout.styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/CRUDForm/layout.styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/CRUDForm/variantForm.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/stockForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Products/stockForm/styles.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Suppliers/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Suppliers/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Supplyings/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Supplyings/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Users/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/pages/Users/CRUDForm/index.js",
+  "/home/macarrones/Projects/Melquisedec/src/styles/theme.js",
+  "/home/macarrones/Projects/Melquisedec/src/utils/formatDate.js",
+  "/home/macarrones/Projects/Melquisedec/src/utils/getProductName.js",
+  "/home/macarrones/Projects/Melquisedec/src/utils/stockManipulation.js",
+  "/home/macarrones/Projects/Melquisedec/src/utils/validateSchema.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/category.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/client.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/product.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/supplier.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/supplying.js",
+  "/home/macarrones/Projects/Melquisedec/src/validations/schemas/user.js"
+ ],
+ "options": {
+  "allowJs": true,
+  "maxNodeModuleJsDepth": 2,
+  "allowSyntheticDefaultImports": true,
+  "skipLibCheck": true,
+  "noEmit": true,
+  "baseUrl": "/home/macarrones/Projects/Melquisedec/src",
+  "configFilePath": "/home/macarrones/Projects/Melquisedec/jsconfig.json"
+ }
+}
+Info 9    [12:44:37.141] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 10   [12:44:39.735] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 1 structureChanged: true Elapsed: 2593.6688690185547ms
+Info 11   [12:44:39.735] Project '/home/macarrones/Projects/Melquisedec/jsconfig.json' (Configured)
+Info 12   [12:44:39.735] 	Files (1193)
+
+Info 13   [12:44:39.735] -----------------------------------------------
+Info 14   [12:44:39.758] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 15   [12:44:40.546] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true Elapsed: 788.0312889814377ms
+Info 16   [12:44:40.546] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 17   [12:44:40.546] 	Files (137)
+
+Info 18   [12:44:40.546] -----------------------------------------------
+Info 19   [12:44:41.843] DirectoryWatcher:: Triggered with /home/macarrones/Projects/Melquisedec/.log/ti-82362.log 0:: WatchInfo: /home/macarrones/Projects/Melquisedec 1 undefined Config: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Wild card directory
+Info 20   [12:44:41.844] Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Detected file add/remove of non supported extension: /home/macarrones/Projects/Melquisedec/.log/ti-82362.log
+Info 21   [12:44:41.844] Elapsed:: 0.3240939974784851ms DirectoryWatcher:: Triggered with /home/macarrones/Projects/Melquisedec/.log/ti-82362.log 0:: WatchInfo: /home/macarrones/Projects/Melquisedec 1 undefined Config: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Wild card directory
+Info 22   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 0:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 23   [12:44:41.844] Elapsed:: 0.17666801810264587ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 0:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 24   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 1:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 25   [12:44:41.844] Elapsed:: 0.04422497749328613ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 1:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 26   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 2:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 27   [12:44:41.844] Elapsed:: 0.03206798434257507ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 2:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 28   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 3:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 29   [12:44:41.844] Elapsed:: 0.02508300542831421ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 3:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 30   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 4:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 31   [12:44:41.844] Elapsed:: 0.022733986377716064ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 4:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 32   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 5:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 33   [12:44:41.844] Elapsed:: 0.023896992206573486ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 5:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 34   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 6:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 35   [12:44:41.844] Elapsed:: 0.0314980149269104ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 6:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 36   [12:44:41.844] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 7:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 37   [12:44:41.844] Elapsed:: 0.025458991527557373ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 7:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 38   [12:44:46.551] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/aria-query :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 39   [12:44:46.551] Elapsed:: 0.04417598247528076ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/aria-query :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 40   [12:44:46.552] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/argparse :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 41   [12:44:46.552] Elapsed:: 0.030393004417419434ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/argparse :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 42   [12:44:46.552] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/assert :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 43   [12:44:46.552] Elapsed:: 0.025597989559173584ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/assert :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 44   [12:44:46.552] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/babel-plugin-macros :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 45   [12:44:46.552] Elapsed:: 0.027171999216079712ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/babel-plugin-macros :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 46   [12:44:46.552] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/babylon :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 47   [12:44:46.552] Elapsed:: 0.023692011833190918ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/babylon :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 48   [12:44:46.552] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bindings :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 49   [12:44:46.553] Elapsed:: 0.030301988124847412ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bindings :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 50   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bluebird :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 51   [12:44:46.553] Elapsed:: 0.024121999740600586ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bluebird :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 52   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/body-parser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 53   [12:44:46.553] Elapsed:: 0.023235976696014404ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/body-parser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 54   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bonjour :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 55   [12:44:46.553] Elapsed:: 0.025575995445251465ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bonjour :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 56   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/braces :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 57   [12:44:46.553] Elapsed:: 0.021738022565841675ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/braces :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 58   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 59   [12:44:46.553] Elapsed:: 0.020292997360229492ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 60   [12:44:46.553] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bytes :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 61   [12:44:46.554] Elapsed:: 0.019921988248825073ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/bytes :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 62   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cacache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 63   [12:44:46.554] Elapsed:: 0.019703000783920288ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cacache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 64   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/caniuse-api :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 65   [12:44:46.554] Elapsed:: 0.019469022750854492ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/caniuse-api :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 66   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/caniuse-lite :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 67   [12:44:46.554] Elapsed:: 0.020871996879577637ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/caniuse-lite :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 68   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/case-sensitive-paths-webpack-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 69   [12:44:46.554] Elapsed:: 0.02007398009300232ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/case-sensitive-paths-webpack-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 70   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/check-types :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 71   [12:44:46.554] Elapsed:: 0.021589994430541992ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/check-types :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 72   [12:44:46.554] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/clean-css :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 73   [12:44:46.555] Elapsed:: 0.020175009965896606ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/clean-css :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 74   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/color :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 75   [12:44:46.555] Elapsed:: 0.01905900239944458ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/color :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 76   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/combined-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 77   [12:44:46.555] Elapsed:: 0.02561202645301819ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/combined-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 78   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/common-tags :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 79   [12:44:46.555] Elapsed:: 0.033728986978530884ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/common-tags :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 80   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/compression :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 81   [12:44:46.555] Elapsed:: 0.020456016063690186ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/compression :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 82   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/concat-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 83   [12:44:46.555] Elapsed:: 0.019802987575531006ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/concat-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 84   [12:44:46.555] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/content-disposition :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 85   [12:44:46.555] Elapsed:: 0.019896000623703003ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/content-disposition :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 86   [12:44:46.556] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/connect-history-api-fallback :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 87   [12:44:46.556] Elapsed:: 0.027444005012512207ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/connect-history-api-fallback :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 88   [12:44:46.556] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/content-type :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 89   [12:44:46.556] Elapsed:: 0.02139398455619812ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/content-type :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 90   [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/convert-source-map :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 91   [12:44:46.557] Elapsed:: 0.020970016717910767ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/convert-source-map :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 92   [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cookie :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 93   [12:44:46.557] Elapsed:: 0.01955398917198181ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cookie :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 94   [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 95   [12:44:46.557] Elapsed:: 0.019336998462677002ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 96   [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css-declaration-sorter :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 97   [12:44:46.557] Elapsed:: 0.02094098925590515ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css-declaration-sorter :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 98   [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css-tree :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 99   [12:44:46.557] Elapsed:: 0.020665019750595093ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/css-tree :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 100  [12:44:46.557] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cssnano :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 101  [12:44:46.557] Elapsed:: 0.020381003618240356ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/cssnano :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 102  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/csso :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 103  [12:44:46.558] Elapsed:: 0.022852003574371338ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/csso :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 104  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/d :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 105  [12:44:46.558] Elapsed:: 0.020550012588500977ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/d :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 106  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/debounce-promise :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 107  [12:44:46.558] Elapsed:: 0.019585996866226196ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/debounce-promise :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 108  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/dir-glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 109  [12:44:46.558] Elapsed:: 0.022251009941101074ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/dir-glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 110  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/dns-packet :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 111  [12:44:46.558] Elapsed:: 0.019081979990005493ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/dns-packet :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 112  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/doctrine :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 113  [12:44:46.558] Elapsed:: 0.019167006015777588ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/doctrine :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 114  [12:44:46.558] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/ejs :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 115  [12:44:46.558] Elapsed:: 0.018810003995895386ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/ejs :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 116  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/elliptic :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 117  [12:44:46.559] Elapsed:: 0.019116997718811035ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/elliptic :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 118  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/envinfo :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 119  [12:44:46.559] Elapsed:: 0.018557995557785034ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/envinfo :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 120  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/es-abstract :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 121  [12:44:46.559] Elapsed:: 0.018620997667312622ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/es-abstract :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 122  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/escodegen :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 123  [12:44:46.559] Elapsed:: 0.019484996795654297ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/escodegen :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 124  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eslint :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 125  [12:44:46.559] Elapsed:: 0.018895000219345093ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eslint :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 126  [12:44:46.559] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eslint-scope :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 127  [12:44:46.559] Elapsed:: 0.019467979669570923ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eslint-scope :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 128  [12:44:46.560] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/esprima :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 129  [12:44:46.560] Elapsed:: 0.019154995679855347ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/esprima :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 130  [12:44:46.560] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/esquery :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 131  [12:44:46.560] Elapsed:: 0.018934011459350586ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/esquery :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 132  [12:44:46.560] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/estraverse :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 133  [12:44:46.560] Elapsed:: 0.019302010536193848ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/estraverse :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 134  [12:44:46.560] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/etag :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 135  [12:44:46.560] Elapsed:: 0.020095020532608032ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/etag :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 136  [12:44:46.560] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eventsource :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 137  [12:44:46.560] Elapsed:: 0.03044000267982483ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/eventsource :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 138  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/express :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 139  [12:44:46.561] Elapsed:: 0.020963996648788452ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/express :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 140  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fast-levenshtein :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 141  [12:44:46.561] Elapsed:: 0.01989799737930298ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fast-levenshtein :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 142  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fb-watchman :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 143  [12:44:46.561] Elapsed:: 0.01956900954246521ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fb-watchman :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 144  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/file-entry-cache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 145  [12:44:46.561] Elapsed:: 0.02883198857307434ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/file-entry-cache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 146  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/file-loader :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 147  [12:44:46.561] Elapsed:: 0.01935398578643799ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/file-loader :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 148  [12:44:46.561] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/finalhandler :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 149  [12:44:46.562] Elapsed:: 0.03231200575828552ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/finalhandler :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 150  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/end-of-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 151  [12:44:46.562] Elapsed:: 0.020805001258850098ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/end-of-stream :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 152  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/find-cache-dir :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 153  [12:44:46.562] Elapsed:: 0.02131199836730957ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/find-cache-dir :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 154  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/follow-redirects :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 155  [12:44:46.562] Elapsed:: 0.047556012868881226ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/follow-redirects :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 156  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/from2 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 157  [12:44:46.562] Elapsed:: 0.04495498538017273ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/from2 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 158  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fs-extra :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 159  [12:44:46.562] Elapsed:: 0.01990601420402527ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/fs-extra :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 160  [12:44:46.562] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/functional-red-black-tree :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 161  [12:44:46.563] Elapsed:: 0.020782023668289185ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/functional-red-black-tree :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 162  [12:44:46.563] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/get-value :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 163  [12:44:46.563] Elapsed:: 0.019225001335144043ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/get-value :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 164  [12:44:46.563] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/glob-parent :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 165  [12:44:46.563] Elapsed:: 0.018806010484695435ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/glob-parent :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 166  [12:44:46.563] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 167  [12:44:46.563] Elapsed:: 0.02350899577140808ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 168  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/he :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 169  [12:44:46.564] Elapsed:: 0.02416399121284485ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/he :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 170  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/hex-color-regex :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 171  [12:44:46.564] Elapsed:: 0.021557986736297607ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/hex-color-regex :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 172  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/history :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 173  [12:44:46.564] Elapsed:: 0.020588010549545288ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/history :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 174  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/html-encoding-sniffer :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 175  [12:44:46.564] Elapsed:: 0.01982101798057556ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/html-encoding-sniffer :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 176  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/html-minifier-terser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 177  [12:44:46.564] Elapsed:: 0.01963600516319275ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/html-minifier-terser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 178  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/http-errors :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 179  [12:44:46.564] Elapsed:: 0.019342005252838135ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/http-errors :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 180  [12:44:46.564] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/http-proxy :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 181  [12:44:46.564] Elapsed:: 0.0194379985332489ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/http-proxy :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 182  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/is-glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 183  [12:44:46.565] Elapsed:: 0.01921701431274414ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/is-glob :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 184  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/isexe :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 185  [12:44:46.565] Elapsed:: 0.019372999668121338ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/isexe :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 186  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/js-yaml :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 187  [12:44:46.565] Elapsed:: 0.018916994333267212ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/js-yaml :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 188  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsdom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 189  [12:44:46.565] Elapsed:: 0.019070982933044434ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsdom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 190  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsonfile :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 191  [12:44:46.565] Elapsed:: 0.019612997770309448ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsonfile :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 192  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsesc :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 193  [12:44:46.565] Elapsed:: 0.020578980445861816ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/jsesc :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 194  [12:44:46.565] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/hosted-git-info :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 195  [12:44:46.566] Elapsed:: 0.019428014755249023ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/hosted-git-info :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 196  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/loader-runner :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 197  [12:44:46.566] Elapsed:: 0.019167989492416382ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/loader-runner :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 198  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/loader-utils :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 199  [12:44:46.566] Elapsed:: 0.02020999789237976ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/loader-utils :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 200  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/lodash :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 201  [12:44:46.566] Elapsed:: 0.019145995378494263ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/lodash :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 202  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/lru-cache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 203  [12:44:46.566] Elapsed:: 0.019113004207611084ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/lru-cache :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 204  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/luxon :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 205  [12:44:46.566] Elapsed:: 0.018612980842590332ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/luxon :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 206  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/media-typer :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 207  [12:44:46.566] Elapsed:: 0.019030004739761353ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/media-typer :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 208  [12:44:46.566] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/merge2 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 209  [12:44:46.567] Elapsed:: 0.018639981746673584ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/merge2 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 210  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mini-css-extract-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 211  [12:44:46.567] Elapsed:: 0.018854975700378418ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mini-css-extract-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 212  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minimatch :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 213  [12:44:46.567] Elapsed:: 0.018472999334335327ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minimatch :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 214  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minimist :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 215  [12:44:46.567] Elapsed:: 0.01849299669265747ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minimist :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 216  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mime-db :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 217  [12:44:46.567] Elapsed:: 0.018453001976013184ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mime-db :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 218  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minipass :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 219  [12:44:46.567] Elapsed:: 0.018189996480941772ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minipass :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 220  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minizlib :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 221  [12:44:46.567] Elapsed:: 0.018487006425857544ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/minizlib :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 222  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mkdirp :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 223  [12:44:46.567] Elapsed:: 0.018684983253479004ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/mkdirp :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 224  [12:44:46.567] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/move-concurrently :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 225  [12:44:46.568] Elapsed:: 0.019345998764038086ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/move-concurrently :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 226  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/multicast-dns :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 227  [12:44:46.568] Elapsed:: 0.020893990993499756ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/multicast-dns :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 228  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/node-forge :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 229  [12:44:46.568] Elapsed:: 0.01891198754310608ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/node-forge :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 230  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/node-notifier :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 231  [12:44:46.568] Elapsed:: 0.018584996461868286ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/node-notifier :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 232  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/normalize-package-data :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 233  [12:44:46.568] Elapsed:: 0.019148021936416626ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/normalize-package-data :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 234  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/object-inspect :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 235  [12:44:46.568] Elapsed:: 0.01875898241996765ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/object-inspect :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 236  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/object.fromentries :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 237  [12:44:46.568] Elapsed:: 0.01842600107192993ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/object.fromentries :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 238  [12:44:46.568] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/optimize-css-assets-webpack-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 239  [12:44:46.568] Elapsed:: 0.01883399486541748ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/optimize-css-assets-webpack-plugin :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 240  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/pako :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 241  [12:44:46.569] Elapsed:: 0.018914014101028442ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/pako :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 242  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/parallel-transform :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 243  [12:44:46.569] Elapsed:: 0.018626004457473755ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/parallel-transform :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 244  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/parse5 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 245  [12:44:46.569] Elapsed:: 0.019001007080078125ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/parse5 :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 246  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/picomatch :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 247  [12:44:46.569] Elapsed:: 0.018768996000289917ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/picomatch :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 248  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/pify :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 249  [12:44:46.569] Elapsed:: 0.018747985363006592ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/pify :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 250  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/nwsapi :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 251  [12:44:46.569] Elapsed:: 0.024483978748321533ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/nwsapi :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 252  [12:44:46.569] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-calc :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 253  [12:44:46.569] Elapsed:: 0.01893898844718933ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-calc :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 254  [12:44:46.570] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-custom-properties :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 255  [12:44:46.570] Elapsed:: 0.020000994205474854ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-custom-properties :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 256  [12:44:46.570] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-flexbugs-fixes :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 257  [12:44:46.570] Elapsed:: 0.019988983869552612ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-flexbugs-fixes :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 258  [12:44:46.570] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-focus-within :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 259  [12:44:46.570] Elapsed:: 0.019492000341415405ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-focus-within :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 260  [12:44:46.570] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-gap-properties :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 261  [12:44:46.570] Elapsed:: 0.019549012184143066ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-gap-properties :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 262  [12:44:46.570] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-local-by-default :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 263  [12:44:46.570] Elapsed:: 0.020319998264312744ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-local-by-default :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 264  [12:44:46.571] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-scope :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 265  [12:44:46.571] Elapsed:: 0.01916801929473877ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-scope :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 266  [12:44:46.571] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-normalize :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 267  [12:44:46.571] Elapsed:: 0.019898980855941772ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-normalize :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 268  [12:44:46.571] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-preset-env :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 269  [12:44:46.571] Elapsed:: 0.019605010747909546ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-preset-env :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 270  [12:44:46.571] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/progress :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 271  [12:44:46.571] Elapsed:: 0.019172996282577515ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/progress :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 272  [12:44:46.571] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/prompts :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 273  [12:44:46.571] Elapsed:: 0.01940399408340454ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/prompts :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 274  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/prop-types :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 275  [12:44:46.572] Elapsed:: 0.019613981246948242ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/prop-types :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 276  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/q :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 277  [12:44:46.572] Elapsed:: 0.019351989030838013ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/q :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 278  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/qs :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 279  [12:44:46.572] Elapsed:: 0.01913800835609436ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/qs :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 280  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/range-parser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 281  [12:44:46.572] Elapsed:: 0.018639981746673584ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/range-parser :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 282  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 283  [12:44:46.572] Elapsed:: 0.019025981426239014ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 284  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-dev-utils :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 285  [12:44:46.572] Elapsed:: 0.018751978874206543ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-dev-utils :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 286  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-extract-imports :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 287  [12:44:46.572] Elapsed:: 0.01996898651123047ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/postcss-modules-extract-imports :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 288  [12:44:46.572] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-dom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 289  [12:44:46.573] Elapsed:: 0.018741995096206665ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-dom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 290  [12:44:46.573] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-input-autosize :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 291  [12:44:46.573] Elapsed:: 0.01909598708152771ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-input-autosize :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 292  [12:44:46.573] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-paginate :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 293  [12:44:46.573] Elapsed:: 0.018912017345428467ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-paginate :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 294  [12:44:46.573] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-router :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 295  [12:44:46.573] Elapsed:: 0.027713000774383545ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-router :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 296  [12:44:46.573] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-router-dom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 297  [12:44:46.573] Elapsed:: 0.020099997520446777ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/@types/react-router-dom :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 298  [12:44:47.968] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 299  [12:44:48.439] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 2 structureChanged: true Elapsed: 471.5387140214443ms
+Info 300  [12:44:48.439] Project '/home/macarrones/Projects/Melquisedec/jsconfig.json' (Configured)
+Info 301  [12:44:48.439] 	Files (1182)
+
+Info 302  [12:44:48.439] -----------------------------------------------
+Info 303  [12:44:48.439] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 304  [12:44:48.439] 	Files (137)
+
+Info 305  [12:44:48.439] -----------------------------------------------
+Info 306  [12:44:50.217] Before ensureProjectForOpenFiles:
+Info 307  [12:44:50.217] After ensureProjectForOpenFiles:
+Info 308  [12:44:50.218] got projects updated in background, updating diagnostics for /home/macarrones/Projects/Melquisedec/src/pages/Supplyings/CRUDForm/index.js
+Info 309  [12:44:50.925] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 310  [12:44:53.101] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 3 structureChanged: true Elapsed: 2175.500169992447ms
+Info 311  [12:44:53.101] Project '/home/macarrones/Projects/Melquisedec/jsconfig.json' (Configured)
+Info 312  [12:44:53.101] 	Files (3336)
+
+Info 313  [12:44:53.101] -----------------------------------------------
+Info 314  [12:44:53.101] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 315  [12:44:53.101] 	Files (137)
+
+Info 316  [12:44:53.101] -----------------------------------------------
+Info 317  [12:44:53.127] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 318  [12:44:53.127] Elapsed:: 0.030290991067886353ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules :: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 319  [12:44:53.182] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 320  [12:44:53.712] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 4 structureChanged: true Elapsed: 529.8723910152912ms
+Info 321  [12:44:53.712] Project '/home/macarrones/Projects/Melquisedec/jsconfig.json' (Configured)
+Info 322  [12:44:53.712] 	Files (3344)
+
+Info 323  [12:44:53.712] -----------------------------------------------
+Info 324  [12:44:53.712] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 325  [12:44:53.712] 	Files (137)
+
+Info 326  [12:44:53.712] -----------------------------------------------
+Info 327  [12:44:55.683] Before ensureProjectForOpenFiles:
+Info 328  [12:44:55.683] After ensureProjectForOpenFiles:
+Info 329  [12:44:55.683] got projects updated in background, updating diagnostics for /home/macarrones/Projects/Melquisedec/src/pages/Supplyings/CRUDForm/index.js
+Info 330  [12:47:06.221] Search path: /home/macarrones/Projects/Melquisedec/src/components/Navbar
+Info 331  [12:47:06.221] For info: /home/macarrones/Projects/Melquisedec/src/components/Navbar/styles.js :: Config file name: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 332  [12:47:06.238] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 333  [12:47:06.329] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 5 structureChanged: false Elapsed: 90.53007200360298ms
+Info 334  [12:47:06.329] Different program with same set of files:: structureIsReused:: 2
+Info 335  [12:47:23.933] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 336  [12:47:24.003] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 6 structureChanged: false Elapsed: 70.01670700311661ms
+Info 337  [12:47:24.004] Different program with same set of files:: structureIsReused:: 2
+Info 338  [12:47:24.380] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 339  [12:47:24.441] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 7 structureChanged: false Elapsed: 60.971336990594864ms
+Info 340  [12:47:24.441] Different program with same set of files:: structureIsReused:: 2
+Info 341  [12:47:24.837] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 342  [12:47:24.890] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 8 structureChanged: false Elapsed: 52.38247299194336ms
+Info 343  [12:47:24.890] Different program with same set of files:: structureIsReused:: 2
+Info 344  [12:47:24.910] getCompletionData: Get current token: 0.01076701283454895
+Info 345  [12:47:24.911] getCompletionData: Is inside comment: 0.005495995283126831
+Info 346  [12:47:24.911] getCompletionData: Get previous token 1: 0.059383004903793335
+Info 347  [12:47:24.911] getCompletionsAtPosition: isCompletionListBlocker: 0.04404899477958679
+Info 348  [12:47:24.911] Returning an empty list because completion was requested in an invalid position.
+Info 349  [12:47:24.916] getCompletionData: Get current token: 0.008123010396957397
+Info 350  [12:47:24.916] getCompletionData: Is inside comment: 0.004132002592086792
+Info 351  [12:47:24.916] getCompletionData: Get previous token 1: 0.0511699914932251
+Info 352  [12:47:24.916] getCompletionsAtPosition: isCompletionListBlocker: 0.005880981683731079
+Info 353  [12:47:24.916] Returning an empty list because completion was requested in an invalid position.
+Info 354  [12:47:24.917] getCompletionData: Get current token: 0.006868988275527954
+Info 355  [12:47:24.917] getCompletionData: Is inside comment: 0.00391000509262085
+Info 356  [12:47:24.917] getCompletionData: Get previous token 1: 0.02652999758720398
+Info 357  [12:47:24.917] getCompletionsAtPosition: isCompletionListBlocker: 0.004503011703491211
+Info 358  [12:47:24.917] Returning an empty list because completion was requested in an invalid position.
+Info 359  [12:47:25.125] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 360  [12:47:25.212] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 9 structureChanged: false Elapsed: 86.74367699027061ms
+Info 361  [12:47:25.212] Different program with same set of files:: structureIsReused:: 2
+Info 362  [12:47:25.236] getCompletionData: Get current token: 0.008478999137878418
+Info 363  [12:47:25.236] getCompletionData: Is inside comment: 0.004211992025375366
+Info 364  [12:47:25.236] getCompletionData: Get previous token 1: 0.027696996927261353
+Info 365  [12:47:25.236] getCompletionsAtPosition: isCompletionListBlocker: 0.005266010761260986
+Info 366  [12:47:25.236] Returning an empty list because completion was requested in an invalid position.
+Info 367  [12:47:25.236] getCompletionData: Get current token: 0.00666499137878418
+Info 368  [12:47:25.236] getCompletionData: Is inside comment: 0.0043229758739471436
+Info 369  [12:47:25.236] getCompletionData: Get previous token 1: 0.02636498212814331
+Info 370  [12:47:25.236] getCompletionsAtPosition: isCompletionListBlocker: 0.0042819976806640625
+Info 371  [12:47:25.236] Returning an empty list because completion was requested in an invalid position.
+Info 372  [12:47:25.236] getCompletionData: Get current token: 0.00643998384475708
+Info 373  [12:47:25.236] getCompletionData: Is inside comment: 0.00317499041557312
+Info 374  [12:47:25.236] getCompletionData: Get previous token 1: 0.026356995105743408
+Info 375  [12:47:25.236] getCompletionsAtPosition: isCompletionListBlocker: 0.004211008548736572
+Info 376  [12:47:25.236] Returning an empty list because completion was requested in an invalid position.
+Info 377  [12:47:25.444] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 378  [12:47:25.515] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 10 structureChanged: false Elapsed: 70.68025800585747ms
+Info 379  [12:47:25.515] Different program with same set of files:: structureIsReused:: 2
+Info 380  [12:47:25.515] getCompletionData: Get current token: 0.007464021444320679
+Info 381  [12:47:25.515] getCompletionData: Is inside comment: 0.0038319826126098633
+Info 382  [12:47:25.515] getCompletionData: Get previous token 1: 0.027598023414611816
+Info 383  [12:47:25.516] getCompletionsAtPosition: isCompletionListBlocker: 0.0054409801959991455
+Info 384  [12:47:25.516] Returning an empty list because completion was requested in an invalid position.
+Info 385  [12:47:25.516] getCompletionData: Get current token: 0.006404995918273926
+Info 386  [12:47:25.516] getCompletionData: Is inside comment: 0.0029549896717071533
+Info 387  [12:47:25.516] getCompletionData: Get previous token 1: 0.026033997535705566
+Info 388  [12:47:25.516] getCompletionsAtPosition: isCompletionListBlocker: 0.004251003265380859
+Info 389  [12:47:25.516] Returning an empty list because completion was requested in an invalid position.
+Info 390  [12:47:25.516] getCompletionData: Get current token: 0.008322000503540039
+Info 391  [12:47:25.516] getCompletionData: Is inside comment: 0.0029559731483459473
+Info 392  [12:47:25.516] getCompletionData: Get previous token 1: 0.025931984186172485
+Info 393  [12:47:25.516] getCompletionsAtPosition: isCompletionListBlocker: 0.004193991422653198
+Info 394  [12:47:25.516] Returning an empty list because completion was requested in an invalid position.
+Info 395  [12:47:25.516] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 396  [12:47:25.592] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 11 structureChanged: false Elapsed: 76.1184090077877ms
+Info 397  [12:47:25.592] Different program with same set of files:: structureIsReused:: 2
+Info 398  [12:47:26.052] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 399  [12:47:26.104] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 12 structureChanged: false Elapsed: 52.02639302611351ms
+Info 400  [12:47:26.104] Different program with same set of files:: structureIsReused:: 2
+Info 401  [12:47:26.313] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 402  [12:47:26.369] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 13 structureChanged: false Elapsed: 55.115783989429474ms
+Info 403  [12:47:26.369] Different program with same set of files:: structureIsReused:: 2
+Info 404  [12:47:26.473] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 405  [12:47:26.526] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 14 structureChanged: false Elapsed: 52.876484006643295ms
+Info 406  [12:47:26.526] Different program with same set of files:: structureIsReused:: 2
+Info 407  [12:47:26.669] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 408  [12:47:26.721] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 15 structureChanged: false Elapsed: 52.46195700764656ms
+Info 409  [12:47:26.721] Different program with same set of files:: structureIsReused:: 2
+Info 410  [12:47:26.851] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 411  [12:47:26.900] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 16 structureChanged: false Elapsed: 49.59343600273132ms
+Info 412  [12:47:26.900] Different program with same set of files:: structureIsReused:: 2
+Info 413  [12:47:27.023] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 414  [12:47:27.081] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 17 structureChanged: false Elapsed: 58.19183799624443ms
+Info 415  [12:47:27.081] Different program with same set of files:: structureIsReused:: 2
+Info 416  [12:47:27.230] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 417  [12:47:27.305] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 18 structureChanged: false Elapsed: 74.53205898404121ms
+Info 418  [12:47:27.305] Different program with same set of files:: structureIsReused:: 2
+Info 419  [12:47:27.432] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 420  [12:47:27.479] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 19 structureChanged: false Elapsed: 46.534956991672516ms
+Info 421  [12:47:27.479] Different program with same set of files:: structureIsReused:: 2
+Info 422  [12:47:27.608] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 423  [12:47:27.667] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 20 structureChanged: false Elapsed: 58.24576899409294ms
+Info 424  [12:47:27.667] Different program with same set of files:: structureIsReused:: 2
+Info 425  [12:47:27.792] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 426  [12:47:27.839] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 21 structureChanged: false Elapsed: 46.950357019901276ms
+Info 427  [12:47:27.839] Different program with same set of files:: structureIsReused:: 2
+Info 428  [12:47:27.962] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 429  [12:47:28.010] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 22 structureChanged: false Elapsed: 47.37287598848343ms
+Info 430  [12:47:28.010] Different program with same set of files:: structureIsReused:: 2
+Info 431  [12:47:28.150] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 432  [12:47:28.195] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 23 structureChanged: false Elapsed: 45.40393900871277ms
+Info 433  [12:47:28.195] Different program with same set of files:: structureIsReused:: 2
+Info 434  [12:47:28.317] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 435  [12:47:28.363] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 24 structureChanged: false Elapsed: 45.87377402186394ms
+Info 436  [12:47:28.363] Different program with same set of files:: structureIsReused:: 2
+Info 437  [12:47:28.486] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 438  [12:47:28.610] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 25 structureChanged: false Elapsed: 124.5718289911747ms
+Info 439  [12:47:28.610] Different program with same set of files:: structureIsReused:: 2
+Info 440  [12:47:28.793] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 441  [12:47:28.841] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 26 structureChanged: false Elapsed: 47.90626499056816ms
+Info 442  [12:47:28.841] Different program with same set of files:: structureIsReused:: 2
+Info 443  [12:47:28.968] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 444  [12:47:29.013] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 27 structureChanged: false Elapsed: 45.65796300768852ms
+Info 445  [12:47:29.013] Different program with same set of files:: structureIsReused:: 2
+Info 446  [12:47:29.133] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 447  [12:47:29.179] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 28 structureChanged: false Elapsed: 45.2797090113163ms
+Info 448  [12:47:29.179] Different program with same set of files:: structureIsReused:: 2
+Info 449  [12:47:34.152] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 450  [12:47:34.197] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 29 structureChanged: false Elapsed: 45.29876297712326ms
+Info 451  [12:47:34.197] Different program with same set of files:: structureIsReused:: 2
+Info 452  [12:47:34.325] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 453  [12:47:34.376] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 30 structureChanged: false Elapsed: 51.02659797668457ms
+Info 454  [12:47:34.376] Different program with same set of files:: structureIsReused:: 2
+Info 455  [12:47:34.489] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 456  [12:47:34.533] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 31 structureChanged: false Elapsed: 44.078081995248795ms
+Info 457  [12:47:34.533] Different program with same set of files:: structureIsReused:: 2
+Info 458  [12:47:34.649] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 459  [12:47:34.697] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 32 structureChanged: false Elapsed: 47.34180301427841ms
+Info 460  [12:47:34.697] Different program with same set of files:: structureIsReused:: 2
+Info 461  [12:47:34.814] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 462  [12:47:34.860] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 33 structureChanged: false Elapsed: 45.47527199983597ms
+Info 463  [12:47:34.860] Different program with same set of files:: structureIsReused:: 2
+Info 464  [12:47:34.987] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 465  [12:47:35.033] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 34 structureChanged: false Elapsed: 46.24549701809883ms
+Info 466  [12:47:35.033] Different program with same set of files:: structureIsReused:: 2
+Info 467  [12:47:35.147] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 468  [12:47:35.205] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 35 structureChanged: false Elapsed: 57.74957400560379ms
+Info 469  [12:47:35.205] Different program with same set of files:: structureIsReused:: 2
+Info 470  [12:47:35.329] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 471  [12:47:35.377] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 36 structureChanged: false Elapsed: 48.13390001654625ms
+Info 472  [12:47:35.377] Different program with same set of files:: structureIsReused:: 2
+Info 473  [12:47:35.543] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 474  [12:47:35.590] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 37 structureChanged: false Elapsed: 46.236461997032166ms
+Info 475  [12:47:35.590] Different program with same set of files:: structureIsReused:: 2
+Info 476  [12:47:35.705] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 477  [12:47:35.751] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 38 structureChanged: false Elapsed: 45.30680400133133ms
+Info 478  [12:47:35.751] Different program with same set of files:: structureIsReused:: 2
+Info 479  [12:47:35.873] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 480  [12:47:35.922] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 39 structureChanged: false Elapsed: 48.459785997867584ms
+Info 481  [12:47:35.922] Different program with same set of files:: structureIsReused:: 2
+Info 482  [12:47:36.043] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 483  [12:47:36.093] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 40 structureChanged: false Elapsed: 49.616039991378784ms
+Info 484  [12:47:36.093] Different program with same set of files:: structureIsReused:: 2
+Info 485  [12:47:36.216] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 486  [12:47:36.268] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 41 structureChanged: false Elapsed: 52.235617995262146ms
+Info 487  [12:47:36.268] Different program with same set of files:: structureIsReused:: 2
+Info 488  [12:47:36.402] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 489  [12:47:36.449] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 42 structureChanged: false Elapsed: 46.50422102212906ms
+Info 490  [12:47:36.449] Different program with same set of files:: structureIsReused:: 2
+Info 491  [12:47:36.636] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 492  [12:47:36.693] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 43 structureChanged: false Elapsed: 56.649843007326126ms
+Info 493  [12:47:36.693] Different program with same set of files:: structureIsReused:: 2
+Info 494  [12:47:36.812] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 495  [12:47:36.870] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 44 structureChanged: false Elapsed: 58.09890401363373ms
+Info 496  [12:47:36.870] Different program with same set of files:: structureIsReused:: 2
+Info 497  [12:47:37.015] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 498  [12:47:37.079] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 45 structureChanged: false Elapsed: 64.2417840063572ms
+Info 499  [12:47:37.079] Different program with same set of files:: structureIsReused:: 2
+Info 500  [12:47:37.207] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 501  [12:47:37.253] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 46 structureChanged: false Elapsed: 46.40338400006294ms
+Info 502  [12:47:37.253] Different program with same set of files:: structureIsReused:: 2
+Info 503  [12:47:37.369] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 504  [12:47:37.430] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 47 structureChanged: false Elapsed: 60.56830099225044ms
+Info 505  [12:47:37.430] Different program with same set of files:: structureIsReused:: 2
+Info 506  [12:47:37.549] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 507  [12:47:37.594] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 48 structureChanged: false Elapsed: 45.1864570081234ms
+Info 508  [12:47:37.594] Different program with same set of files:: structureIsReused:: 2
+Info 509  [12:47:37.709] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 510  [12:47:37.755] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 49 structureChanged: false Elapsed: 45.874666005373ms
+Info 511  [12:47:37.755] Different program with same set of files:: structureIsReused:: 2
+Info 512  [12:47:37.872] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 513  [12:47:37.917] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 50 structureChanged: false Elapsed: 45.35419401526451ms
+Info 514  [12:47:37.918] Different program with same set of files:: structureIsReused:: 2
+Info 515  [12:47:38.042] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 516  [12:47:38.089] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 51 structureChanged: false Elapsed: 46.40397700667381ms
+Info 517  [12:47:38.089] Different program with same set of files:: structureIsReused:: 2
+Info 518  [12:47:38.202] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 519  [12:47:38.248] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 52 structureChanged: false Elapsed: 45.6183799803257ms
+Info 520  [12:47:38.248] Different program with same set of files:: structureIsReused:: 2
+Info 521  [12:47:38.367] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 522  [12:47:38.421] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 53 structureChanged: false Elapsed: 53.591589003801346ms
+Info 523  [12:47:38.421] Different program with same set of files:: structureIsReused:: 2
+Info 524  [12:47:38.546] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 525  [12:47:38.601] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 54 structureChanged: false Elapsed: 55.469895005226135ms
+Info 526  [12:47:38.601] Different program with same set of files:: structureIsReused:: 2
+Info 527  [12:47:38.719] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 528  [12:47:38.764] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 55 structureChanged: false Elapsed: 44.92309898138046ms
+Info 529  [12:47:38.764] Different program with same set of files:: structureIsReused:: 2
+Info 530  [12:47:38.888] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 531  [12:47:38.936] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 56 structureChanged: false Elapsed: 48.027287006378174ms
+Info 532  [12:47:38.936] Different program with same set of files:: structureIsReused:: 2
+Info 533  [12:47:39.093] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 534  [12:47:39.141] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 57 structureChanged: false Elapsed: 48.333245009183884ms
+Info 535  [12:47:39.141] Different program with same set of files:: structureIsReused:: 2
+Info 536  [12:47:39.262] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 537  [12:47:39.307] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 58 structureChanged: false Elapsed: 44.8236899971962ms
+Info 538  [12:47:39.307] Different program with same set of files:: structureIsReused:: 2
+Info 539  [12:47:39.427] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 540  [12:47:39.474] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 59 structureChanged: false Elapsed: 46.23868998885155ms
+Info 541  [12:47:39.474] Different program with same set of files:: structureIsReused:: 2
+Info 542  [12:47:39.667] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 543  [12:47:39.719] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 60 structureChanged: false Elapsed: 51.768216997385025ms
+Info 544  [12:47:39.719] Different program with same set of files:: structureIsReused:: 2
+Info 545  [12:47:39.843] getCompletionData: Get current token: 0.007913976907730103
+Info 546  [12:47:39.843] getCompletionData: Is inside comment: 0.0038640201091766357
+Info 547  [12:47:39.843] getCompletionData: Get previous token 1: 0.043665021657943726
+Info 548  [12:47:39.843] getCompletionsAtPosition: isCompletionListBlocker: 0.006783992052078247
+Info 549  [12:47:39.843] Returning an empty list because completion was requested in an invalid position.
+Info 550  [12:47:39.845] getCompletionData: Get current token: 0.007277995347976685
+Info 551  [12:47:39.845] getCompletionData: Is inside comment: 0.003933995962142944
+Info 552  [12:47:39.845] getCompletionData: Get previous token 1: 0.028932005167007446
+Info 553  [12:47:39.845] getCompletionsAtPosition: isCompletionListBlocker: 0.006559997797012329
+Info 554  [12:47:39.845] Returning an empty list because completion was requested in an invalid position.
+Info 555  [12:47:39.865] getCompletionData: Get current token: 0.007544994354248047
+Info 556  [12:47:39.865] getCompletionData: Is inside comment: 0.01947900652885437
+Info 557  [12:47:39.865] getCompletionData: Get previous token 1: 0.02695801854133606
+Info 558  [12:47:39.865] getCompletionsAtPosition: isCompletionListBlocker: 0.008009016513824463
+Info 559  [12:47:39.865] Returning an empty list because completion was requested in an invalid position.
+Info 560  [12:47:39.965] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 561  [12:47:40.011] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 61 structureChanged: false Elapsed: 46.220739990472794ms
+Info 562  [12:47:40.011] Different program with same set of files:: structureIsReused:: 2
+Info 563  [12:47:40.581] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 564  [12:47:40.627] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 62 structureChanged: false Elapsed: 46.42078000307083ms
+Info 565  [12:47:40.628] Different program with same set of files:: structureIsReused:: 2
+Info 566  [12:47:40.838] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 567  [12:47:40.890] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 63 structureChanged: false Elapsed: 51.7347069978714ms
+Info 568  [12:47:40.890] Different program with same set of files:: structureIsReused:: 2
+Info 569  [12:47:41.701] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 570  [12:47:41.746] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 64 structureChanged: false Elapsed: 45.60520902276039ms
+Info 571  [12:47:41.746] Different program with same set of files:: structureIsReused:: 2
+Info 572  [12:47:41.971] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 573  [12:47:42.021] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 65 structureChanged: false Elapsed: 50.52914199233055ms
+Info 574  [12:47:42.021] Different program with same set of files:: structureIsReused:: 2
+Info 575  [12:47:42.151] getCompletionData: Get current token: 0.007535010576248169
+Info 576  [12:47:42.151] getCompletionData: Is inside comment: 0.004397988319396973
+Info 577  [12:47:42.151] getCompletionData: Get previous token 1: 0.029633015394210815
+Info 578  [12:47:42.151] getCompletionsAtPosition: isCompletionListBlocker: 0.006646990776062012
+Info 579  [12:47:42.151] Returning an empty list because completion was requested in an invalid position.
+Info 580  [12:47:42.153] getCompletionData: Get current token: 0.007297992706298828
+Info 581  [12:47:42.153] getCompletionData: Is inside comment: 0.003928005695343018
+Info 582  [12:47:42.153] getCompletionData: Get previous token 1: 0.02738398313522339
+Info 583  [12:47:42.153] getCompletionsAtPosition: isCompletionListBlocker: 0.006388992071151733
+Info 584  [12:47:42.153] Returning an empty list because completion was requested in an invalid position.
+Info 585  [12:47:42.154] getCompletionData: Get current token: 0.006880998611450195
+Info 586  [12:47:42.154] getCompletionData: Is inside comment: 0.003778010606765747
+Info 587  [12:47:42.154] getCompletionData: Get previous token 1: 0.02729901671409607
+Info 588  [12:47:42.154] getCompletionsAtPosition: isCompletionListBlocker: 0.005352020263671875
+Info 589  [12:47:42.154] Returning an empty list because completion was requested in an invalid position.
+Info 590  [12:47:42.357] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 591  [12:47:42.406] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 66 structureChanged: false Elapsed: 49.00338599085808ms
+Info 592  [12:47:42.406] Different program with same set of files:: structureIsReused:: 2
+Info 593  [12:47:42.524] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 594  [12:47:42.572] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 67 structureChanged: false Elapsed: 47.7892470061779ms
+Info 595  [12:47:42.572] Different program with same set of files:: structureIsReused:: 2
+Info 596  [12:47:42.692] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 597  [12:47:42.737] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 68 structureChanged: false Elapsed: 45.385810017585754ms
+Info 598  [12:47:42.737] Different program with same set of files:: structureIsReused:: 2
+Info 599  [12:47:42.863] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 600  [12:47:42.921] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 69 structureChanged: false Elapsed: 57.50769600272179ms
+Info 601  [12:47:42.921] Different program with same set of files:: structureIsReused:: 2
+Info 602  [12:47:43.036] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 603  [12:47:43.082] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 70 structureChanged: false Elapsed: 46.39937099814415ms
+Info 604  [12:47:43.082] Different program with same set of files:: structureIsReused:: 2
+Info 605  [12:47:43.212] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 606  [12:47:43.257] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 71 structureChanged: false Elapsed: 44.98753699660301ms
+Info 607  [12:47:43.257] Different program with same set of files:: structureIsReused:: 2
+Info 608  [12:47:43.514] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 609  [12:47:43.561] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 72 structureChanged: false Elapsed: 46.404430001974106ms
+Info 610  [12:47:43.561] Different program with same set of files:: structureIsReused:: 2
+Info 611  [12:47:43.972] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 612  [12:47:44.051] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 73 structureChanged: false Elapsed: 79.67380198836327ms
+Info 613  [12:47:44.051] Different program with same set of files:: structureIsReused:: 2
+Info 614  [12:47:44.939] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 615  [12:47:44.984] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 74 structureChanged: false Elapsed: 45.48878800868988ms
+Info 616  [12:47:44.984] Different program with same set of files:: structureIsReused:: 2
+Info 617  [12:47:45.141] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 618  [12:47:45.187] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 75 structureChanged: false Elapsed: 45.69980800151825ms
+Info 619  [12:47:45.187] Different program with same set of files:: structureIsReused:: 2
+Info 620  [12:47:45.555] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 621  [12:47:45.604] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 76 structureChanged: false Elapsed: 49.27049997448921ms
+Info 622  [12:47:45.604] Different program with same set of files:: structureIsReused:: 2
+Info 623  [12:47:46.149] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 624  [12:47:46.195] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 77 structureChanged: false Elapsed: 46.11982899904251ms
+Info 625  [12:47:46.195] Different program with same set of files:: structureIsReused:: 2
+Info 626  [12:47:48.933] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 627  [12:47:48.982] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 78 structureChanged: false Elapsed: 48.78475898504257ms
+Info 628  [12:47:48.982] Different program with same set of files:: structureIsReused:: 2
+Info 629  [12:47:49.111] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 630  [12:47:49.161] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 79 structureChanged: false Elapsed: 49.42803901433945ms
+Info 631  [12:47:49.161] Different program with same set of files:: structureIsReused:: 2
+Info 632  [12:47:49.278] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 633  [12:47:49.323] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 80 structureChanged: false Elapsed: 45.26984801888466ms
+Info 634  [12:47:49.323] Different program with same set of files:: structureIsReused:: 2
+Info 635  [12:47:49.448] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 636  [12:47:49.493] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 81 structureChanged: false Elapsed: 45.66195198893547ms
+Info 637  [12:47:49.493] Different program with same set of files:: structureIsReused:: 2
+Info 638  [12:47:49.733] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 639  [12:47:49.781] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 82 structureChanged: false Elapsed: 47.69073900580406ms
+Info 640  [12:47:49.781] Different program with same set of files:: structureIsReused:: 2
+Info 641  [12:47:49.901] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 642  [12:47:49.949] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 83 structureChanged: false Elapsed: 48.802970975637436ms
+Info 643  [12:47:49.949] Different program with same set of files:: structureIsReused:: 2
+Info 644  [12:47:50.071] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 645  [12:47:50.118] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 84 structureChanged: false Elapsed: 46.547253996133804ms
+Info 646  [12:47:50.118] Different program with same set of files:: structureIsReused:: 2
+Info 647  [12:47:50.236] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 648  [12:47:50.283] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 85 structureChanged: false Elapsed: 46.70327499508858ms
+Info 649  [12:47:50.283] Different program with same set of files:: structureIsReused:: 2
+Info 650  [12:47:50.408] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 651  [12:47:50.460] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 86 structureChanged: false Elapsed: 52.54610502719879ms
+Info 652  [12:47:50.460] Different program with same set of files:: structureIsReused:: 2
+Info 653  [12:47:52.468] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 654  [12:47:52.516] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 87 structureChanged: false Elapsed: 47.73835799098015ms
+Info 655  [12:47:52.516] Different program with same set of files:: structureIsReused:: 2
+Info 656  [12:47:56.609] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 657  [12:47:56.655] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 88 structureChanged: false Elapsed: 46.32401302456856ms
+Info 658  [12:47:56.655] Different program with same set of files:: structureIsReused:: 2
+Info 659  [12:47:56.770] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 660  [12:47:56.817] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 89 structureChanged: false Elapsed: 47.09975799918175ms
+Info 661  [12:47:56.818] Different program with same set of files:: structureIsReused:: 2
+Info 662  [12:47:56.942] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 663  [12:47:56.995] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 90 structureChanged: false Elapsed: 52.65341800451279ms
+Info 664  [12:47:56.995] Different program with same set of files:: structureIsReused:: 2
+Info 665  [12:47:57.310] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 666  [12:47:57.362] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 91 structureChanged: false Elapsed: 51.6436830163002ms
+Info 667  [12:47:57.362] Different program with same set of files:: structureIsReused:: 2
+Info 668  [12:47:57.481] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 669  [12:47:57.526] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 92 structureChanged: false Elapsed: 45.14649999141693ms
+Info 670  [12:47:57.526] Different program with same set of files:: structureIsReused:: 2
+Info 671  [12:47:58.004] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 672  [12:47:58.051] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 93 structureChanged: false Elapsed: 46.43615999817848ms
+Info 673  [12:47:58.051] Different program with same set of files:: structureIsReused:: 2
+Info 674  [12:47:58.503] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 675  [12:47:58.549] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 94 structureChanged: false Elapsed: 46.076546996831894ms
+Info 676  [12:47:58.549] Different program with same set of files:: structureIsReused:: 2
+Info 677  [12:47:59.070] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 678  [12:47:59.118] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 95 structureChanged: false Elapsed: 48.21171900629997ms
+Info 679  [12:47:59.118] Different program with same set of files:: structureIsReused:: 2
+Info 680  [12:48:09.231] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 681  [12:48:09.277] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 96 structureChanged: false Elapsed: 45.82937401533127ms
+Info 682  [12:48:09.277] Different program with same set of files:: structureIsReused:: 2
+Info 683  [12:48:09.433] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 684  [12:48:09.511] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 97 structureChanged: false Elapsed: 77.8941280245781ms
+Info 685  [12:48:09.511] Different program with same set of files:: structureIsReused:: 2
+Info 686  [12:48:09.637] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 687  [12:48:09.689] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 98 structureChanged: false Elapsed: 52.376812011003494ms
+Info 688  [12:48:09.689] Different program with same set of files:: structureIsReused:: 2
+Info 689  [12:48:09.808] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 690  [12:48:09.855] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 99 structureChanged: false Elapsed: 46.29340699315071ms
+Info 691  [12:48:09.855] Different program with same set of files:: structureIsReused:: 2
+Info 692  [12:48:09.973] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 693  [12:48:10.018] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 100 structureChanged: false Elapsed: 44.44822499155998ms
+Info 694  [12:48:10.018] Different program with same set of files:: structureIsReused:: 2
+Info 695  [12:48:15.885] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 696  [12:48:15.934] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 101 structureChanged: false Elapsed: 48.82308402657509ms
+Info 697  [12:48:15.934] Different program with same set of files:: structureIsReused:: 2
+Info 698  [12:48:16.715] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 699  [12:48:16.761] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 102 structureChanged: false Elapsed: 45.92847400903702ms
+Info 700  [12:48:16.761] Different program with same set of files:: structureIsReused:: 2
+Info 701  [12:48:37.610] Format host information updated
+Info 702  [12:48:37.810] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 703  [12:48:37.911] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 103 structureChanged: false Elapsed: 100.34613499045372ms
+Info 704  [12:48:37.911] Different program with same set of files:: structureIsReused:: 2
+Info 705  [12:48:38.293] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 706  [12:48:38.341] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 104 structureChanged: false Elapsed: 47.91695898771286ms
+Info 707  [12:48:38.341] Different program with same set of files:: structureIsReused:: 2
+Info 708  [12:48:38.531] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 709  [12:48:38.580] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 105 structureChanged: false Elapsed: 48.90655001997948ms
+Info 710  [12:48:38.580] Different program with same set of files:: structureIsReused:: 2
+Info 711  [12:48:40.954] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 712  [12:48:41.004] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 106 structureChanged: false Elapsed: 50.30144000053406ms
+Info 713  [12:48:41.004] Different program with same set of files:: structureIsReused:: 2
+Info 714  [12:48:41.542] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 715  [12:48:41.625] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 107 structureChanged: false Elapsed: 83.0023900270462ms
+Info 716  [12:48:41.625] Different program with same set of files:: structureIsReused:: 2
+Info 717  [12:48:44.191] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 718  [12:48:44.277] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 108 structureChanged: false Elapsed: 85.72932997345924ms
+Info 719  [12:48:44.277] Different program with same set of files:: structureIsReused:: 2
+Info 720  [12:48:45.321] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 721  [12:48:45.372] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 109 structureChanged: false Elapsed: 51.005560994148254ms
+Info 722  [12:48:45.372] Different program with same set of files:: structureIsReused:: 2
+Info 723  [12:48:55.237] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 724  [12:48:55.285] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 110 structureChanged: false Elapsed: 48.34443899989128ms
+Info 725  [12:48:55.285] Different program with same set of files:: structureIsReused:: 2
+Info 726  [12:48:55.285] getCompletionData: Get current token: 0.008370012044906616
+Info 727  [12:48:55.285] getCompletionData: Is inside comment: 0.004217982292175293
+Info 728  [12:48:55.285] getCompletionData: Get previous token 1: 0.030294984579086304
+Info 729  [12:48:55.285] getCompletionsAtPosition: isCompletionListBlocker: 0.006976991891860962
+Info 730  [12:48:55.285] Returning an empty list because completion was requested in an invalid position.
+Info 731  [12:48:55.287] getCompletionData: Get current token: 0.007800012826919556
+Info 732  [12:48:55.287] getCompletionData: Is inside comment: 0.003062009811401367
+Info 733  [12:48:55.287] getCompletionData: Get previous token 1: 0.021448999643325806
+Info 734  [12:48:55.287] getCompletionsAtPosition: isCompletionListBlocker: 0.004584014415740967
+Info 735  [12:48:55.287] Returning an empty list because completion was requested in an invalid position.
+Info 736  [12:48:55.288] getCompletionData: Get current token: 0.008159995079040527
+Info 737  [12:48:55.288] getCompletionData: Is inside comment: 0.0028859972953796387
+Info 738  [12:48:55.288] getCompletionData: Get previous token 1: 0.023571014404296875
+Info 739  [12:48:55.288] getCompletionsAtPosition: isCompletionListBlocker: 0.0045639872550964355
+Info 740  [12:48:55.288] Returning an empty list because completion was requested in an invalid position.
+Info 741  [12:48:55.687] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 742  [12:48:55.786] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 111 structureChanged: false Elapsed: 98.76816999912262ms
+Info 743  [12:48:55.786] Different program with same set of files:: structureIsReused:: 2
+Info 744  [12:48:57.863] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 745  [12:48:57.924] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 112 structureChanged: false Elapsed: 60.43962901830673ms
+Info 746  [12:48:57.924] Different program with same set of files:: structureIsReused:: 2
+Info 747  [12:49:00.278] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 748  [12:49:00.325] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 113 structureChanged: false Elapsed: 47.42484998703003ms
+Info 749  [12:49:00.326] Different program with same set of files:: structureIsReused:: 2
+Info 750  [12:49:00.326] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 751  [12:49:00.372] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 114 structureChanged: false Elapsed: 45.93027698993683ms
+Info 752  [12:49:00.372] Different program with same set of files:: structureIsReused:: 2
+Info 753  [12:49:00.630] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 754  [12:49:00.677] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 115 structureChanged: false Elapsed: 46.293780982494354ms
+Info 755  [12:49:00.677] Different program with same set of files:: structureIsReused:: 2
+Info 756  [12:49:01.153] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 757  [12:49:01.203] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 116 structureChanged: false Elapsed: 50.03454500436783ms
+Info 758  [12:49:01.203] Different program with same set of files:: structureIsReused:: 2
+Info 759  [12:49:01.204] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 760  [12:49:01.248] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 117 structureChanged: false Elapsed: 44.91635900735855ms
+Info 761  [12:49:01.249] Different program with same set of files:: structureIsReused:: 2
+Info 762  [12:49:01.546] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 763  [12:49:01.595] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 118 structureChanged: false Elapsed: 49.171736001968384ms
+Info 764  [12:49:01.595] Different program with same set of files:: structureIsReused:: 2
+Info 765  [12:49:01.596] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 766  [12:49:01.645] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 119 structureChanged: false Elapsed: 49.758940011262894ms
+Info 767  [12:49:01.645] Different program with same set of files:: structureIsReused:: 2
+Info 768  [12:49:02.086] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 769  [12:49:02.132] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 120 structureChanged: false Elapsed: 46.05741900205612ms
+Info 770  [12:49:02.132] Different program with same set of files:: structureIsReused:: 2
+Info 771  [12:49:02.133] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 772  [12:49:02.177] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 121 structureChanged: false Elapsed: 44.68800300359726ms
+Info 773  [12:49:02.177] Different program with same set of files:: structureIsReused:: 2
+Info 774  [12:49:02.865] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 775  [12:49:02.919] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 122 structureChanged: false Elapsed: 53.59860199689865ms
+Info 776  [12:49:02.919] Different program with same set of files:: structureIsReused:: 2
+Info 777  [12:49:19.873] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 778  [12:49:19.933] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 123 structureChanged: false Elapsed: 60.1591539978981ms
+Info 779  [12:49:19.933] Different program with same set of files:: structureIsReused:: 2
+Info 780  [12:49:19.934] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 781  [12:49:19.986] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 124 structureChanged: false Elapsed: 52.271867990493774ms
+Info 782  [12:49:19.986] Different program with same set of files:: structureIsReused:: 2
+Info 783  [12:49:20.830] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 784  [12:49:20.879] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 125 structureChanged: false Elapsed: 48.12997701764107ms
+Info 785  [12:49:20.879] Different program with same set of files:: structureIsReused:: 2
+Info 786  [12:49:20.904] Format host information updated
+Info 787  [12:49:21.105] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 788  [12:49:21.168] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 126 structureChanged: false Elapsed: 63.003270983695984ms
+Info 789  [12:49:21.168] Different program with same set of files:: structureIsReused:: 2
+Info 790  [12:49:38.840] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 791  [12:49:38.933] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 127 structureChanged: false Elapsed: 92.71017000079155ms
+Info 792  [12:49:38.933] Different program with same set of files:: structureIsReused:: 2
+Info 793  [12:49:41.175] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 794  [12:49:41.270] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 128 structureChanged: false Elapsed: 94.86562898755074ms
+Info 795  [12:49:41.270] Different program with same set of files:: structureIsReused:: 2
+Info 796  [12:49:42.105] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 797  [12:49:42.157] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 129 structureChanged: false Elapsed: 51.25665399432182ms
+Info 798  [12:49:42.157] Different program with same set of files:: structureIsReused:: 2
+Info 799  [12:49:42.170] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 800  [12:49:42.315] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 130 structureChanged: false Elapsed: 144.0162300169468ms
+Info 801  [12:49:42.315] Different program with same set of files:: structureIsReused:: 2
+Info 802  [12:49:42.514] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 803  [12:49:42.637] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 131 structureChanged: false Elapsed: 123.05226400494576ms
+Info 804  [12:49:42.637] Different program with same set of files:: structureIsReused:: 2
+Info 805  [12:49:42.638] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 806  [12:49:42.681] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 132 structureChanged: false Elapsed: 43.34317800402641ms
+Info 807  [12:49:42.681] Different program with same set of files:: structureIsReused:: 2
+Info 808  [12:49:55.183] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 809  [12:49:55.275] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 133 structureChanged: false Elapsed: 91.34629997611046ms
+Info 810  [12:49:55.275] Different program with same set of files:: structureIsReused:: 2
+Info 811  [12:49:55.275] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 812  [12:49:55.320] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 134 structureChanged: false Elapsed: 44.12294900417328ms
+Info 813  [12:49:55.320] Different program with same set of files:: structureIsReused:: 2
+Info 814  [12:50:04.149] Search path: /home/macarrones/Projects/Melquisedec/src/styles
+Info 815  [12:50:04.150] For info: /home/macarrones/Projects/Melquisedec/src/styles/theme.js :: Config file name: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 816  [12:50:04.175] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 817  [12:50:04.224] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 135 structureChanged: false Elapsed: 49.10192000865936ms
+Info 818  [12:50:04.224] Different program with same set of files:: structureIsReused:: 2
+Info 819  [12:50:09.777] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 820  [12:50:09.868] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 136 structureChanged: false Elapsed: 90.38996800780296ms
+Info 821  [12:50:09.868] Different program with same set of files:: structureIsReused:: 2
+Info 822  [12:50:10.137] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 823  [12:50:10.187] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 137 structureChanged: false Elapsed: 49.93845400214195ms
+Info 824  [12:50:10.187] Different program with same set of files:: structureIsReused:: 2
+Info 825  [12:50:10.710] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 826  [12:50:10.786] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 138 structureChanged: false Elapsed: 75.53754699230194ms
+Info 827  [12:50:10.786] Different program with same set of files:: structureIsReused:: 2
+Info 828  [12:50:11.295] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 829  [12:50:11.368] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 139 structureChanged: false Elapsed: 72.89642402529716ms
+Info 830  [12:50:11.368] Different program with same set of files:: structureIsReused:: 2
+Info 831  [12:50:11.545] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 832  [12:50:11.588] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 140 structureChanged: false Elapsed: 43.51116701960564ms
+Info 833  [12:50:11.588] Different program with same set of files:: structureIsReused:: 2
+Info 834  [12:50:13.979] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 835  [12:50:14.027] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 141 structureChanged: false Elapsed: 48.173370987176895ms
+Info 836  [12:50:14.027] Different program with same set of files:: structureIsReused:: 2
+Info 837  [12:50:14.333] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 838  [12:50:14.380] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 142 structureChanged: false Elapsed: 46.96384701132774ms
+Info 839  [12:50:14.380] Different program with same set of files:: structureIsReused:: 2
+Info 840  [12:50:14.580] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 841  [12:50:14.625] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 143 structureChanged: false Elapsed: 45.28600898385048ms
+Info 842  [12:50:14.625] Different program with same set of files:: structureIsReused:: 2
+Info 843  [12:50:21.626] Search path: /home/macarrones/Projects/Melquisedec/src/pages/Home
+Info 844  [12:50:21.626] For info: /home/macarrones/Projects/Melquisedec/src/pages/Home/layout.styles.js :: Config file name: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 845  [12:50:21.626] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 846  [12:50:21.681] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 144 structureChanged: false Elapsed: 54.675567001104355ms
+Info 847  [12:50:21.681] Different program with same set of files:: structureIsReused:: 2
+Info 848  [12:50:21.684] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 849  [12:50:21.734] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 145 structureChanged: false Elapsed: 49.48681500554085ms
+Info 850  [12:50:21.734] Different program with same set of files:: structureIsReused:: 2
+Info 851  [12:51:00.599] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 852  [12:51:00.695] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 146 structureChanged: false Elapsed: 95.6109490096569ms
+Info 853  [12:51:00.695] Different program with same set of files:: structureIsReused:: 2
+Info 854  [12:51:01.032] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 855  [12:51:01.131] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 147 structureChanged: false Elapsed: 98.50944098830223ms
+Info 856  [12:51:01.131] Different program with same set of files:: structureIsReused:: 2
+Info 857  [12:51:02.167] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 858  [12:51:02.220] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 148 structureChanged: false Elapsed: 52.68060499429703ms
+Info 859  [12:51:02.220] Different program with same set of files:: structureIsReused:: 2
+Info 860  [12:51:21.858] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 861  [12:51:21.919] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 149 structureChanged: false Elapsed: 60.78473100066185ms
+Info 862  [12:51:21.919] Different program with same set of files:: structureIsReused:: 2
+Info 863  [12:51:22.385] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 864  [12:51:22.436] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 150 structureChanged: false Elapsed: 51.175241976976395ms
+Info 865  [12:51:22.436] Different program with same set of files:: structureIsReused:: 2
+Info 866  [12:51:23.071] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 867  [12:51:23.140] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 151 structureChanged: false Elapsed: 68.96532899141312ms
+Info 868  [12:51:23.140] Different program with same set of files:: structureIsReused:: 2
+Info 869  [12:51:26.873] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 870  [12:51:26.961] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 152 structureChanged: false Elapsed: 87.99693500995636ms
+Info 871  [12:51:26.961] Different program with same set of files:: structureIsReused:: 2
+Info 872  [12:51:35.818] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 873  [12:51:35.870] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 153 structureChanged: false Elapsed: 51.95284000039101ms
+Info 874  [12:51:35.870] Different program with same set of files:: structureIsReused:: 2
+Info 875  [12:51:36.151] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 876  [12:51:36.194] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 154 structureChanged: false Elapsed: 43.12662500143051ms
+Info 877  [12:51:36.194] Different program with same set of files:: structureIsReused:: 2
+Info 878  [12:52:15.758] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 879  [12:52:15.826] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 155 structureChanged: false Elapsed: 67.92412200570107ms
+Info 880  [12:52:15.826] Different program with same set of files:: structureIsReused:: 2
+Info 881  [12:52:42.075] Format host information updated
+Info 882  [12:52:42.276] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 883  [12:52:42.340] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 156 structureChanged: false Elapsed: 63.57954499125481ms
+Info 884  [12:52:42.340] Different program with same set of files:: structureIsReused:: 2
+Info 885  [12:52:44.544] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 886  [12:52:44.592] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 157 structureChanged: false Elapsed: 48.48852801322937ms
+Info 887  [12:52:44.592] Different program with same set of files:: structureIsReused:: 2
+Info 888  [12:52:45.433] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 889  [12:52:45.487] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 158 structureChanged: false Elapsed: 53.755650997161865ms
+Info 890  [12:52:45.487] Different program with same set of files:: structureIsReused:: 2
+Info 891  [12:52:45.489] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 892  [12:52:45.540] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 159 structureChanged: false Elapsed: 50.996980994939804ms
+Info 893  [12:52:45.540] Different program with same set of files:: structureIsReused:: 2
+Info 894  [12:52:48.432] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 895  [12:52:48.515] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 160 structureChanged: false Elapsed: 82.79647001624107ms
+Info 896  [12:52:48.515] Different program with same set of files:: structureIsReused:: 2
+Info 897  [12:52:49.069] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 898  [12:52:49.115] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 161 structureChanged: false Elapsed: 45.144647002220154ms
+Info 899  [12:52:49.115] Different program with same set of files:: structureIsReused:: 2
+Info 900  [12:52:50.518] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 901  [12:52:50.566] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 162 structureChanged: false Elapsed: 47.93003898859024ms
+Info 902  [12:52:50.566] Different program with same set of files:: structureIsReused:: 2
+Info 903  [12:52:51.592] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 904  [12:52:51.640] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 163 structureChanged: false Elapsed: 48.030605018138885ms
+Info 905  [12:52:51.640] Different program with same set of files:: structureIsReused:: 2
+Info 906  [12:52:52.069] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 907  [12:52:52.117] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 164 structureChanged: false Elapsed: 47.98463201522827ms
+Info 908  [12:52:52.117] Different program with same set of files:: structureIsReused:: 2
+Info 909  [12:52:52.976] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 910  [12:52:53.035] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 165 structureChanged: false Elapsed: 59.15444600582123ms
+Info 911  [12:52:53.035] Different program with same set of files:: structureIsReused:: 2
+Info 912  [12:52:53.582] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 913  [12:52:53.638] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 166 structureChanged: false Elapsed: 53.795038014650345ms
+Info 914  [12:52:53.638] Different program with same set of files:: structureIsReused:: 2
+Info 915  [12:52:54.152] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 916  [12:52:54.243] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 167 structureChanged: false Elapsed: 89.93987601995468ms
+Info 917  [12:52:54.243] Different program with same set of files:: structureIsReused:: 2
+Info 918  [12:53:00.174] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 919  [12:53:00.228] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 168 structureChanged: false Elapsed: 53.590378016233444ms
+Info 920  [12:53:00.228] Different program with same set of files:: structureIsReused:: 2
+Info 921  [12:53:01.302] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 922  [12:53:01.352] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 169 structureChanged: false Elapsed: 49.91911402344704ms
+Info 923  [12:53:01.352] Different program with same set of files:: structureIsReused:: 2
+Info 924  [12:54:05.626] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 925  [12:54:05.703] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 170 structureChanged: false Elapsed: 76.83602702617645ms
+Info 926  [12:54:05.703] Different program with same set of files:: structureIsReused:: 2
+Info 927  [12:54:08.552] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 928  [12:54:08.614] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 171 structureChanged: false Elapsed: 61.8587149977684ms
+Info 929  [12:54:08.614] Different program with same set of files:: structureIsReused:: 2
+Info 930  [12:54:14.341] Format host information updated
+Info 931  [12:54:14.541] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 932  [12:54:14.626] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 172 structureChanged: false Elapsed: 84.91476899385452ms
+Info 933  [12:54:14.627] Different program with same set of files:: structureIsReused:: 2
+Info 934  [12:54:15.310] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 935  [12:54:15.365] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 173 structureChanged: false Elapsed: 54.45657700300217ms
+Info 936  [12:54:15.365] Different program with same set of files:: structureIsReused:: 2
+Info 937  [12:54:19.824] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 938  [12:54:19.998] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 174 structureChanged: false Elapsed: 172.89499098062515ms
+Info 939  [12:54:19.998] Different program with same set of files:: structureIsReused:: 2
+Info 940  [12:54:20.328] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 941  [12:54:20.492] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 175 structureChanged: false Elapsed: 163.781161993742ms
+Info 942  [12:54:20.492] Different program with same set of files:: structureIsReused:: 2
+Info 943  [12:54:20.495] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 944  [12:54:20.549] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 176 structureChanged: false Elapsed: 53.6041080057621ms
+Info 945  [12:54:20.549] Different program with same set of files:: structureIsReused:: 2
+Info 946  [12:54:21.400] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 947  [12:54:21.476] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 177 structureChanged: false Elapsed: 75.37171298265457ms
+Info 948  [12:54:21.476] Different program with same set of files:: structureIsReused:: 2
+Info 949  [12:54:22.112] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 950  [12:54:22.162] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 178 structureChanged: false Elapsed: 50.717942982912064ms
+Info 951  [12:54:22.162] Different program with same set of files:: structureIsReused:: 2
+Info 952  [12:54:22.735] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 953  [12:54:22.818] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 179 structureChanged: false Elapsed: 83.30788600444794ms
+Info 954  [12:54:22.818] Different program with same set of files:: structureIsReused:: 2
+Info 955  [12:54:24.098] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 956  [12:54:24.142] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 180 structureChanged: false Elapsed: 43.95331600308418ms
+Info 957  [12:54:24.142] Different program with same set of files:: structureIsReused:: 2
+Info 958  [12:54:24.377] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 959  [12:54:24.457] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 181 structureChanged: false Elapsed: 79.80181801319122ms
+Info 960  [12:54:24.457] Different program with same set of files:: structureIsReused:: 2
+Info 961  [12:54:25.279] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 962  [12:54:25.331] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 182 structureChanged: false Elapsed: 51.60178899765015ms
+Info 963  [12:54:25.331] Different program with same set of files:: structureIsReused:: 2
+Info 964  [12:54:54.097] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 965  [12:54:54.164] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 183 structureChanged: false Elapsed: 66.91689902544022ms
+Info 966  [12:54:54.164] Different program with same set of files:: structureIsReused:: 2
+Info 967  [12:54:57.641] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 968  [12:54:57.693] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 184 structureChanged: false Elapsed: 52.42952498793602ms
+Info 969  [12:54:57.693] Different program with same set of files:: structureIsReused:: 2
+Info 970  [12:55:01.896] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 971  [12:55:01.951] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 185 structureChanged: false Elapsed: 54.73470801115036ms
+Info 972  [12:55:01.951] Different program with same set of files:: structureIsReused:: 2
+Info 973  [12:55:01.951] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 974  [12:55:02.034] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 186 structureChanged: false Elapsed: 82.21000599861145ms
+Info 975  [12:55:02.034] Different program with same set of files:: structureIsReused:: 2
+Info 976  [12:55:14.055] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 977  [12:55:14.099] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 187 structureChanged: false Elapsed: 44.635576993227005ms
+Info 978  [12:55:14.099] Different program with same set of files:: structureIsReused:: 2
+Info 979  [12:56:03.615] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 980  [12:56:03.675] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 188 structureChanged: false Elapsed: 59.3097560107708ms
+Info 981  [12:56:03.675] Different program with same set of files:: structureIsReused:: 2
+Info 982  [12:56:07.919] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 983  [12:56:07.969] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 189 structureChanged: false Elapsed: 49.620204985141754ms
+Info 984  [12:56:07.969] Different program with same set of files:: structureIsReused:: 2
+Info 985  [12:56:12.529] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 986  [12:56:12.611] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 190 structureChanged: false Elapsed: 82.11404597759247ms
+Info 987  [12:56:12.611] Different program with same set of files:: structureIsReused:: 2
+Info 988  [12:56:12.615] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 989  [12:56:12.735] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 191 structureChanged: false Elapsed: 119.99649399518967ms
+Info 990  [12:56:12.735] Different program with same set of files:: structureIsReused:: 2
+Info 991  [12:56:18.096] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 992  [12:56:18.146] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 192 structureChanged: false Elapsed: 50.107116997241974ms
+Info 993  [12:56:18.146] Different program with same set of files:: structureIsReused:: 2
+Info 994  [12:56:18.147] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 995  [12:56:18.191] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 193 structureChanged: false Elapsed: 44.54180398583412ms
+Info 996  [12:56:18.191] Different program with same set of files:: structureIsReused:: 2
+Info 997  [12:56:18.365] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 998  [12:56:18.414] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 194 structureChanged: false Elapsed: 48.73044300079346ms
+Info 999  [12:56:18.414] Different program with same set of files:: structureIsReused:: 2
+Info 1000 [12:56:20.455] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1001 [12:56:20.503] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 195 structureChanged: false Elapsed: 47.715831995010376ms
+Info 1002 [12:56:20.503] Different program with same set of files:: structureIsReused:: 2
+Info 1003 [12:56:27.256] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1004 [12:56:27.307] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 196 structureChanged: false Elapsed: 51.41066399216652ms
+Info 1005 [12:56:27.307] Different program with same set of files:: structureIsReused:: 2
+Info 1006 [12:56:28.698] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1007 [12:56:28.785] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 197 structureChanged: false Elapsed: 87.12540000677109ms
+Info 1008 [12:56:28.785] Different program with same set of files:: structureIsReused:: 2
+Info 1009 [12:56:29.503] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1010 [12:56:29.563] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 198 structureChanged: false Elapsed: 59.97480300068855ms
+Info 1011 [12:56:29.563] Different program with same set of files:: structureIsReused:: 2
+Info 1012 [12:58:42.672] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1013 [12:58:42.760] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 199 structureChanged: false Elapsed: 87.86325398087502ms
+Info 1014 [12:58:42.760] Different program with same set of files:: structureIsReused:: 2
+Info 1015 [12:58:43.585] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1016 [12:58:43.644] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 200 structureChanged: false Elapsed: 59.508299976587296ms
+Info 1017 [12:58:43.644] Different program with same set of files:: structureIsReused:: 2
+Info 1018 [12:58:44.025] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1019 [12:58:44.070] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 201 structureChanged: false Elapsed: 44.94389200210571ms
+Info 1020 [12:58:44.070] Different program with same set of files:: structureIsReused:: 2
+Info 1021 [12:58:44.593] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1022 [12:58:44.638] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 202 structureChanged: false Elapsed: 44.617974013090134ms
+Info 1023 [12:58:44.638] Different program with same set of files:: structureIsReused:: 2
+Info 1024 [12:58:44.702] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1025 [12:58:44.823] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 203 structureChanged: false Elapsed: 120.80574601888657ms
+Info 1026 [12:58:44.823] Different program with same set of files:: structureIsReused:: 2
+Info 1027 [12:58:51.673] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1028 [12:58:51.746] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 204 structureChanged: false Elapsed: 73.39315497875214ms
+Info 1029 [12:58:51.746] Different program with same set of files:: structureIsReused:: 2
+Info 1030 [12:59:14.788] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1031 [12:59:14.876] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 205 structureChanged: false Elapsed: 87.47523698210716ms
+Info 1032 [12:59:14.876] Different program with same set of files:: structureIsReused:: 2
+Info 1033 [12:59:15.209] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1034 [12:59:15.274] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 206 structureChanged: false Elapsed: 65.20767000317574ms
+Info 1035 [12:59:15.274] Different program with same set of files:: structureIsReused:: 2
+Info 1036 [12:59:15.513] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1037 [12:59:15.567] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 207 structureChanged: false Elapsed: 54.201964020729065ms
+Info 1038 [12:59:15.567] Different program with same set of files:: structureIsReused:: 2
+Info 1039 [12:59:15.568] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1040 [12:59:15.628] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 208 structureChanged: false Elapsed: 60.00628200173378ms
+Info 1041 [12:59:15.628] Different program with same set of files:: structureIsReused:: 2
+Info 1042 [12:59:15.777] Starting updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json
+Info 1043 [12:59:15.871] Finishing updateGraphWorker: Project: /home/macarrones/Projects/Melquisedec/jsconfig.json Version: 209 structureChanged: false Elapsed: 93.94313898682594ms
+Info 1044 [12:59:15.871] Different program with same set of files:: structureIsReused:: 2
+Info 1045 [13:02:10.667] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 0:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1046 [13:02:10.668] Elapsed:: 0.2411249876022339ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 0:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1047 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 1:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1048 [13:02:10.668] Elapsed:: 0.029450982809066772ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 1:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1049 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 2:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1050 [13:02:10.668] Elapsed:: 0.02476602792739868ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 2:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1051 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 3:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1052 [13:02:10.668] Elapsed:: 0.025489002466201782ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 3:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1053 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 4:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1054 [13:02:10.668] Elapsed:: 0.01916101574897766ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/fsevents 4:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1055 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 5:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1056 [13:02:10.668] Elapsed:: 0.02025100588798523ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/bindings 5:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1057 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 6:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1058 [13:02:10.668] Elapsed:: 0.02428099513053894ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/nan 6:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1059 [13:02:10.668] DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 7:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations
+Info 1060 [13:02:10.668] Elapsed:: 0.018034011125564575ms DirectoryWatcher:: Triggered with /home/macarrones/.cache/typescript/4.3/node_modules/file-uri-to-path 7:: WatchInfo: /home/macarrones/.cache/typescript/4.3/node_modules 1 undefined Project: /home/macarrones/Projects/Melquisedec/jsconfig.json WatchType: Failed Lookup Locations

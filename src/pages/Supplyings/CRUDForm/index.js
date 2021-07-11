@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import {
     Form,
@@ -43,8 +43,14 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
         schema: supplyingSchema,
         onSubmitSuccess: onSubmit,
     });
+
     const [recentSupplyings, setRecentSupplyings] = useState(null);
     const [activeSupplying, setActiveSupplying] = useState(supplying);
+
+    const supplierRef = useRef(null);
+    const productRef = useRef(null);
+    const buyPriceRef = useRef(null);
+    const quantityRef = useRef(null);
 
     useEffect(() => {
         if (activeSupplying)
@@ -76,7 +82,11 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
             <BodyContainer>
                 <InputContainer>
                     <SupplierSearch
-                        onSelect={(selectedSupplierId) => setFormData({ ...formData, supplierId: selectedSupplierId })}
+                        innerRef={supplierRef}
+                        onSelect={(selectedSupplierId) => {
+                            setFormData({ ...formData, supplierId: selectedSupplierId });
+                            productRef.current.focus();
+                        }}
                         value={activeSupplying.supplier}
                         autoFocus
                     />
@@ -84,7 +94,11 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 </InputContainer>
                 <InputContainer>
                     <ProductSearch
-                        onSelect={(selectedProductId) => setFormData({ ...formData, product_variant_id: selectedProductId })}
+                        innerRef={productRef}
+                        onSelect={(selectedProductId) => {
+                            setFormData({ ...formData, product_variant_id: selectedProductId });
+                            quantityRef.current.focus();
+                        }}
                         value={activeSupplying.product_variant}
                     />
                     {printError('product_variant_id')}
@@ -92,6 +106,7 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 <InlineContainer>
                     <InputContainer>
                         <LabeledInput
+                            innerRef={buyPriceRef}
                             onValueChange={({ floatValue }) => handleNumericInput(floatValue, 'buyPrice')}
                             value={formData.buyPrice}
                             placeholder='Precio/Unidad'
@@ -104,6 +119,7 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                     </InputContainer>
                     <InputContainer>
                         <LabeledInput
+                            innerRef={quantityRef}
                             onValueChange={({ floatValue }) => handleNumericInput(floatValue, 'quantity')}
                             value={formData.quantity}
                             placeholder='Cantidad'
