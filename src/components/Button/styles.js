@@ -19,6 +19,10 @@ export const StyledButton = styled.button`
     overflow: hidden;
     white-space: nowrap;
 
+    :hover {
+        opacity: 0.8;
+    }
+
     > svg {
         margin-right: 5px;
     }

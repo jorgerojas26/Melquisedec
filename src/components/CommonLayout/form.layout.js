@@ -29,12 +29,12 @@ export const TitleContainer = styled.div`
 
 export const BodyContainer = styled.div`
     padding: 20px;
-    flex: 1;
     gap: 10px;
     max-height: 450px;
     overflow-y: ${(props) => (props.overflow ? 'auto' : 'none')};
 
-    h4 {
+    h4,
+    h2 {
         margin: 0 0 5px 0;
     }
 `;
@@ -53,6 +53,7 @@ export const FooterContainer = styled.div`
 
 export const InlineContainer = styled.div`
     flex-direction: row;
+    flex: 1 1 auto;
     gap: 10px;
 
     div {
@@ -60,13 +61,12 @@ export const InlineContainer = styled.div`
     }
 `;
 export const InputContainer = styled.div`
-    flex: 0 1 auto;
+    flex: 0 1 100%;
 `;
 
 export const ButtonContainer = styled.div`
-    margin-right: 10px;
-
     background: ${(props) => (props.color ? props.color : 'transparent')};
+    margin: 0 5px;
 
     > button {
         color: white;
@@ -74,6 +74,10 @@ export const ButtonContainer = styled.div`
 
     svg {
         margin: 0;
+    }
+
+    :hover {
+        opacity: 0.8;
     }
 `;
 

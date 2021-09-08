@@ -46,6 +46,7 @@ export const createProduct = async (productData) => {
 export const updateProduct = async (id, productData) => {
     let formData = new FormData();
     let variantsWithImage = [];
+    console.log('from updateProduct API', productData);
 
     productData.product_variant.forEach((variant, index) => {
         if (variant.imagePath != null && typeof variant.imagePath === 'object') {
@@ -62,6 +63,10 @@ export const updateProduct = async (id, productData) => {
     formData.append('name', productData.name);
     formData.append('brand', productData.brand);
     formData.append('product_variant', JSON.stringify(productData.product_variant));
+
+    if (productData.reasons && productData.reasons.trim().length > 0) {
+        formData.append('reasons', productData.reasons.trim());
+    }
 
     const response = await axios({
         method: 'patch',

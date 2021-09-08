@@ -6,15 +6,7 @@ import { colors } from 'styles/theme';
 
 import { X } from 'phosphor-react';
 
-const ConfirmAlert = ({ showNotification, handleClose, callback }) => {
-    const handleClick = async () => {
-        const response = await callback();
-        if (response.error) {
-            showNotification('error', response.error.message, 3000);
-        } else {
-            showNotification('success', 'Se ha eliminado el recurso con éxito');
-        }
-    };
+const ConfirmAlert = ({ message, showNotification, handleClose, callback }) => {
     return (
         <Container>
             <Header>
@@ -26,11 +18,13 @@ const ConfirmAlert = ({ showNotification, handleClose, callback }) => {
                 <Title>Confirmación</Title>
             </Header>
             <Body>
-                <Description>¿Está seguro que desea realizar esta acción?</Description>
+                <Description>{message ? message : '¿Está seguro que desea realizar esta acción?'}</Description>
             </Body>
             <Footer>
                 <ButtonContainer color={colors.primary}>
-                    <Button onClick={handleClick}>Aceptar</Button>
+                    <Button onClick={callback} autoFocus>
+                        Aceptar
+                    </Button>
                 </ButtonContainer>
                 <ButtonContainer color='red'>
                     <Button onClick={handleClose}>Cancelar</Button>

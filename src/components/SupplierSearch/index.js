@@ -26,7 +26,7 @@ const SupplierSearch = ({ value, autoFocus, onSelect }) => {
 
     const handleSelect = ({ label, value }) => {
         setSelectedSupplier({ label, value });
-        onSelect(value.id);
+        onSelect(value);
     };
 
     return (

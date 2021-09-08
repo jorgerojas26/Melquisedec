@@ -59,7 +59,7 @@ const Suppliers = () => {
                     <TableContainer>
                         <SuppliersTable
                             onSupplierSelect={setSelectedSupplier}
-                            selectedRowID={selectedSupplier && selectedSupplier.id}
+                            selectedRows={selectedSupplier}
                             showNotification={showNotification}
                             shouldRefresh={CRUDAction === 'refresh'}
                         />

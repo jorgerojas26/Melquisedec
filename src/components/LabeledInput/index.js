@@ -26,7 +26,6 @@ const LabeledInput = ({
                 {...rest}
             />
             <StyledLabel disabled={disabled}>{placeholder}</StyledLabel>
-            {children}
         </StyledMainWrapper>
     );
 };

@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from 'styles/theme';
 
 export const Container = styled.div`
     justify-content: center;
@@ -17,12 +17,13 @@ export const Container = styled.div`
     font-weight: 700;
     text-align: center;
     color: white;
+    z-index: 2;
 
     ${(props) => {
-        if (props.type === "success") {
+        if (props.type === 'success') {
             return { background: colors.primary };
-        } else if (props.type === "error") {
-            return { background: "red" };
+        } else if (props.type === 'error') {
+            return { background: 'red' };
         }
     }}
 

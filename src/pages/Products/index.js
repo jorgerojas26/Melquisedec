@@ -76,7 +76,7 @@ const Products = () => {
                 <TableContainer>
                     <ProductsTable
                         shouldRefresh={CRUDAction === 'refresh'}
-                        selectedRowID={selectedProduct && selectedProduct.id}
+                        selectedRows={selectedProduct}
                         onProductSelect={setSelectedProduct}
                         showNotification={showNotification}
                     />
@@ -101,7 +101,7 @@ const Products = () => {
                     {CRUDAction === 'reassignStock' && (
                         <FormContainer medium>
                             <StockForm
-                                variant={selectedProduct && selectedProduct}
+                                product={selectedProduct && selectedProduct.product}
                                 handleClose={() => setCRUDAction(null)}
                                 onSubmit={handleSubmit}
                             />

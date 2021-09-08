@@ -3,11 +3,14 @@ import SearchInput from 'components/SearchInput';
 import { getProductVariants } from 'api/product_variants';
 import getProductName from 'utils/getProductName';
 
-const ProductSearch = ({ innerRef, value, autoFocus = false, onSelect }) => {
+const ProductSearch = ({ innerRef, value, autoFocus = false, isDisabled, onSelect }) => {
     const [selectedProduct, setSelectedProduct] = useState();
-
     useEffect(() => {
-        if (value) setSelectedProduct({ label: getProductName(value), value });
+        if (value) {
+            setSelectedProduct({ label: getProductName(value), value });
+        } else {
+            setSelectedProduct(null);
+        }
     }, [value]);
 
     const loadProductVariants = async (inputValue) => {
@@ -25,19 +28,36 @@ const ProductSearch = ({ innerRef, value, autoFocus = false, onSelect }) => {
         }
     };
 
-    const handleSelect = ({ label, value }) => {
-        setSelectedProduct({ label, value });
-        onSelect(value.id);
+    const handleSelect = (option, { action }) => {
+        if (action === 'select-option') {
+            setSelectedProduct({ label: option.value.name, value });
+            onSelect(option.value, action);
+        } else if (action === 'clear') {
+            setSelectedProduct(null);
+            onSelect(null, action);
+        }
     };
 
     return (
         <SearchInput
             loadOptions={loadProductVariants}
-            placeholder='Producto'
+            placeholder='Buscar...'
             value={selectedProduct}
             onSelect={handleSelect}
             autoFocus={autoFocus}
             innerRef={innerRef}
+            isDisabled={isDisabled}
+            styles={{
+                option: (provided, state) => {
+                    const stock = Number(state.data.value.stock);
+                    const color = stock ? 'green' : 'red';
+
+                    return {
+                        ...provided,
+                        color,
+                    };
+                },
+            }}
         />
     );
 };

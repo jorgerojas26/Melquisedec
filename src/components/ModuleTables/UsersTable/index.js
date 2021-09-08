@@ -6,7 +6,7 @@ import { getUsers } from 'api/users';
 
 import { COLUMNS } from './columns';
 
-const UsersTable = ({ onUserSelect, selectedRowID, shouldRefresh, showNotification }) => {
+const UsersTable = ({ onUserSelect, selectedRows, shouldRefresh, showNotification }) => {
     const [page, setPage] = useState(1);
     const [filter, setFilter] = useState('');
     const memoizedColumns = useMemo(() => COLUMNS, []);
@@ -22,7 +22,7 @@ const UsersTable = ({ onUserSelect, selectedRowID, shouldRefresh, showNotificati
 
     return (
         <Table
-            selectedRowID={selectedRowID}
+            selectedRows={selectedRows}
             onRowSelect={onUserSelect}
             loading={loading}
             data={data.records}

@@ -3,55 +3,63 @@ import styled from 'styled-components';
 import { breakpoints, colors } from 'styles/theme';
 
 export const Wrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 50px;
     height: 100vh;
     width: 100vw;
-    flex-direction: column;
-    overflow: hidden;
 
-    background: ${colors.brown};
+    background: pink;
+
     @media (min-width: ${breakpoints.mobile}) {
-        flex-direction: row;
+        grid-template-columns: minmax(70px, 270px) 1fr;
     }
 `;
 
 export const Header = styled.header`
     position: sticky;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 1 50px;
+    top: 0;
+    height: 50px;
 
     background: ${colors.primary};
 
     z-index: 1;
+
+    @media (min-width: ${breakpoints.mobile}) {
+        display: flex;
+        height: 100vh;
+    }
 `;
 
 export const Main = styled.main`
     display: flex;
-    flex: 1;
-    flex-direction: column-reverse;
+    background: blue;
 
-    overflow: hidden;
+    flex-direction: column-reverse;
 
     background-image: url('../../assets/patterns/leaves-pattern.png');
 
     @media (min-width: ${breakpoints.mobile}) {
         flex-direction: column;
-        overflow: hidden;
     }
 `;
 
 export const MainHeader = styled.div`
     justify-content: center;
     align-items: center;
-    flex: 0 1 50px;
+
+    position: sticky;
+    bottom: 0;
+    height: 50px;
 
     background: ${colors.primary};
     z-index: 1;
 
     @media (min-width: ${breakpoints.mobile}) {
         flex-direction: row;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid ${colors.lightPrimary};
+        top: 0;
+        bottom: auto;
     }
 
     @media (min-width: ${breakpoints.tablet}) {
@@ -63,7 +71,6 @@ export const HeaderTitleContainer = styled.div`
     display: none;
     color: white;
     margin-left: 10px;
-    height: 100%;
     justify-content: center;
 
     @media (min-width: ${breakpoints.tablet}) {
@@ -80,14 +87,12 @@ export const DolarValueContainer = styled.div`
 
     span {
         color: white;
-        margin-left: 10px;
-        font-size: 19px;
+        font-size: 20px;
         font-weight: 700;
     }
 
     h3 {
-        display: none;
-        color: white;
+        color: ${colors.smokyBlack};
         margin: 0;
     }
 
@@ -105,16 +110,11 @@ export const Heading = styled.span`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
     font-size: 24px;
     font-weight: 800;
 `;
 
-export const MainBodyWrapper = styled.div`
-    flex-direction: row;
-    flex: 1;
-`;
-
 export const MainBody = styled.div`
-    flex: 1;
+    @media (min-width: ${breakpoints.mobile}) {
+    }
 `;

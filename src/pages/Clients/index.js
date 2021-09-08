@@ -72,7 +72,7 @@ const Clients = () => {
                     <TableContainer>
                         <ClientsTable
                             shouldRefresh={CRUDAction === 'refresh'}
-                            selectedRowID={selectedClient && selectedClient.id}
+                            selectedRows={selectedClient}
                             onClientSelect={setSelectedClient}
                             showNotification={showNotification}
                         />

@@ -23,14 +23,14 @@ import productSchema from 'validations/schemas/product';
 import NumberInput from 'components/NumberInput';
 import { releaseOrAssign } from 'utils/stockManipulation';
 
-const StockForm = ({ variant, handleClose, onSubmit }) => {
+const StockForm = ({ product, handleClose, onSubmit }) => {
     const [freeStock, setFreeStock] = useState(0);
     const [stockTotal, setStockTotal] = useState(0);
-    const { formData, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
+
+    const { formData, handleChange, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
         initialState: {
-            id: '',
-            name: '',
             product_variant: [],
+            reasons: '',
         },
         action: 'edit',
         editResource: updateProduct,
@@ -39,25 +39,22 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
     });
 
     useEffect(() => {
-        if (variant) {
-            const total = variant.product.product_variant.reduce((old, current) => old + current.stock * current.unitValue, 0);
+        if (product) {
+            const total = product.product_variant.reduce((old, current) => old + current.stock * current.unitValue, 0);
             setStockTotal(total);
         }
-    }, [variant]);
+    }, [product]);
 
     useEffect(() => {
-        if (variant) setFormData({ ...variant.product });
-    }, [variant, setFormData]);
+        if (product) setFormData({ ...formData, ...product });
+    }, [product, setFormData]);
 
-    const handleChange = (selector, index, key, value) => {
+    const onChangeHandler = (selector, index, key, value) => {
         value = parseFloat(value);
 
         if (isNaN(value)) {
             value = 0;
-        } else {
-            value = value;
         }
-
         const product = formData.product_variant[index];
         const currentStock = product.stock;
         const unitValue = product.unitValue;
@@ -74,9 +71,8 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
         let stockToAsign = 0;
 
         if (action === 'plus') {
-            stockToAsign = Math.floor(freeStock / product.unitValue) + product.stock;
+            stockToAsign = Math.floor(freeStock / Number(product.unitValue)) + Number(product.stock);
         }
-
         const { newFreeStock, newProductStock } = releaseOrAssign({
             freeStock,
             currentStock,
@@ -91,14 +87,15 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        if (freeStock === 0) {
-            handleSubmit(event);
+        if (freeStock > 0 && formData.reasons.trim().length === 0) {
+            setSubmitErrors({
+                ...submitErrors,
+                reasons: 'Debe proveer las razones del cambio arbitrario del stock',
+            });
         } else {
-            submitErrors['freeStock'] = 'Debe asignar el stock liberado';
-            setSubmitErrors({ ...submitErrors });
+            handleSubmit(event);
         }
     };
-    console.log(submitErrors);
 
     return (
         <Form onSubmit={submitHandler}>
@@ -128,21 +125,33 @@ const StockForm = ({ variant, handleClose, onSubmit }) => {
                         formData.product_variant.map((productVariant, index) => {
                             return (
                                 <VariantContainer key={productVariant.id}>
-                                    <Label>{variant.product.name + ' ' + productVariant.name}</Label>
+                                    <Label>{product.name + ' ' + productVariant.name}</Label>
                                     <NumberInput
                                         value={formData['product_variant'][index].stock}
-                                        onChange={(value) => handleChange('product_variant', index, 'stock', value)}
+                                        onChange={(value) => onChangeHandler('product_variant', index, 'stock', value)}
                                         onCtrlClick={(action) => ctrlClickHandler('product_variant', index, 'stock', action)}
                                     />
                                 </VariantContainer>
                             );
                         })}
                 </Variants>
+                {freeStock > 0 && (
+                    <div>
+                        <textarea
+                            style={{ minHeight: '50px' }}
+                            value={formData.reasons}
+                            placeholder='Escriba las razones del cambio arbitrario del stock...'
+                            name='reasons'
+                            onChange={handleChange}
+                        ></textarea>
+                    </div>
+                )}
             </BodyContainer>
             <FooterWrapper>
                 <ErrorContainer>
                     {printError('freeStock')}
                     {printError('stockLimit')}
+                    {printError('reasons')}
                 </ErrorContainer>
                 <FooterContainer>
                     <ButtonContainer color={colors.primary}>

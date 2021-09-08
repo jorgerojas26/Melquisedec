@@ -7,7 +7,7 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
     const [formData, setFormData] = useState(initialState);
     const [submitting, setSubmitting] = useState(false);
     const { errors, handleErrors, setErrors } = useFormError([]);
-    const [submitSuccess, setSubmitSuccess] = useState(false);
+
     let successMessage = submitSuccessMessage || {
         create: 'El recurso fue creado con éxito',
         edit: 'El recurso fue actualizado con éxito',
@@ -51,6 +51,7 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         const errors = await validateSchema(formData, schema);
         handleErrors(errors);
 
@@ -73,10 +74,9 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
                 if (response.error) {
                     handleErrors(response.error);
                 } else {
-                    setSubmitSuccess(true);
+                    setSubmitting(false);
                     onSubmitSuccess && onSubmitSuccess(successMessage[action]);
                 }
-                setSubmitting(false);
             }
         } else {
             setSubmitting(false);
@@ -91,7 +91,6 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
         setFormData,
         submitErrors: errors,
         setSubmitErrors: setErrors,
-        submitSuccess,
         printError,
         hasError,
     };

@@ -59,7 +59,7 @@ const Users = () => {
                     <TableContainer>
                         <UsersTable
                             onUserSelect={setSelectedUser}
-                            selectedRowID={selectedUser && selectedUser.id}
+                            selectedRows={selectedUser }
                             showNotification={showNotification}
                             shouldRefresh={CRUDAction === 'refresh'}
                         />

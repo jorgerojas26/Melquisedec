@@ -10,19 +10,9 @@ export const StyledMainWrapper = styled.label`
 
     border: 1px solid #999;
     border-radius: 4px;
-    padding: 25px 0 5px 0;
+    padding: 20px 0 5px 0;
 
     background: white;
-
-    min-width: 0px;
-    min-height: 0px;
-    max-width: 100%;
-    max-height: 100%;
-
-    overflow-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: pre-wrap;
 
     :focus-within {
         box-shadow: 0 0 0 2px ${colors.secondary};
@@ -63,8 +53,9 @@ export const StyledInput = styled.input`
     height: 100%;
     border: 0;
     outline: 0;
-    font-size: 16px;
-    padding: 0 10px;
+
+    font-size: 14px;
+    padding: 0 5px 0 5px;
 
     ${(props) => props.capitalize && { textTransform: 'capitalize' }}
 `;
@@ -76,10 +67,10 @@ export const StyledLabel = styled.label`
     color: rgb(91, 112, 131);
     position: absolute;
     pointer-events: none;
-    top: 5px;
+    top: 3px;
     left: 5px;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     transition: all 0.2s;
 `;

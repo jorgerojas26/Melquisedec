@@ -12,7 +12,6 @@ export const releaseOrAssign = ({ freeStock = 0, currentStock = 0, unitValue = 0
     } else if (value < currentStock) {
         newFreeStock = freeStock + releasingStock;
     } else if (value > currentStock && freeStock - releasingStock >= 0) {
-        console.log(freeStock);
         newFreeStock = freeStock - releasingStock;
     } else {
         newProductStock = currentStock;

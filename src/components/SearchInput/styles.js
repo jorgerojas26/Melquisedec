@@ -17,7 +17,6 @@ export const SuggestionBox = styled.div`
     top: 100%;
     max-height: 100px;
     width: 100%;
-    z-index: 1;
     overflow-y: auto;
     border-radius: 4px;
     box-shadow: rgba(101 119 134 / 20%) 0px 0px 15px, rgba(101 119 134 / 25%) 0px 0px 3px 1px;

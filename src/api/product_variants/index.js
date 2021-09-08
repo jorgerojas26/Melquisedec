@@ -11,6 +11,11 @@ export const getProductVariants = async ({ page, filter }) => {
     return response.data;
 };
 
+export const getProductVariantById = async (id) => {
+    const response = await axios.get(`${BASE_URL}/${id}`).catch((error) => error.response);
+    return response.data;
+};
+
 export const getRecentSupplyings = async ({ page, filter, count, product_variant_id }) => {
     let pageParam = page ? `?page=${page}` : '?';
     let filterParams = filter ? `&filter=${filter}` : '';

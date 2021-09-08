@@ -27,15 +27,21 @@ const Supplyings = () => {
     const handleSubmit = (submitMessage) => {
         showNotification('success', submitMessage, 2000);
         setCRUDAction('refresh');
+        setCRUDAction('create');
     };
 
     const handleDelete = async () => {
         const response = await deleteSupplying(selectedSupplying.id);
 
-        setCRUDAction('refresh');
+        refreshTable();
         setSelectedSupplying(null);
 
         return response;
+    };
+
+    const refreshTable = () => {
+        setCRUDAction('refresh');
+        setCRUDAction(null);
     };
 
     return (
@@ -47,13 +53,13 @@ const Supplyings = () => {
                 <L.TableContainer>
                     <SupplyingsTable
                         onSupplyingSelect={setSelectedSupplying}
-                        selectedRowID={selectedSupplying && selectedSupplying.id}
+                        selectedRows={selectedSupplying}
                         shouldRefresh={CRUDAction === 'refresh'}
                         showNotification={showNotification}
                     />
                 </L.TableContainer>
-                <Modal backdrop show={CRUDAction && CRUDAction !== 'refresh' ? true : false} handleClose={() => setCRUDAction(null)}>
-                    {(CRUDAction === 'create' || CRUDAction === 'edit') && (
+                <Modal backdrop show={CRUDAction ? true : false} handleClose={() => setCRUDAction(null)}>
+                    {(CRUDAction === 'create' || CRUDAction === 'edit' || CRUDAction === 'refresh') && (
                         <L.FormContainer>
                             <SupplyingForm
                                 onSubmit={handleSubmit}

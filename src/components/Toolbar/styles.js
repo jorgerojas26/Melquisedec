@@ -22,9 +22,9 @@ export const ButtonContainer = styled.div`
         color: white;
     }
 
-    background: ${(props) => props.color};
-
     :hover {
         opacity: 0.8;
     }
+
+    background: ${(props) => props.color};
 `;

@@ -7,7 +7,7 @@ import Table from 'components/Table';
 
 import { COLUMNS } from './columns.js';
 
-const ClientsTable = ({ onClientSelect, selectedRowID, shouldRefresh, showNotification }) => {
+const ClientsTable = ({ onClientSelect, selectedRows, shouldRefresh, showNotification }) => {
     const [page, setPage] = useState(1);
     const [filter, setFilter] = useState('');
 
@@ -24,20 +24,18 @@ const ClientsTable = ({ onClientSelect, selectedRowID, shouldRefresh, showNotifi
     }, [error, showNotification]);
 
     return (
-        <>
-            <Table
-                selectedRowID={selectedRowID}
-                onRowSelect={onClientSelect}
-                loading={loading}
-                data={data.records}
-                columns={memoizedColumns}
-                onFilter={setFilter}
-                filterPlaceholder='Buscar por id, nombre, cédula o teléfono'
-                onPaginate={setPage}
-                pageCount={data.pageCount}
-                capitalize={[1, 3]}
-            />
-        </>
+        <Table
+            selectedRows={selectedRows}
+            onRowSelect={onClientSelect}
+            loading={loading}
+            data={data.records}
+            columns={memoizedColumns}
+            onFilter={setFilter}
+            filterPlaceholder='Buscar por id, nombre, cédula o teléfono'
+            onPaginate={setPage}
+            pageCount={data.pageCount}
+            capitalize={[1, 3]}
+        />
     );
 };
 

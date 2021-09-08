@@ -66,7 +66,7 @@ const Categories = () => {
                     <TableContainer>
                         <CategoriesTable
                             shouldRefresh={CRUDAction === 'refresh'}
-                            selectedRowID={selectedCategory && selectedCategory.id}
+                            selectedRows={selectedCategory}
                             onCategorySelect={setSelectedCategory}
                             showNotification={showNotification}
                         />

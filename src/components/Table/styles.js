@@ -1,22 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from 'styles/theme';
 
 export const StyledFilterContainer = styled.div`
-    position: sticky;
-    left: 0;
-    right: 100%;
-    height: 50px;
-    z-index: 2;
+    flex: 1 0 50px;
 `;
 
 export const TableContainer = styled.div`
     overflow: auto;
+    max-height: 100%;
     scrollbar-width: none;
-    max-height: calc(100% - 100px);
-    @media (min-width: ${breakpoints.mobile}) {
-        max-height: calc(100% - 50px);
-    }
 `;
 
 export const StyledLoadingContainer = styled.div`
@@ -36,7 +29,7 @@ export const StyledLoadingContainer = styled.div`
 
     ${(props) =>
         !props.data && {
-            position: "static",
+            position: 'static',
         }}
 `;
 
@@ -49,8 +42,8 @@ export const StyledNoDataContainer = styled.div`
 export const StyledTable = styled.table`
     text-align: center;
     border-collapse: collapse;
-    width: 100%;
     padding-bottom: 5px;
+
     @media (min-width: ${breakpoints.mobile}) {
         border-bottom: 1px solid ${colors.shadow};
     }
@@ -59,9 +52,10 @@ export const StyledTable = styled.table`
 export const TD = styled.td`
     padding: 10px;
     font-size: 17px;
+
     ${(props) =>
         props.capitalize && {
-            textTransform: "capitalize",
+            textTransform: 'capitalize',
         }}
 `;
 
@@ -74,8 +68,8 @@ export const TH = styled.th`
     position: sticky;
     top: 0px;
 
-    background: ${colors.lightGray};
-    color: black;
+    background: ${colors.smokyBlack};
+    color: white;
 `;
 
 export const TR = styled.tr`
@@ -83,12 +77,18 @@ export const TR = styled.tr`
 
     ${(props) =>
         props.active && {
-            background: colors.primary + "!important",
-            color: "white",
+            background: colors.primary + '!important',
+            color: 'white',
+        }}
+
+    ${(props) =>
+        props.theme === 'dark' && {
+            background: colors.black,
+            color: 'white',
         }}
 
     :nth-child(2n + 0) {
-        background: rgba(0, 0, 0, 0.05);
+        background: ${(props) => (props.theme === 'light' ? 'rgba(0, 0, 0, 0.05)' : colors.smokyBlack)};
     }
 
     :hover {
@@ -104,11 +104,9 @@ export const TFoot = styled.tfoot``;
 export const TBody = styled.tbody``;
 
 export const PaginationContainer = styled.div`
-    position: fixed;
     align-items: center;
     margin-top: 10px;
-    bottom: 50px;
-    width: 100%;
+    flex: 1 0 50px;
 
     > ul,
     li {
@@ -144,8 +142,6 @@ export const PaginationContainer = styled.div`
     }
 
     @media (min-width: ${breakpoints.mobile}) {
-        position: sticky;
-        bottom: 0;
         align-items: flex-end;
     }
 `;

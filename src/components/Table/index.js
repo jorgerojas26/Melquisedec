@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react';
 import { useTable } from 'react-table';
 
 import Table from './Table';
 import TableFilterInput from 'components/TableFilterInput';
 import Pagination from 'components/Pagination';
+import { MinusCircle } from 'phosphor-react';
 
 import debounce from 'lodash.debounce';
 
@@ -10,21 +12,52 @@ const CustomTable = ({
     data = [],
     loading,
     columns = [],
-    onRowSelect,
-    selectedRowID,
-    onFilter,
     filterPlaceholder,
-    onPaginate,
     pageCount,
     capitalize,
+    async = true,
+    theme = 'light',
+    onFilter,
+    onRowSelect,
+    onPaginate,
+    onDeleteRow,
+    multiSelect,
+    selectedRows = [],
 }) => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+    const [selected, setSelected] = useState([]);
 
-    const handleClick = (row) => {
-        if (selectedRowID === row.id) {
-            onRowSelect(null);
-        } else {
-            onRowSelect(row);
+    useEffect(() => {
+        if (selectedRows && selectedRows.length > 0) {
+            setSelected(selectedRows);
+        } else if (selectedRows === null) {
+            setSelected([]);
+        }
+    }, [selectedRows]);
+
+    const handleClick = (event, row) => {
+        if (event.target.tagName !== 'BUTTON') {
+            const rowIsAlreadySelected = selected.some((r) => r.id === row.id);
+
+            if (multiSelect) {
+                let newSelectedRows = [];
+
+                if (!rowIsAlreadySelected) {
+                    newSelectedRows = [...selected, row];
+                } else {
+                    newSelectedRows = selected.filter((r) => r.id !== row.id);
+                }
+                setSelected(newSelectedRows);
+                onRowSelect(newSelectedRows);
+            } else {
+                if (!rowIsAlreadySelected) {
+                    setSelected([row]);
+                    onRowSelect(row);
+                } else {
+                    setSelected([]);
+                    onRowSelect(null);
+                }
+            }
         }
     };
 
@@ -48,6 +81,7 @@ const CustomTable = ({
                     <Table.Head>
                         {headerGroups.map((headerGroup) => (
                             <Table.TR {...headerGroup.getHeaderGroupProps()}>
+                                {onDeleteRow && <Table.TH></Table.TH>}
                                 {headerGroup.headers.map((column) => (
                                     <Table.TH {...column.getHeaderProps()}>{column.render('Header')}</Table.TH>
                                 ))}
@@ -59,15 +93,26 @@ const CustomTable = ({
                             prepareRow(row);
                             return (
                                 <Table.TR
-                                    active={selectedRowID === row.original.id}
+                                    theme={theme}
+                                    active={selected.some((r) => r.id === row.original.id)}
                                     {...row.getRowProps({
                                         onClick: onRowSelect
-                                            ? () => {
-                                                  handleClick(row.original);
+                                            ? (event) => {
+                                                  handleClick(event, row.original);
                                               }
                                             : null,
                                     })}
                                 >
+                                    {onDeleteRow && (
+                                        <Table.TD>
+                                            <button
+                                                onClick={() => onDeleteRow(row.original)}
+                                                style={{ padding: '5px 10px', background: 'red', cursor: 'pointer', borderRadius: '5px' }}
+                                            >
+                                                <MinusCircle color='white' />
+                                            </button>
+                                        </Table.TD>
+                                    )}
                                     {row.cells.map((cell, index) => {
                                         return (
                                             <Table.TD
@@ -84,14 +129,14 @@ const CustomTable = ({
                         })}
                     </Table.Body>
                 </Table>
-                {onPaginate && data.length > 0 && (
-                    <Table.PaginationContainer>
-                        <Pagination pageCount={pageCount} onPaginate={onPaginate} />
-                    </Table.PaginationContainer>
-                )}
             </Table.TableContainer>
+            {onPaginate && data.length > 0 && (
+                <Table.PaginationContainer>
+                    <Pagination pageCount={pageCount} onPaginate={onPaginate} />
+                </Table.PaginationContainer>
+            )}
             {loading && <Table.LoadingContainer data={data.length ? 1 : 0}>Cargando...</Table.LoadingContainer>}
-            {!data.length && !loading && <Table.NoDataContainer>No hay recursos en la base de datos</Table.NoDataContainer>}
+            {async && !data.length && !loading && <Table.NoDataContainer>No hay recursos en la base de datos</Table.NoDataContainer>}
         </>
     );
 };

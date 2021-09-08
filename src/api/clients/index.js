@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = '/api/clients';
 
 export const getClients = async ({ page, filter }) => {
-    let pageParam = page ? `?page=${page}` : '';
+    let pageParam = page ? `?page=${page}` : '?';
     let filterParams = filter ? `&filter=${filter}` : '';
 
     const response = await axios.get(BASE_URL + pageParam + filterParams).catch((error) => error.response);

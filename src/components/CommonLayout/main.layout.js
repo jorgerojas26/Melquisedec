@@ -1,34 +1,31 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from 'styles/theme';
 
 export const Wrapper = styled.div`
-    flex: 1;
+    height: 100%;
 `;
 
 export const SeparatorWrapper = styled.div`
     flex-direction: row;
-    flex: 1;
+    height: 100%;
 `;
 
 export const ContentContainer = styled.div`
     flex: 1;
-    overflow: hidden;
-
-    @media (min-width: ${breakpoints.mobile}) {
-        overflow-x: auto;
-    }
+    height: 100%;
 `;
 
 export const ToolbarContainer = styled.div`
-    height: 50px;
-
     background: ${colors.extraLightPrimary};
+
+    div {
+        height: 50px;
+    }
 `;
 
 export const TableContainer = styled.div`
-    flex: 1 1 auto;
-    overflow: hidden;
+    max-height: 500px;
 `;
 
 export const FormContainer = styled.div`

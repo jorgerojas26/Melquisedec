@@ -6,7 +6,7 @@ import { getSupplyings } from 'api/supplyings';
 
 import { COLUMNS } from './columns';
 
-const SupplyingsTable = ({ onSupplyingSelect, selectedRowID, shouldRefresh, showNotification }) => {
+const SupplyingsTable = ({ onSupplyingSelect, selectedRows, shouldRefresh, showNotification }) => {
     const [page, setPage] = useState(1);
     const [filter, setFilter] = useState('');
     const memoizedColumns = useMemo(() => COLUMNS || [], []);
@@ -22,7 +22,7 @@ const SupplyingsTable = ({ onSupplyingSelect, selectedRowID, shouldRefresh, show
 
     return (
         <Table
-            selectedRowID={selectedRowID}
+            selectedRows={selectedRows}
             onRowSelect={onSupplyingSelect}
             loading={loading}
             data={data.records}

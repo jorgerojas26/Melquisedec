@@ -1,25 +1,13 @@
 import { useEffect, useState, useRef } from 'react';
 
-import {
-    Form,
-    HeaderContainer,
-    BodyContainer,
-    FooterWrapper,
-    FooterContainer,
-    InputContainer,
-    InlineContainer,
-    ButtonContainer,
-    CloseButtonContainer,
-    TitleContainer,
-    ErrorContainer,
-    TableContainer,
-} from 'components/CommonLayout/form.layout';
+import * as L from 'components/CommonLayout/form.layout';
 
 import Button from 'components/Button';
 import { colors } from 'styles/theme';
 import { BookBookmark, XCircle, X } from 'phosphor-react';
 import { useForm } from 'hooks/useForm';
 import { createSupplying, updateSupplying } from 'api/supplyings';
+import { getRecentSupplyings } from 'api/product_variants';
 import NumericInput from 'react-number-format';
 
 import supplyingSchema from 'validations/schemas/supplying';
@@ -43,9 +31,12 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
         schema: supplyingSchema,
         onSubmitSuccess: onSubmit,
     });
+    const [selectedSupplier, setSelectedSupplier] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
+    const [loadingRecentSupplyings, setLoadingRecentSupplyings] = useState(false);
     const [recentSupplyings, setRecentSupplyings] = useState(null);
-    const [activeSupplying, setActiveSupplying] = useState(supplying);
+    const [productSearchDisabled, setProductSearchDisabled] = useState(false);
 
     const supplierRef = useRef(null);
     const productRef = useRef(null);
@@ -53,58 +44,99 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
     const quantityRef = useRef(null);
 
     useEffect(() => {
-        if (activeSupplying)
+        if (supplying) {
+            fetchRecentSupplyings(supplying.product_variant.id);
             setFormData({
-                id: activeSupplying.id,
-                supplierId: activeSupplying.supplier.id,
-                product_variant_id: activeSupplying.product_variant.id,
-                buyPrice: activeSupplying.buyPrice,
-                quantity: activeSupplying.quantity,
+                id: supplying.id,
+                supplierId: supplying.supplier.id,
+                product_variant_id: supplying.product_variant.id,
+                buyPrice: supplying.buyPrice,
+                quantity: supplying.quantity,
             });
-    }, [activeSupplying, setFormData]);
-
-    useEffect(() => {
-        if (recentSupplyings && recentSupplyings.length > 0 && action === 'create') {
-            setActiveSupplying(recentSupplyings[0]);
+            setSelectedProduct(supplying.product_variant);
+            setSelectedSupplier(supplying.supplier);
         }
-    }, [recentSupplyings]);
+    }, [supplying, setFormData]);
+
+    const fetchRecentSupplyings = async (product_variant_id) => {
+        setLoadingRecentSupplyings(true);
+        setProductSearchDisabled(true);
+        const response = await getRecentSupplyings({ page: 1, count: 5, product_variant_id });
+        setRecentSupplyings(response.records);
+        setLoadingRecentSupplyings(false);
+        setProductSearchDisabled(false);
+        return response;
+    };
+
+    const onProductSelect = async (product) => {
+        if (!loadingRecentSupplyings && action === 'create') {
+            const response = await fetchRecentSupplyings(product.id);
+
+            if (response && response.records.length > 0) {
+                console.log('there are recent supplyings');
+                const mostRecentSupplying = response.records[0];
+                setFormData({
+                    ...formData,
+                    product_variant_id: product.id,
+                    buyPrice: mostRecentSupplying.buyPrice,
+                    quantity: mostRecentSupplying.quantity,
+                });
+                setTimeout(() => quantityRef.current.focus());
+            } else {
+                console.log('no records');
+                setFormData({
+                    ...formData,
+                    product_variant_id: product.id,
+                    buyPrice: '',
+                    quantity: '',
+                });
+                setTimeout(() => buyPriceRef.current.focus());
+            }
+            setSelectedProduct(product);
+        }
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        setTimeout(() => productRef.current.focus());
+        handleSubmit(event);
+    };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <HeaderContainer>
-                <CloseButtonContainer>
+        <L.Form onSubmit={submitHandler}>
+            <L.HeaderContainer>
+                <L.CloseButtonContainer>
                     <Button onClick={handleClose}>
                         <X />
                     </Button>
-                </CloseButtonContainer>
-                <TitleContainer>{action === 'create' ? 'Crear abastecimiento' : 'Editar abastecimiento'}</TitleContainer>
-            </HeaderContainer>
-            <BodyContainer>
-                <InputContainer>
+                </L.CloseButtonContainer>
+                <L.TitleContainer>{action === 'create' ? 'Crear abastecimiento' : 'Editar abastecimiento'}</L.TitleContainer>
+            </L.HeaderContainer>
+            <L.BodyContainer>
+                <L.InputContainer>
                     <SupplierSearch
                         innerRef={supplierRef}
-                        onSelect={(selectedSupplierId) => {
-                            setFormData({ ...formData, supplierId: selectedSupplierId });
+                        onSelect={(supplier) => {
+                            setSelectedSupplier(supplier);
+                            setFormData({ ...formData, supplierId: supplier.id });
                             productRef.current.focus();
                         }}
-                        value={activeSupplying.supplier}
+                        value={selectedSupplier}
                         autoFocus
                     />
                     {printError('supplierId')}
-                </InputContainer>
-                <InputContainer>
+                </L.InputContainer>
+                <L.InputContainer>
                     <ProductSearch
+                        isDisabled={productSearchDisabled}
                         innerRef={productRef}
-                        onSelect={(selectedProductId) => {
-                            setFormData({ ...formData, product_variant_id: selectedProductId });
-                            quantityRef.current.focus();
-                        }}
-                        value={activeSupplying.product_variant}
+                        onSelect={onProductSelect}
+                        value={selectedProduct}
                     />
                     {printError('product_variant_id')}
-                </InputContainer>
-                <InlineContainer>
-                    <InputContainer>
+                </L.InputContainer>
+                <L.InlineContainer>
+                    <L.InputContainer>
                         <LabeledInput
                             innerRef={buyPriceRef}
                             onValueChange={({ floatValue }) => handleNumericInput(floatValue, 'buyPrice')}
@@ -116,8 +148,8 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                             required
                         />
                         {printError('buyPrice')}
-                    </InputContainer>
-                    <InputContainer>
+                    </L.InputContainer>
+                    <L.InputContainer>
                         <LabeledInput
                             innerRef={quantityRef}
                             onValueChange={({ floatValue }) => handleNumericInput(floatValue, 'quantity')}
@@ -128,35 +160,33 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                             required
                         />
                         {printError('quantity')}
-                    </InputContainer>
-                </InlineContainer>
-                {formData.product_variant_id && (
-                    <>
-                        <TableContainer>
-                            <h4>Abastecimientos recientes</h4>
-                            <RecentSupplyingsTable product_variant_id={formData.product_variant_id} onLoad={setRecentSupplyings} />
-                        </TableContainer>
-                    </>
+                    </L.InputContainer>
+                </L.InlineContainer>
+                {selectedProduct && (
+                    <L.TableContainer>
+                        <h4>Abastecimientos recientes</h4>
+                        <RecentSupplyingsTable supplyings={recentSupplyings || []} loading={loadingRecentSupplyings} />
+                    </L.TableContainer>
                 )}
-            </BodyContainer>
-            <FooterWrapper>
-                <ErrorContainer>{printError('undefined')}</ErrorContainer>
-                <FooterContainer>
-                    <ButtonContainer color={colors.primary}>
+            </L.BodyContainer>
+            <L.FooterWrapper>
+                <L.ErrorContainer>{printError('undefined')}</L.ErrorContainer>
+                <L.FooterContainer>
+                    <L.ButtonContainer color={colors.primary}>
                         <Button type='submit'>
                             <BookBookmark size={24} />
                             Enviar
                         </Button>
-                    </ButtonContainer>
-                    <ButtonContainer color='red'>
+                    </L.ButtonContainer>
+                    <L.ButtonContainer color='red'>
                         <Button onClick={handleClose}>
                             <XCircle size={24} />
                             Cancelar
                         </Button>
-                    </ButtonContainer>
-                </FooterContainer>
-            </FooterWrapper>
-        </Form>
+                    </L.ButtonContainer>
+                </L.FooterContainer>
+            </L.FooterWrapper>
+        </L.Form>
     );
 };
 export default SupplyingForm;

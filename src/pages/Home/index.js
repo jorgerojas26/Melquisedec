@@ -1,14 +1,6 @@
-import {
-    Wrapper,
-    Header,
-    Main,
-    MainHeader,
-    HeaderTitleContainer,
-    Heading,
-    DolarValueContainer,
-    MainBodyWrapper,
-    MainBody,
-} from './layout.styles';
+import { HeaderTitleContainer, Heading, DolarValueContainer } from './layout.styles';
+
+import * as L from './new-layout.styles';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -22,6 +14,7 @@ import CategoriesPage from 'pages/Categories';
 import ProductsPage from 'pages/Products';
 import Button from 'components/Button';
 import SupplyingsPage from 'pages/Supplyings';
+import SalesControl from 'pages/SalesControl';
 
 import { useRedirectToActiveLocation } from 'hooks/redirect';
 import { useDolarValue } from 'hooks/useDolarValue';
@@ -45,17 +38,31 @@ const HomePage = () => {
     };
 
     return (
-        <Wrapper>
-            <Header>
+        <L.Wrapper>
+            <L.Header>
                 <Navbar />
-            </Header>
-            <Main>
-                <MainHeader>
+            </L.Header>
+            <L.MainWrapper>
+                <L.Main>
+                    <Switch>
+                        <Route path='/control-de-ventas' component={SalesControl}></Route>
+                        <Route path='/inventario'>Hola</Route>
+                        <Route path='/deudas'>Hola</Route>
+                        <Route path='/categorias' component={CategoriesPage} />
+                        <Route path='/clientes' component={ClientsPage} />
+                        <Route path='/productos' component={ProductsPage} />
+                        <Route path='/ventas'>Hola</Route>
+                        <Route path='/abastecimientos' component={SupplyingsPage} />
+                        <Route path='/proveedores' component={SuppliersPage} />
+                        <Route path='/usuarios' component={UsersPage} />
+                    </Switch>
+                </L.Main>
+                <L.MainHeader>
                     <HeaderTitleContainer>
                         <Heading>{localStorage.getItem('activeLocation')}</Heading>
                     </HeaderTitleContainer>
                     <DolarValueContainer>
-                        <h3>Valor del dolar:</h3>
+                        <h3>Tasa del dolar:</h3>
                         <span>
                             {(dolarValue && dolarValue.toLocaleString('es-VE')) || (
                                 <span style={{ color: 'red' }}>No hay valor asignado</span>
@@ -63,26 +70,10 @@ const HomePage = () => {
                         </span>
                         <Button onClick={handleDolarChange}>Editar</Button>
                     </DolarValueContainer>
-                </MainHeader>
-                <MainBodyWrapper>
-                    <MainBody>
-                        <Switch>
-                            <Route path='/control-de-ventas'>Hola</Route>
-                            <Route path='/inventario'>Hola</Route>
-                            <Route path='/deudas'>Hola</Route>
-                            <Route path='/categorias' component={CategoriesPage} />
-                            <Route path='/clientes' component={ClientsPage} />
-                            <Route path='/productos' component={ProductsPage} />
-                            <Route path='/ventas'>Hola</Route>
-                            <Route path='/abastecimientos' component={SupplyingsPage} />
-                            <Route path='/proveedores' component={SuppliersPage} />
-                            <Route path='/usuarios' component={UsersPage} />
-                        </Switch>
-                    </MainBody>
-                </MainBodyWrapper>
-            </Main>
+                </L.MainHeader>
+            </L.MainWrapper>
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
-        </Wrapper>
+        </L.Wrapper>
     );
 };
 
