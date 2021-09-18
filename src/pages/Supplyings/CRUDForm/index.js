@@ -18,7 +18,7 @@ import LabeledInput from 'components/LabeledInput';
 import RecentSupplyingsTable from 'components/ModuleTables/RecentSupplyingsTable';
 
 const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
-    const { handleNumericInput, handleSubmit, formData, setFormData, printError, hasError } = useForm({
+    const { handleNumericInput, loading, handleSubmit, formData, setFormData, printError, hasError } = useForm({
         initialState: {
             supplierId: null,
             product_variant_id: null,
@@ -173,7 +173,7 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 <L.ErrorContainer>{printError('undefined')}</L.ErrorContainer>
                 <L.FooterContainer>
                     <L.ButtonContainer color={colors.primary}>
-                        <Button type='submit'>
+                        <Button loading={loading} type='submit'>
                             <BookBookmark size={24} />
                             Enviar
                         </Button>

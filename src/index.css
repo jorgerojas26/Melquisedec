@@ -30,3 +30,33 @@ body, html, #root {
 svg {
     pointer-events: none
 }
+
+.button--loading .button_text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button_text {
+    transition: all 0.2s;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

@@ -9,7 +9,7 @@ export const Form = styled.form`
 `;
 
 export const HeaderContainer = styled.div`
-    flex: 0 1 50px;
+    min-height: 50px;
     border-bottom: 1px solid ${colors.shadow};
 `;
 
@@ -22,13 +22,14 @@ export const TitleContainer = styled.div`
     flex: 1;
     align-items: flex-start;
     margin-left: 20px;
+    margin-bottom: 10px;
 
     font-size: 20px;
     font-weight: 700;
 `;
 
 export const BodyContainer = styled.div`
-    padding: 20px;
+    padding: 10px;
     gap: 10px;
     max-height: 450px;
     overflow-y: ${(props) => (props.overflow ? 'auto' : 'none')};
@@ -53,7 +54,7 @@ export const FooterContainer = styled.div`
 
 export const InlineContainer = styled.div`
     flex-direction: row;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     gap: 10px;
 
     div {

@@ -15,27 +15,15 @@ import ProductsPage from 'pages/Products';
 import Button from 'components/Button';
 import SupplyingsPage from 'pages/Supplyings';
 import SalesControl from 'pages/SalesControl';
+import CurrenciesPage from 'pages/Currencies';
 
 import { useRedirectToActiveLocation } from 'hooks/redirect';
-import { useDolarValue } from 'hooks/useDolarValue';
+import { useCurrencyRates } from 'hooks/useCurrencyRates';
 
 const HomePage = () => {
     useRedirectToActiveLocation();
 
-    const { dolarValue, notification, showNotification, updateDolarValue } = useDolarValue();
-
-    const handleDolarChange = () => {
-        let response = prompt('Ingrese el valor del dolar');
-
-        if (response !== null) {
-            if (isNaN(response) || response === '') {
-                showNotification('error', 'El valor del dólar debe ser numérico', 3000);
-            } else {
-                updateDolarValue(response);
-                window.location.reload();
-            }
-        }
-    };
+    const { currencyRates, notification } = useCurrencyRates(true);
 
     return (
         <L.Wrapper>
@@ -55,6 +43,7 @@ const HomePage = () => {
                         <Route path='/abastecimientos' component={SupplyingsPage} />
                         <Route path='/proveedores' component={SuppliersPage} />
                         <Route path='/usuarios' component={UsersPage} />
+                        <Route path='/tasas-de-cambio' component={CurrenciesPage} />
                     </Switch>
                 </L.Main>
                 <L.MainHeader>
@@ -64,11 +53,9 @@ const HomePage = () => {
                     <DolarValueContainer>
                         <h3>Tasa del dolar:</h3>
                         <span>
-                            {(dolarValue && dolarValue.toLocaleString('es-VE')) || (
-                                <span style={{ color: 'red' }}>No hay valor asignado</span>
-                            )}
+                            {(currencyRates && currencyRates['USD'] && currencyRates['USD'].value.toLocaleString()) ||
+                                'No hay valor asignado'}
                         </span>
-                        <Button onClick={handleDolarChange}>Editar</Button>
                     </DolarValueContainer>
                 </L.MainHeader>
             </L.MainWrapper>

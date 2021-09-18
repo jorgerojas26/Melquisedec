@@ -1,23 +1,39 @@
-import { Wrapper } from './styles';
 import * as L from '../styles';
 import NumericInput from 'react-number-format';
 import LabeledInput from 'components/LabeledInput';
-import { InputContainer } from 'components/CommonLayout/form.layout';
+import { useCurrencyRates } from 'hooks/useCurrencyRates';
 
-const Cash = ({ onChange }) => {
+const Cash = ({ inputValue, onChange, onDelete }) => {
+    const { currencyRates } = useCurrencyRates();
+
     return (
-        <Wrapper>
-            <L.NameContainer>Cash</L.NameContainer>
+        <L.Wrapper ischange={inputValue.isChange}>
+            <L.NameContainer onClick={onDelete}>Cash</L.NameContainer>
             <L.InputContainer>
-                <LabeledInput placeholder='Monto' thousandSeparator='.' decimalSeparator=',' as={NumericInput} />
+                <LabeledInput
+                    value={inputValue.amount || ''}
+                    onValueChange={({ floatValue }) => onChange(floatValue, 'amount')}
+                    placeholder={
+                        inputValue.currency && inputValue.currency === 'USD'
+                            ? `Monto - ${
+                                  currencyRates && currencyRates['SYSTEM_USD'] && currencyRates['SYSTEM_USD'].value
+                                      ? ((inputValue.amount || 0) * currencyRates['SYSTEM_USD'].value).toLocaleString()
+                                      : ''
+                              } Bs`
+                            : 'Monto'
+                    }
+                    thousandSeparator='.'
+                    decimalSeparator=','
+                    as={NumericInput}
+                />
             </L.InputContainer>
-            <L.InputContainer>
-                <select>
-                    <option>Bs</option>
-                    <option>$</option>
+            <L.SelectContainer>
+                <select value={inputValue.currency} onChange={(event) => onChange(event.target.value, 'currency')}>
+                    <option value='VES'>Bs</option>
+                    <option value='USD'>USD</option>
                 </select>
-            </L.InputContainer>
-        </Wrapper>
+            </L.SelectContainer>
+        </L.Wrapper>
     );
 };
 

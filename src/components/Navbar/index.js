@@ -14,6 +14,7 @@ import {
     ClipboardText,
     ShoppingCart,
     ShoppingCartSimple,
+    Money,
 } from 'phosphor-react';
 
 import Banner from 'components/shared/Banner';
@@ -39,6 +40,7 @@ const Navbar = () => {
                         <NavItem Icon={Package} title='Abastecimientos' to='/abastecimientos' dissapearonmobile />
                         <NavItem Icon={IdentificationCard} title='Proveedores' to='/proveedores' dissapearonmobile />
                         <NavItem Icon={User} title='Usuarios' to='/usuarios' dissapearonmobile />
+                        <NavItem Icon={Money} title='Tasas de cambio' to='/tasas-de-cambio' />
                     </Nav>
                 </NavContainer>
             </NavWrapper>

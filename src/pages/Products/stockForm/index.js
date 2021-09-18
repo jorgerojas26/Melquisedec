@@ -27,10 +27,11 @@ const StockForm = ({ product, handleClose, onSubmit }) => {
     const [freeStock, setFreeStock] = useState(0);
     const [stockTotal, setStockTotal] = useState(0);
 
-    const { formData, handleChange, handleNestedChange, setFormData, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
+    const { formData, handleChange, handleNestedChange, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
         initialState: {
             product_variant: [],
             reasons: '',
+            ...product,
         },
         action: 'edit',
         editResource: updateProduct,
@@ -44,10 +45,6 @@ const StockForm = ({ product, handleClose, onSubmit }) => {
             setStockTotal(total);
         }
     }, [product]);
-
-    useEffect(() => {
-        if (product) setFormData({ ...formData, ...product });
-    }, [product, setFormData]);
 
     const onChangeHandler = (selector, index, key, value) => {
         value = parseFloat(value);

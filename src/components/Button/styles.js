@@ -15,17 +15,18 @@ export const StyledButton = styled.button`
     min-width: 0px;
     min-height: 0px;
 
-    overflow-wrap: break-word;
-    overflow: hidden;
-    white-space: nowrap;
-
     :hover {
         opacity: 0.8;
     }
 
-    > svg {
-        margin-right: 5px;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    ${(props) => props.background && { background: props.background }}
+    ${(props) => props.color && { color: props.color }}
 
     ${(props) => props.disabled && { background: 'lightGrey', color: 'black !important', cursor: 'not-allowed' }}
 `;

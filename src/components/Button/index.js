@@ -1,9 +1,9 @@
 import { StyledButton } from './styles';
 
-const Button = ({ children, disabled, ...rest }) => {
+const Button = ({ children, disabled, loading, ...rest }) => {
     return (
-        <StyledButton type='button' disabled={disabled} {...rest}>
-            {children}
+        <StyledButton className={loading ? 'button--loading' : ''} type='button' disabled={disabled} {...rest}>
+            <span className='button_text'>{children}</span>
         </StyledButton>
     );
 };

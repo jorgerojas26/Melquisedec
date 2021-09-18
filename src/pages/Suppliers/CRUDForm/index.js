@@ -21,7 +21,7 @@ import { createSupplier, updateSupplier } from 'api/suppliers';
 import supplierSchema from 'validations/schemas/supplier';
 
 const SupplierForm = ({ supplier, action, handleClose, onSubmit }) => {
-    const { handleChange, handleNumericInput, handleSubmit, formData, printError, hasError } = useForm({
+    const { handleChange, loading, handleNumericInput, handleSubmit, formData, printError, hasError } = useForm({
         initialState: {
             name: '',
             rif: '',
@@ -107,7 +107,7 @@ const SupplierForm = ({ supplier, action, handleClose, onSubmit }) => {
                 <ErrorContainer>{printError('undefined')}</ErrorContainer>
                 <FooterContainer>
                     <ButtonContainer color={colors.primary}>
-                        <Button type='submit'>
+                        <Button loading={loading} type='submit'>
                             <BookBookmark size={24} />
                             Enviar
                         </Button>

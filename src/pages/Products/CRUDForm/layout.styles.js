@@ -13,7 +13,7 @@ export const VariantsContainer = styled.div`
 
 export const InputsWrapper = styled.div`
     display: grid;
-    grid-template-columns: 4fr 2fr 0.5fr;
+    grid-template-columns: 3fr 3fr 0.5fr;
     grid-auto-columns: auto;
     gap: 10px;
 `;
@@ -21,7 +21,7 @@ export const InputsWrapper = styled.div`
 export const InputsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 8px;
 
     div {
@@ -70,4 +70,24 @@ export const ProductImageContainer = styled.div`
     background-position-x: center;
     background-position-y: center;
     background-size: 48px;
+`;
+
+export const VariantNameContainer = styled.div`
+    grid-column: 1/3;
+`;
+
+export const PriceContainer = styled.div`
+    grid-row: 2;
+    grid-column: 1/1;
+    input {
+        text-align: right;
+    }
+`;
+
+export const UnitValueContainer = styled.div`
+    grid-row: 2;
+    grid-column: 2/2;
+    input {
+        text-align: right;
+    }
 `;

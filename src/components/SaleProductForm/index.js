@@ -7,11 +7,12 @@ import { getProductVariantById } from 'api/product_variants';
 import Notification from 'components/Notification';
 import { useNotification } from 'hooks/notification';
 import getProductName from 'utils/getProductName';
-import { useDolarValue } from 'hooks/useDolarValue';
+import { useCurrencyRates } from 'hooks/useCurrencyRates';
 
 const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
-    const { dolarValue } = useDolarValue();
+    const { currencyRates } = useCurrencyRates(false);
 
+    const [loading, setLoading] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const { notification, showNotification } = useNotification();
@@ -32,7 +33,7 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (!dolarValue) {
+        if (!currencyRates) {
             showNotification('error', 'Debe asignar el valor del dolar');
             return;
         }
@@ -49,18 +50,22 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
             return;
         }
 
-        onSubmit({
-            ...product,
-            name: getProductName(product),
-            price: Number(product.price),
-            quantity,
-            profitPercent: Number(product.profitPercent),
-            stock: Number(product.stock),
-        });
+        if (!loading) {
+            setLoading(true);
+            onSubmit({
+                ...product,
+                name: getProductName(product),
+                price: Number(product.price),
+                quantity,
+                profitPercent: Number(product.profitPercent),
+                stock: Number(product.stock),
+            });
+            setLoading(false);
 
-        setQuantity(1);
-        setSelectedProduct(null);
-        productSearchRef.current.focus();
+            setQuantity(1);
+            setSelectedProduct(null);
+            productSearchRef.current.focus();
+        }
     };
 
     const onProductSelect = (product, action) => {
@@ -73,7 +78,7 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
             <h4>Producto</h4>
             <h4>Cantidad</h4>
             <label></label>
-            <ProductSearch innerRef={productSearchRef} value={selectedProduct} onSelect={onProductSelect} autoFocus />
+            <ProductSearch hideOutOfStock innerRef={productSearchRef} value={selectedProduct} onSelect={onProductSelect} autoFocus />
             <L.QuantityInput
                 style={{ textAlign: 'center', fontSize: '16px' }}
                 onFocus={(event) => {
@@ -83,7 +88,9 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
                 onValueChange={(values) => setQuantity(values.floatValue)}
                 value={quantity}
             />
-            <Button type='submit'>Enviar</Button>
+            <Button loading={loading} type='submit'>
+                Enviar
+            </Button>
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </L.FormContainer>
     );

@@ -3,9 +3,19 @@ import { useFormError } from 'hooks/formError';
 import { ErrorAlert } from 'components/CommonLayout/form.layout';
 import validateSchema from 'utils/validateSchema';
 
-export const useForm = ({ initialState, action, createResource, editResource, schema, onSubmitSuccess, submitSuccessMessage }) => {
+export const useForm = ({
+    initialState,
+    action,
+    createResource,
+    editResource,
+    deleteResource,
+    schema,
+    onSubmitSuccess,
+    submitSuccessMessage,
+    onDeleteSuccess,
+}) => {
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState(initialState);
-    const [submitting, setSubmitting] = useState(false);
     const { errors, handleErrors, setErrors } = useFormError([]);
 
     let successMessage = submitSuccessMessage || {
@@ -51,15 +61,14 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         const errors = await validateSchema(formData, schema);
         handleErrors(errors);
 
         if (!errors.length) {
             let response = {};
 
-            if (!submitting) {
-                setSubmitting(true);
+            if (!loading) {
+                setLoading(true);
                 try {
                     if (action === 'create') {
                         response = await createResource(formData);
@@ -68,30 +77,45 @@ export const useForm = ({ initialState, action, createResource, editResource, sc
                     }
                 } catch (error) {
                     console.log(error);
-                    setSubmitting(false);
                 }
 
                 if (response.error) {
                     handleErrors(response.error);
                 } else {
-                    setSubmitting(false);
                     onSubmitSuccess && onSubmitSuccess(successMessage[action]);
                 }
+                setLoading(false);
             }
         } else {
-            setSubmitting(false);
+            setLoading(false);
         }
     };
+
+    const handleDelete = async (id) => {
+        if (deleteResource) {
+            const response = await deleteResource(id);
+
+            if (response.error) {
+                handleErrors(response.error);
+            } else {
+                onDeleteSuccess();
+            }
+        }
+    };
+
     return {
+        loading,
         handleNestedChange,
         handleChange,
         handleNumericInput,
         handleSubmit,
+        handleDelete,
         formData,
         setFormData,
         submitErrors: errors,
         setSubmitErrors: setErrors,
         printError,
         hasError,
+        onDeleteSuccess,
     };
 };

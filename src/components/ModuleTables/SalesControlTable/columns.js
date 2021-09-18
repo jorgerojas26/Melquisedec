@@ -17,7 +17,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.other_currency_prices.VES}
+                    value={row.converted_price.SYSTEM_USD}
                 />
             );
         },
@@ -35,7 +35,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.other_currency_prices.VES * row.quantity}
+                    value={row.converted_price.SYSTEM_USD * row.quantity}
                 />
             );
         },

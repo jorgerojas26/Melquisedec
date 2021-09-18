@@ -7,7 +7,16 @@ import LabeledInput from 'components/LabeledInput';
 import { InputContainer } from 'components/CommonLayout/form.layout';
 
 import Button from 'components/Button';
-import { InputsWrapper, InputsContainer, FileInputContainer, VariantButtonContainer, ProductImageContainer } from './layout.styles';
+import {
+    InputsWrapper,
+    InputsContainer,
+    FileInputContainer,
+    VariantButtonContainer,
+    ProductImageContainer,
+    VariantNameContainer,
+    PriceContainer,
+    UnitValueContainer,
+} from './layout.styles';
 
 const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index, handleNestedChange, printError, hasError }) => {
     const addProductVariant = () => {
@@ -42,7 +51,7 @@ const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index
     return (
         <InputsWrapper>
             <InputsContainer>
-                <InputContainer>
+                <VariantNameContainer>
                     <LabeledInput
                         onChange={(event) => handleNestedChange('product_variant', index, 'name', event.target.value)}
                         placeholder='* Nombre'
@@ -54,8 +63,8 @@ const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index
                         active
                     />
                     {printError(`product_variant[${index}].name`)}
-                </InputContainer>
-                <InputContainer>
+                </VariantNameContainer>
+                <PriceContainer>
                     <LabeledInput
                         onValueChange={(values) => handleNestedChange('product_variant', index, 'price', values.floatValue)}
                         placeholder='* Precio $'
@@ -67,22 +76,25 @@ const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index
                         active
                     />
                     {printError(`product_variant[${index}].price`)}
-                </InputContainer>
+                </PriceContainer>
                 <InputContainer>
+                    {/*
                     <LabeledInput
-                        placeholder='% Ganancia'
-                        //onValueChange={(values) => handleNestedChange('product_variant', index, 'profitPercent', values.floatValue)}
-                        value={product_variant.profitPercent}
-                        allowDecimalSeparators
-                        as={NumberFormatInput}
-                        errorborder={hasError(`product_variant[${index}].profitPercent`)}
-                        active
-                        disabled
-                        title='No se puede editar'
+                    placeholder='% Ganancia'
+                    //onValueChange={(values) => handleNestedChange('product_variant', index, 'profitPercent', values.floatValue)}
+                    value={product_variant.profitPercent}
+                    allowDecimalSeparators
+                    as={NumberFormatInput}
+                    errorborder={hasError(`product_variant[${index}].profitPercent`)}
+                    active
+                    disabled
+                    title='No se puede editar'
                     />
                     {printError(`product_variant[${index}].profitPercent`)}
+
+                    */}
                 </InputContainer>
-                <InputContainer>
+                <UnitValueContainer>
                     <LabeledInput
                         placeholder='* Valor Unidad'
                         onValueChange={(values) => handleNestedChange('product_variant', index, 'unitValue', values.floatValue)}
@@ -93,7 +105,7 @@ const VariantForm = ({ CRUDAction, formData, setFormData, product_variant, index
                         active
                     />
                     {printError(`product_variant[${index}].unitValue`)}
-                </InputContainer>
+                </UnitValueContainer>
             </InputsContainer>
             <FileInputContainer>
                 <LabeledInput

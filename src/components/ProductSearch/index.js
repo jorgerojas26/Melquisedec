@@ -3,8 +3,9 @@ import SearchInput from 'components/SearchInput';
 import { getProductVariants } from 'api/product_variants';
 import getProductName from 'utils/getProductName';
 
-const ProductSearch = ({ innerRef, value, autoFocus = false, isDisabled, onSelect }) => {
+const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isDisabled, onSelect }) => {
     const [selectedProduct, setSelectedProduct] = useState();
+
     useEffect(() => {
         if (value) {
             setSelectedProduct({ label: getProductName(value), value });
@@ -14,8 +15,11 @@ const ProductSearch = ({ innerRef, value, autoFocus = false, isDisabled, onSelec
     }, [value]);
 
     const loadProductVariants = async (inputValue) => {
-        const products = await getProductVariants({ page: 0, filter: inputValue });
+        let products = await getProductVariants({ page: 0, filter: inputValue });
+
         if (products && products.records.length > 0) {
+            if (hideOutOfStock) products.records = products.records.filter((p) => p.stock > 0);
+
             const records = products.records.map((record) => {
                 const product = {
                     label: getProductName(record),
@@ -30,7 +34,7 @@ const ProductSearch = ({ innerRef, value, autoFocus = false, isDisabled, onSelec
 
     const handleSelect = (option, { action }) => {
         if (action === 'select-option') {
-            setSelectedProduct({ label: option.value.name, value });
+            setSelectedProduct({ label: getProductName(option.value), value });
             onSelect(option.value, action);
         } else if (action === 'clear') {
             setSelectedProduct(null);
@@ -49,7 +53,7 @@ const ProductSearch = ({ innerRef, value, autoFocus = false, isDisabled, onSelec
             isDisabled={isDisabled}
             styles={{
                 option: (provided, state) => {
-                    const stock = Number(state.data.value.stock);
+                    const stock = state.data.value.stock;
                     const color = stock ? 'green' : 'red';
 
                     return {

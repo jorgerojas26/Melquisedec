@@ -11,7 +11,7 @@ export const colors = {
     extraLightPrimary: 'rgba(111,156,129, 0.2)',
     secondary: '#FA7612',
     lightSecondary: '#FA8B00',
-    darkerSecondary: '#FF7400',
+    darkerSecondary: '#cd5700',
     lightGray: '#AAB8C2',
     extraLightGray: '#E1E8ED',
     superLightGray: '#F5F8FA',

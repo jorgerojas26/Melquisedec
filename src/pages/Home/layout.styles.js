@@ -95,15 +95,6 @@ export const DolarValueContainer = styled.div`
         color: ${colors.smokyBlack};
         margin: 0;
     }
-
-    button {
-        background: ${colors.secondary};
-        border-radius: 16px;
-        padding: 10px 20px;
-        color: white;
-        font-weight: 600;
-        font-size: 14px;
-    }
 `;
 
 export const Heading = styled.span`

@@ -1,48 +1,89 @@
 import styled from 'styled-components';
-import { breakpoints } from 'styles/theme';
+import { colors, breakpoints } from 'styles/theme';
 
 export const MainContainer = styled.div`
-    flex: 1 1 100%;
+    height: 100%;
     border: 1px solid black;
     overflow-y: auto;
 `;
 
-export const InvoiceFormContainer = styled.div`
-    flex: 1 1 100%;
-`;
-
-export const InvoiceTotalContainer = styled.div`
-    flex: 1 0 auto;
-    justify-content: space-between;
-`;
-
 export const MetadataContainer = styled.div`
-    flex: 0 1 auto;
-    max-height: 300px;
+    flex: 0 0 40%;
 
-    h2 {
-        font-size: 16px;
-    }
-
-    @media (min-width: ${breakpoints.tablet}) {
+    @media (min-width: ${breakpoints.laptop}) {
         flex-direction: row;
-
-        h2 {
-            font-size: 24px;
-        }
+        flex: 0 0 auto;
+        max-height: 22%;
     }
+`;
+
+export const InvoiceFormContainer = styled.div`
+    flex: 1 0 60%;
+    overflow: auto;
+    max-height: 100%;
 `;
 
 export const ClientContainer = styled.div`
-    flex: 0 1 auto;
-
+    flex: 0 0 auto;
     border-bottom: 1px solid black;
+    gap: 5px;
+    padding-bottom: 10px;
 
-    @media (min-width: ${breakpoints.tablet}) {
-        border-right: 1px solid black;
-        border-bottom: 0;
-        flex: 1;
+    h2 {
+        margin: 5px 0 0 0;
     }
+
+    @media (min-width: ${breakpoints.mobile}) {
+        padding: 10px;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+        flex: 1 0 50%;
+        border-bottom: none;
+        border-right: 1px solid black;
+    }
+`;
+
+export const PaymentsContainer = styled.div`
+    flex: 1 1 50%;
+
+    border-top: 1px solid black;
+    gap: 5px;
+    overflow: auto;
+    padding-bottom: 10px;
+
+    h2 {
+        margin: 5px 0 0 0;
+    }
+
+    @media (min-width: ${breakpoints.mobile}) {
+        padding: 10px;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+        border-top: none;
+    }
+`;
+
+export const PaymentTitleContainer = styled.div`
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const AddPaymentContainer = styled.div`
+    flex-direction: row;
+    gap: 5px;
+`;
+
+export const InvoiceTotalContainer = styled.div`
+    flex: 0 1 auto;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    font-size: 16px;
+    font-weight: 800;
 `;
 
 export const ClientNameContainer = styled.div`
@@ -61,12 +102,6 @@ export const ClientPhoneNumberContainer = styled.div`
     @media (min-width: ${breakpoints.mobile}) {
         display: flex;
     }
-`;
-
-export const PaymentsContainer = styled.div`
-    flex: 1;
-    max-height: 250px;
-    overflow: auto;
 `;
 
 export const OrderDetailsContainer = styled.div`
@@ -94,41 +129,49 @@ export const TableContainer = styled.div`
 `;
 
 export const FooterContainer = styled.div`
-    margin: 10px;
-    gap: 10px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
     button {
-        padding: 5px 20px;
+        padding: 5px 10px;
         color: white;
         font-size: 16px;
         background: ${(props) => props.color || 'transparent'};
     }
-
-    @media (min-width: ${breakpoints.tablet}) {
-        flex-direction: row-reverse;
-    }
 `;
 
 export const ActionsContainer = styled.div`
-    gap: 10px;
-    flex-direction: row;
+    flex: 1;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    gap: 5px;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-bottom: 5px;
+    }
 `;
 
-export const TotalContainer = styled.div`
+export const TotalContainer = styled.fieldset`
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: end;
+    align-content: end;
+    border: 1px solid black;
+    padding: 2px;
+    height: 100%;
 
-    font-size: 16px;
-    font-weight: 800;
+    legend {
+        color: ${colors.primary};
+    }
 
     label {
         padding: 5px;
     }
 
     @media (min-width: ${breakpoints.tablet}) {
-        font-size: 26px;
+        font-size: 24px;
     }
 `;

@@ -1,17 +1,23 @@
-import { Wrapper } from './styles';
 import * as L from '../styles';
 import NumericInput from 'react-number-format';
 import LabeledInput from 'components/LabeledInput';
 
-const POS = ({ onChange }) => {
+const POS = ({ inputValue, onChange, onDelete }) => {
     return (
-        <Wrapper>
-            <L.NameContainer>POS</L.NameContainer>
+        <L.Wrapper ischange={inputValue.isChange}>
+            <L.NameContainer onClick={onDelete}>POS</L.NameContainer>
             <L.InputContainer>
-                <LabeledInput placeholder='Monto' thousandSeparator='.' decimalSeparator=',' as={NumericInput} />
+                <LabeledInput
+                    value={inputValue.amount || ''}
+                    onValueChange={({ floatValue }) => onChange(floatValue, 'amount')}
+                    placeholder='Monto'
+                    thousandSeparator='.'
+                    decimalSeparator=','
+                    as={NumericInput}
+                />
             </L.InputContainer>
             <L.CurrencyContainer>Bs</L.CurrencyContainer>
-        </Wrapper>
+        </L.Wrapper>
     );
 };
 

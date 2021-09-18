@@ -1,10 +1,10 @@
-import { useState, createContext } from "react";
+import { useState, createContext } from 'react';
 
 export const DolarContext = createContext(null);
 
 const DolarContextProvider = ({ children }) => {
-    const [dolarValue, setDolarValue] = useState();
+    const [currencyRates, setCurrencyRates] = useState();
 
-    return <DolarContext.Provider value={{ dolarValue, setDolarValue }}>{children}</DolarContext.Provider>;
+    return <DolarContext.Provider value={{ currencyRates, setCurrencyRates }}>{children}</DolarContext.Provider>;
 };
 export default DolarContextProvider;

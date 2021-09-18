@@ -32,11 +32,12 @@ const Supplyings = () => {
 
     const handleDelete = async () => {
         const response = await deleteSupplying(selectedSupplying.id);
-
-        refreshTable();
-        setSelectedSupplying(null);
-
-        return response;
+        if (response.error) {
+            showNotification('error', response.error.message);
+            setCRUDAction(null);
+        } else {
+            refreshTable();
+        }
     };
 
     const refreshTable = () => {

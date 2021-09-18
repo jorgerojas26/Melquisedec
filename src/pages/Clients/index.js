@@ -62,12 +62,7 @@ const Clients = () => {
             <SeparatorWrapper>
                 <ContentContainer>
                     <ToolbarContainer>
-                        <Toolbar
-                            recordSelected={selectedClient ? true : false}
-                            onCreate={handleCRUD}
-                            onEdit={handleCRUD}
-                            onDelete={handleCRUD}
-                        />
+                        <Toolbar recordSelected={selectedClient} onCreate={handleCRUD} onEdit={handleCRUD} onDelete={handleCRUD} />
                     </ToolbarContainer>
                     <TableContainer>
                         <ClientsTable

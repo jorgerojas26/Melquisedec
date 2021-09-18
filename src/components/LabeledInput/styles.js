@@ -10,6 +10,7 @@ export const StyledMainWrapper = styled.label`
 
     border: 1px solid #999;
     border-radius: 4px;
+    max-height: 100%;
     padding: 20px 0 5px 0;
 
     background: white;

@@ -22,8 +22,8 @@ const LabeledInput = ({
                 capitalize={capitalize}
                 value={value}
                 disabled={disabled}
-                as={as}
                 {...rest}
+                as={as}
             />
             <StyledLabel disabled={disabled}>{placeholder}</StyledLabel>
         </StyledMainWrapper>

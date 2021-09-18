@@ -19,8 +19,8 @@ export const COLUMNS = [
     },
     {
         Header: 'Precio VES',
-        accessor: 'other_currency_prices.VES',
-        id: 'other_currency_prices.VES',
+        accessor: 'converted_price.SYSTEM_USD',
+        id: 'converted_price.SYSTEM_USD',
         Cell: (props) => {
             return props.value ? props.value.toLocaleString('es-VE') : '0';
         },
