@@ -31,11 +31,8 @@ export const TableContainer = styled.div`
 export const FormContainer = styled.div`
     position: absolute;
     margin: auto;
-    top: 5%;
     left: 0;
     right: 0;
-
-    max-width: 90%;
 
     background: white;
 
@@ -45,17 +42,28 @@ export const FormContainer = styled.div`
 
     @media (min-width: ${breakpoints.mobile}) {
         top: 100px;
+        left: 70px;
         bottom: auto;
         max-width: 400px;
-        height: auto;
 
         ${(props) => {
             if (props.medium) {
                 return `
                     max-width: 650px;
                 `;
+            } else if (props.large) {
+                return `max-width: 800px`;
             }
         }}
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+        left: 275px;
+    }
+
+    @media (min-width: ${breakpoints.desktop}) {
+        left: 275px;
+        right: 350px;
     }
 `;
 

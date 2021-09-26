@@ -31,7 +31,7 @@ export const TitleContainer = styled.div`
 export const BodyContainer = styled.div`
     padding: 10px;
     gap: 10px;
-    max-height: 450px;
+    max-height: 550px;
     overflow-y: ${(props) => (props.overflow ? 'auto' : 'none')};
 
     h4,

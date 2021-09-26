@@ -65,16 +65,6 @@ export const PaymentsContainer = styled.div`
     }
 `;
 
-export const PaymentTitleContainer = styled.div`
-    flex-direction: row;
-    justify-content: space-between;
-`;
-
-export const AddPaymentContainer = styled.div`
-    flex-direction: row;
-    gap: 5px;
-`;
-
 export const InvoiceTotalContainer = styled.div`
     flex: 0 1 auto;
     flex-direction: row;
@@ -157,8 +147,10 @@ export const ActionsContainer = styled.div`
 export const TotalContainer = styled.fieldset`
     display: grid;
     grid-template-columns: 1fr auto;
-    justify-items: end;
-    align-content: end;
+
+    place-content: end;
+    place-items: end;
+
     border: 1px solid black;
     padding: 2px;
     height: 100%;

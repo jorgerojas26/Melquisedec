@@ -3,8 +3,8 @@ const Selector = ({ paymentList = [], onChange, value }) => {
         <select value={value} onChange={onChange}>
             {paymentList.map((payment, index) => {
                 return (
-                    <option key={index} value={payment.cod}>
-                        {payment.name}
+                    <option key={payment.id} value={payment.id}>
+                        {payment.display_name}
                     </option>
                 );
             })}

@@ -42,6 +42,10 @@ export const SelectContainer = styled.div`
         height: 100%;
         cursor: pointer;
     }
+
+    select:disabled {
+        opacity: 1;
+    }
 `;
 
 export const CurrencyContainer = styled.div`

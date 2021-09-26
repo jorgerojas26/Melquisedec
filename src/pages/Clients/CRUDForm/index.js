@@ -20,7 +20,7 @@ import { useForm } from 'hooks/useForm';
 import { createClient, updateClient } from 'api/clients';
 import clientSchema from 'validations/schemas/client';
 
-const ClientForm = ({ client, action, handleClose, onSubmit }) => {
+const ClientForm = ({ client, action, handleClose, onSubmit, autoFocus = 'name' }) => {
     const { handleChange, handleNumericInput, handleSubmit, formData, printError, hasError } = useForm({
         initialState: {
             name: '',
@@ -52,7 +52,7 @@ const ClientForm = ({ client, action, handleClose, onSubmit }) => {
                         placeholder='Nombre'
                         name='name'
                         value={formData.name}
-                        autoFocus
+                        autoFocus={autoFocus === 'name'}
                         capitalize
                         required
                         errorborder={hasError('name')}
@@ -65,6 +65,7 @@ const ClientForm = ({ client, action, handleClose, onSubmit }) => {
                         placeholder='Cédula'
                         name='cedula'
                         value={formData.cedula}
+                        autoFocus={autoFocus === 'cedula'}
                         thousandSeparator='.'
                         decimalSeparator=','
                         decimalScale={0}
@@ -80,6 +81,7 @@ const ClientForm = ({ client, action, handleClose, onSubmit }) => {
                         placeholder='Teléfono'
                         name='phoneNumber'
                         value={formData.phoneNumber}
+                        autoFocus={autoFocus === 'phoneNumber'}
                         format='( #### ) - ### - ####'
                         allowEmptyFormatting
                         mask='_'

@@ -11,14 +11,14 @@ export const COLUMNS = [
         Header: 'Valor en bolívares',
         accessor: 'value',
         Cell: ({ value }) => {
-            return value.toLocaleString();
+            return value ? value.toLocaleString() : '';
         },
     },
     {
         Header: 'Redondeo',
         accessor: 'rounding',
         Cell: ({ value }) => {
-            return value.toLocaleString();
+            return value ? value.toLocaleString() : '';
         },
     },
 ];

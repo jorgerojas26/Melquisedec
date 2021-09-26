@@ -22,6 +22,7 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
 
             const records = products.records.map((record) => {
                 const product = {
+                    key: record.id,
                     label: getProductName(record),
                     value: record,
                 };
@@ -54,7 +55,7 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
             styles={{
                 option: (provided, state) => {
                     const stock = state.data.value.stock;
-                    const color = stock ? 'green' : 'red';
+                    const color = stock > 0 ? 'green' : 'red';
 
                     return {
                         ...provided,

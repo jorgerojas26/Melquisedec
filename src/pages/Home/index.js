@@ -12,7 +12,6 @@ import UsersPage from 'pages/Users';
 import SuppliersPage from 'pages/Suppliers';
 import CategoriesPage from 'pages/Categories';
 import ProductsPage from 'pages/Products';
-import Button from 'components/Button';
 import SupplyingsPage from 'pages/Supplyings';
 import SalesControl from 'pages/SalesControl';
 import CurrenciesPage from 'pages/Currencies';

@@ -82,7 +82,7 @@ export const useForm = ({
                 if (response.error) {
                     handleErrors(response.error);
                 } else {
-                    onSubmitSuccess && onSubmitSuccess(successMessage[action]);
+                    onSubmitSuccess && onSubmitSuccess(successMessage[action], formData);
                 }
                 setLoading(false);
             }

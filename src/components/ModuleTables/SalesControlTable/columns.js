@@ -35,7 +35,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.converted_price.SYSTEM_USD * row.quantity}
+                    value={row.converted_price['SYSTEM_USD'] * row.quantity}
                 />
             );
         },

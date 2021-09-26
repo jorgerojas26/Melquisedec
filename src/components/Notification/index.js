@@ -7,7 +7,7 @@ const Notification = ({ type, children }) => {
 };
 
 const PortalNotification = ({ type, children }) => {
-    return ReactDOM.createPortal(<Notification type={type}>{children}</Notification>, document.getElementById('portal'));
+    return ReactDOM.createPortal(<Notification type={type}>{children}</Notification>, document.getElementById('modal-root'));
 };
 
 export default PortalNotification;

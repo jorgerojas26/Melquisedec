@@ -3,7 +3,7 @@ import POS from './POS';
 import Transfer from './Transfer';
 import Cash from './Cash';
 
-const PaymentMethods = { Selector, POS, Transfer, Cash };
+const PaymentMethods = { Selector, POS, Transfer, Cash, Paypal: 'div' };
 
 export const paymentList = [
     { cod: 'Cash', name: 'Efectivo' },

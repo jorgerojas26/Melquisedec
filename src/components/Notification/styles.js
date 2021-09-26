@@ -17,7 +17,7 @@ export const Container = styled.div`
     font-weight: 700;
     text-align: center;
     color: white;
-    z-index: 2;
+    z-index: 3;
 
     ${(props) => {
         if (props.type === 'success') {

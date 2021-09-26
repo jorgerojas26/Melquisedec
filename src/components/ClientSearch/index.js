@@ -1,11 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import SearchInput from 'components/SearchInput';
 import { getClients } from 'api/clients';
-import NumberInput from 'react-number-format';
 
-const ClientSearch = ({ size, value, autoFocus, onSelect }) => {
+const ClientSearch = ({ size, innerRef, value, autoFocus, onSelect, onCreate }) => {
     const [selectedClient, setSelectedClient] = useState();
-    const searchRef = useRef(null);
 
     useEffect(() => {
         if (value) setSelectedClient({ label: value.name, value });
@@ -15,14 +13,10 @@ const ClientSearch = ({ size, value, autoFocus, onSelect }) => {
         const clients = await getClients({ page: 1, filter: inputValue });
 
         if (clients && clients.records.length > 0) {
-            clients.records[0].debts = true;
             const records = clients.records.map((client) => {
                 const formattedClient = {
-                    label: [
-                        client.name,
-                        ' - ',
-                        <NumberInput displayType='text' thousandSeparator='.' decimalSeparator=',' value={client.cedula} />,
-                    ],
+                    key: client.id,
+                    label: `${client.name} - ${Number(client.cedula).toLocaleString()}`,
                     value: client,
                 };
                 return formattedClient;
@@ -44,13 +38,15 @@ const ClientSearch = ({ size, value, autoFocus, onSelect }) => {
 
     return (
         <SearchInput
-            innerRef={searchRef}
+            onCreateOption={onCreate}
+            innerRef={innerRef}
             loadOptions={loadClients}
+            defaultOptions={false}
             placeholder='Cliente'
             value={selectedClient}
             onSelect={handleSelect}
             autoFocus={autoFocus}
-            isError={selectedClient && selectedClient.value.debts}
+            isError={selectedClient && selectedClient.value.sale && selectedClient.value.sale.length > 0}
             size={size}
         />
     );

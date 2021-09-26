@@ -3,7 +3,7 @@ import NumericInput from 'react-number-format';
 import LabeledInput from 'components/LabeledInput';
 import { useCurrencyRates } from 'hooks/useCurrencyRates';
 
-const Cash = ({ inputValue, onChange, onDelete }) => {
+const Cash = ({ inputValue, onChange, onDelete, disabled }) => {
     const { currencyRates } = useCurrencyRates();
 
     return (
@@ -12,23 +12,25 @@ const Cash = ({ inputValue, onChange, onDelete }) => {
             <L.InputContainer>
                 <LabeledInput
                     value={inputValue.amount || ''}
-                    onValueChange={({ floatValue }) => onChange(floatValue, 'amount')}
+                    onValueChange={({ floatValue }) => onChange && onChange(floatValue, 'amount')}
                     placeholder={
                         inputValue.currency && inputValue.currency === 'USD'
                             ? `Monto - ${
-                                  currencyRates && currencyRates['SYSTEM_USD'] && currencyRates['SYSTEM_USD'].value
-                                      ? ((inputValue.amount || 0) * currencyRates['SYSTEM_USD'].value).toLocaleString()
+                                  currencyRates && currencyRates['USD'] && currencyRates['USD'].value
+                                      ? ((inputValue.amount || 0) * currencyRates['USD'].value).toLocaleString()
                                       : ''
                               } Bs`
                             : 'Monto'
                     }
                     thousandSeparator='.'
                     decimalSeparator=','
+                    disabled={disabled}
+                    autoFocus
                     as={NumericInput}
                 />
             </L.InputContainer>
             <L.SelectContainer>
-                <select value={inputValue.currency} onChange={(event) => onChange(event.target.value, 'currency')}>
+                <select value={inputValue.currency} onChange={(event) => onChange(event.target.value, 'currency')} disabled={disabled}>
                     <option value='VES'>Bs</option>
                     <option value='USD'>USD</option>
                 </select>
