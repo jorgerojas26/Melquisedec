@@ -21,5 +21,5 @@ export const usePaginatedResource = ({ page, filter, fetching, count, fetchOnMou
         if (fetchOnMount) fetchResource();
     }, [page, filter, fetchResource, count, fetchOnMount]);
 
-    return { data, loading, error, fetchResource };
+    return { data, setData, loading, error, fetchResource };
 };

@@ -3,7 +3,9 @@ import NumberFormat from 'react-number-format';
 export const COLUMNS = [
     {
         Header: 'Producto',
-        accessor: 'name',
+        accessor: (row) => {
+            return row.name || row.product_variant.name;
+        },
         minWidth: 10,
         maxWidth: 20,
         width: 15,
@@ -17,7 +19,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.converted_price.SYSTEM_USD}
+                    value={row.converted_price.PRICE_VES}
                 />
             );
         },
@@ -35,7 +37,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.converted_price['SYSTEM_USD'] * row.quantity}
+                    value={row.converted_price['PRICE_VES'] * row.quantity}
                 />
             );
         },

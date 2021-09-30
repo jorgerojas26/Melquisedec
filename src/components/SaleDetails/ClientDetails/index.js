@@ -1,15 +1,17 @@
 import * as L from './styles';
 import NumericInput from 'react-number-format';
 
-const ClientDetails = ({ name, cedula = '', phoneNumber }) => {
+const ClientDetails = ({ name = '', cedula = '', phoneNumber = '' }) => {
     return (
         <L.Wrapper>
             <label>Nombre:</label>
-            <span>{name}</span>
+            <span>{name || 'Anónimo'}</span>
             <label>Cédula:</label>
-            <span>{Number(cedula).toLocaleString()}</span>
+            <span>{(cedula && Number(cedula).toLocaleString()) || 'Anónimo'}</span>
             <label>Teléfono:</label>
-            <NumericInput displayType='text' value={phoneNumber} format='( #### ) - ### - ####' />
+            {(phoneNumber && <NumericInput displayType='text' value={phoneNumber} format='( #### ) - ### - ####' />) || (
+                <span>Anónimo</span>
+            )}
         </L.Wrapper>
     );
 };

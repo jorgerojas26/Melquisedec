@@ -6,7 +6,6 @@ import ProductSearch from 'components/ProductSearch';
 import { getProductVariantById } from 'api/product_variants';
 import Notification from 'components/Notification';
 import { useNotification } from 'hooks/notification';
-import getProductName from 'utils/getProductName';
 import { useCurrencyRates } from 'hooks/useCurrencyRates';
 
 const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
@@ -54,7 +53,7 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
             setLoading(true);
             onSubmit({
                 ...product,
-                name: getProductName(product),
+                name: product.name,
                 price: Number(product.price),
                 quantity,
                 profitPercent: Number(product.profitPercent),

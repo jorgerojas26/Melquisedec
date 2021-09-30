@@ -42,6 +42,7 @@ const ClientSearch = ({ size, innerRef, value, autoFocus, onSelect, onCreate }) 
             innerRef={innerRef}
             loadOptions={loadClients}
             defaultOptions={false}
+            cacheOptions={false}
             placeholder='Cliente'
             value={selectedClient}
             onSelect={handleSelect}

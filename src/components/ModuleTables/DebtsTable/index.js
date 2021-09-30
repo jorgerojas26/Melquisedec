@@ -1,25 +1,31 @@
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import Table from 'components/Table';
 import formatDate from 'utils/formatDate';
 
-const DebtsTable = ({ selectedRows, onDebtSelect, onShowDetailsClick, data }) => {
+import { getDebts } from 'api/debts';
+import { usePaginatedResource } from 'hooks/paginatedResource';
+
+const DebtsTable = ({
+    selectedRows,
+    onDebtSelect = () => {},
+    shouldRefresh = false,
+    onShowDetailsClick = () => {},
+    onError = () => {},
+}) => {
     const memoizedColumns = useMemo(
         () => [
             {
                 Header: 'ID',
                 accessor: 'id',
-                Cell: (props) => {
-                    return (
-                        <button style={{ cursor: 'pointer' }} onClick={() => onShowDetailsClick(props.row.original)}>
-                            {props.value}
-                        </button>
-                    );
-                },
+            },
+            {
+                Header: 'Cliente',
+                accessor: 'sale.client.name',
             },
             {
                 Header: 'Deuda Bs',
-                accessor: 'debt.converted_amount.USD',
+                accessor: 'converted_amount.PAYMENT_VES',
                 Cell: ({ value }) => {
                     return Math.round(value).toLocaleString() + ' Bs';
                 },
@@ -32,19 +38,33 @@ const DebtsTable = ({ selectedRows, onDebtSelect, onShowDetailsClick, data }) =>
                 },
             },
         ],
-        [onShowDetailsClick]
+        []
     );
+
+    const [page, setPage] = useState(1);
+    const [filter, setFilter] = useState('');
+
+    const { data, loading, error, fetchResource } = usePaginatedResource({ page, filter, fetching: getDebts });
+
+    useEffect(() => {
+        if (shouldRefresh) fetchResource();
+    }, [shouldRefresh, fetchResource]);
+
+    useEffect(() => {
+        if (error) onError(error);
+    }, [error, onError]);
 
     return (
         <>
             <Table
+                loading={loading}
+                data={data.records}
                 selectedRows={selectedRows}
                 onRowSelect={onDebtSelect}
-                data={data}
                 columns={memoizedColumns}
-                capitalize={[1]}
-                async={false}
-                multiSelect
+                onPaginate={setPage}
+                onFilter={setFilter}
+                pageCount={data.pageCount}
             />
         </>
     );

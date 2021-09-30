@@ -26,8 +26,9 @@ const Supplyings = () => {
 
     const handleSubmit = (submitMessage) => {
         showNotification('success', submitMessage, 2000);
+        const crudAction = CRUDAction;
         setCRUDAction('refresh');
-        setCRUDAction('create');
+        setCRUDAction(crudAction);
     };
 
     const handleDelete = async () => {
@@ -48,7 +49,12 @@ const Supplyings = () => {
     return (
         <L.Wrapper>
             <L.ToolbarContainer>
-                <Toolbar onCreate={handleCRUD} onEdit={handleCRUD} onDelete={handleCRUD} recordSelected={selectedSupplying} />
+                <Toolbar 
+                onCreate={handleCRUD} 
+                onEdit={handleCRUD} 
+                onDelete={handleCRUD} 
+                recordSelected={selectedSupplying} 
+                />
             </L.ToolbarContainer>
             <L.ContentContainer>
                 <L.TableContainer>
@@ -84,5 +90,5 @@ const Supplyings = () => {
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </L.Wrapper>
     );
-};
+};;
 export default Supplyings;

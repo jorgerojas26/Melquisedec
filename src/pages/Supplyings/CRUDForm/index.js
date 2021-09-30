@@ -45,7 +45,7 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
 
     useEffect(() => {
         if (supplying) {
-            fetchRecentSupplyings(supplying.product_variant.id);
+            //fetchRecentSupplyings(supplying.product_variant.id);
             setFormData({
                 id: supplying.id,
                 supplierId: supplying.supplier.id,
@@ -73,7 +73,6 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
             const response = await fetchRecentSupplyings(product.id);
 
             if (response && response.records.length > 0) {
-                console.log('there are recent supplyings');
                 const mostRecentSupplying = response.records[0];
                 setFormData({
                     ...formData,
@@ -83,7 +82,6 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 });
                 setTimeout(() => quantityRef.current.focus());
             } else {
-                console.log('no records');
                 setFormData({
                     ...formData,
                     product_variant_id: product.id,
@@ -93,6 +91,8 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 setTimeout(() => buyPriceRef.current.focus());
             }
             setSelectedProduct(product);
+        } else {
+            setFormData({ ...formData, product_variant_id: product.id });
         }
     };
 

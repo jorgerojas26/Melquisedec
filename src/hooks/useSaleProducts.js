@@ -15,7 +15,7 @@ export const useSaleProducts = (persistToLocalStorage = false) => {
         const currentProducts = persistToLocalStorage ? persistedInvoiceProducts : invoiceProducts;
 
         const subtotal = currentProducts.reduce(
-            (accumulator, current) => accumulator + (current.converted_price['SYSTEM_USD'] || 0) * current.quantity,
+            (accumulator, current) => accumulator + (current.converted_price['PRICE_VES'] || 0) * current.quantity,
             0
         );
         if (persistToLocalStorage) {

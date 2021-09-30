@@ -10,8 +10,8 @@ const SuppliersTable = ({ onSupplierSelect, selectedRows, shouldRefresh, showNot
     const [page, setPage] = useState(1);
     const [filter, setFilter] = useState('');
     const memoizedColumns = useMemo(() => COLUMNS, []);
-    const { data, loading, error, fetchResource } = usePaginatedResource({ page, filter, fetching: getSuppliers });
 
+    const { data, loading, error, fetchResource } = usePaginatedResource({ page, filter, fetching: getSuppliers });
     useEffect(() => {
         if (shouldRefresh) fetchResource();
     }, [shouldRefresh, fetchResource]);

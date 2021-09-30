@@ -6,7 +6,7 @@ import { UserCirclePlus, UserCircleGear, UserCircleMinus } from 'phosphor-react'
 
 import Button from 'components/Button';
 
-const Toolbar = ({ children, onCreate, onEdit, onDelete, recordSelected }) => {
+const Toolbar = ({ children, onCreate, onEdit, onDelete, deleteText, recordSelected }) => {
     return (
         <Container>
             {children}
@@ -30,7 +30,7 @@ const Toolbar = ({ children, onCreate, onEdit, onDelete, recordSelected }) => {
                 <ButtonContainer color='red'>
                     <Button name='ToolbarDelete' onClick={onDelete} disabled={!recordSelected}>
                         <UserCircleMinus size='24px' />
-                        Eliminar
+                        {deleteText || 'Eliminar'}
                     </Button>
                 </ButtonContainer>
             )}

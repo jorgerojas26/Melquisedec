@@ -15,6 +15,8 @@ import ProductsPage from 'pages/Products';
 import SupplyingsPage from 'pages/Supplyings';
 import SalesControl from 'pages/SalesControl';
 import CurrenciesPage from 'pages/Currencies';
+import SalesPage from 'pages/Sales';
+import DebtsPage from 'pages/Debts';
 
 import { useRedirectToActiveLocation } from 'hooks/redirect';
 import { useCurrencyRates } from 'hooks/useCurrencyRates';
@@ -34,11 +36,11 @@ const HomePage = () => {
                     <Switch>
                         <Route path='/control-de-ventas' component={SalesControl}></Route>
                         <Route path='/inventario'>Hola</Route>
-                        <Route path='/deudas'>Hola</Route>
+                        <Route path='/deudas' component={DebtsPage} />
                         <Route path='/categorias' component={CategoriesPage} />
                         <Route path='/clientes' component={ClientsPage} />
                         <Route path='/productos' component={ProductsPage} />
-                        <Route path='/ventas'>Hola</Route>
+                        <Route path='/ventas' component={SalesPage} />
                         <Route path='/abastecimientos' component={SupplyingsPage} />
                         <Route path='/proveedores' component={SuppliersPage} />
                         <Route path='/usuarios' component={UsersPage} />
@@ -52,7 +54,7 @@ const HomePage = () => {
                     <DolarValueContainer>
                         <h3>Tasa del dolar:</h3>
                         <span>
-                            {(currencyRates && currencyRates['USD'] && currencyRates['USD'].value.toLocaleString()) ||
+                            {(currencyRates && currencyRates['PAYMENT_VES'] && currencyRates['PAYMENT_VES'].value.toLocaleString()) ||
                                 'No hay valor asignado'}
                         </span>
                     </DolarValueContainer>

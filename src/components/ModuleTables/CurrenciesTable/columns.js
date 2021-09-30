@@ -18,7 +18,7 @@ export const COLUMNS = [
         Header: 'Redondeo',
         accessor: 'rounding',
         Cell: ({ value }) => {
-            return value ? value.toLocaleString() : '';
+            return value ? value.toLocaleString() : 'Sin redondeo';
         },
     },
 ];

@@ -6,7 +6,7 @@ const PaymentDetails = ({ paymentInfo = [] }) => {
     return (
         <div style={{ gap: '2px' }}>
             {paymentInfo.map((payment) => {
-                return React.createElement(PaymentMethods[payment.name], {
+                return React.createElement(PaymentMethods[payment.payment_method_name || payment.name], {
                     key: payment.id,
                     disabled: true,
                     inputValue: {

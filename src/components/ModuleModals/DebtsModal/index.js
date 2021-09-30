@@ -3,16 +3,14 @@ import { FormContainer } from 'components/CommonLayout/main.layout';
 import { HeaderContainer, BodyContainer, CloseButtonContainer, TitleContainer } from 'components/CommonLayout/form.layout';
 import * as L from './styles';
 import Modal from 'components/Modal';
-import DebtsTable from 'components/ModuleTables/DebtsTable';
+import DebtSelectionTable from 'components/ModuleTables/DebtSelectionTable';
 import Button from 'components/Button';
 import { X } from 'phosphor-react';
 import SaleDetailsModal from 'components/ModuleModals/SaleDetailsModal';
-import getProductName from 'utils/getProductName';
 
 export const DebtsModal = ({ show, selectedDebts, client, onClose, onDebtSelect }) => {
     const [showDebtDetails, setShowDebtDetails] = useState(false);
     const [debtDetails, setDebtDetails] = useState({});
-
     return (
         <>
             <Modal backdrop show={showDebtDetails ? false : show} handleClose={onClose}>
@@ -29,7 +27,7 @@ export const DebtsModal = ({ show, selectedDebts, client, onClose, onDebtSelect 
                         {client && client.sale && client.sale.length > 0 ? (
                             <L.Wrapper>
                                 <L.TableContainer>
-                                    <DebtsTable
+                                    <DebtSelectionTable
                                         onShowDetailsClick={(debtDetails) => {
                                             setShowDebtDetails(true);
                                             setDebtDetails(debtDetails);
@@ -49,38 +47,10 @@ export const DebtsModal = ({ show, selectedDebts, client, onClose, onDebtSelect 
             <SaleDetailsModal
                 show={showDebtDetails}
                 onClose={() => setShowDebtDetails(false)}
-                products={
-                    debtDetails &&
-                    debtDetails.products &&
-                    debtDetails.products.reduce(
-                        (acc, product) => [
-                            {
-                                name: getProductName(product.product_variant),
-                                price: product.price,
-                                converted_price: product.converted_price,
-                                quantity: product.quantity,
-                            },
-                            ...acc,
-                        ],
-                        []
-                    )
-                }
+                products={debtDetails && debtDetails.products}
                 client={client}
-                paymentsArray={
-                    debtDetails &&
-                    debtDetails.payment &&
-                    debtDetails.payment.reduce(
-                        (acc, payment) => [
-                            {
-                                ...payment,
-                                name: payment.payment_method.name,
-                                amount: Number(payment.amount),
-                            },
-                            ...acc,
-                        ],
-                        []
-                    )
-                }
+                debtInfo={debtDetails && debtDetails.debt}
+                paymentsArray={debtDetails && debtDetails.payment}
             />
         </>
     );

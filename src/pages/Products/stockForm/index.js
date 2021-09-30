@@ -41,6 +41,7 @@ const StockForm = ({ product, handleClose, onSubmit }) => {
 
     useEffect(() => {
         if (product) {
+            console.log(product);
             const total = product.product_variant.reduce((old, current) => old + current.stock * current.unitValue, 0);
             setStockTotal(total);
         }

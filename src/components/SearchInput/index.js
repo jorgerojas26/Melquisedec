@@ -16,6 +16,7 @@ const SearchInput = ({
     loadOptions,
     onCreateOption,
     defaultOptions = true,
+    cacheOptions = true,
 }) => {
     return (
         <Wrapper>
@@ -53,7 +54,7 @@ const SearchInput = ({
                 }}
                 loadOptions={debounce((inputValue, callback) => loadOptions(inputValue, callback), 150)}
                 defaultOptions={defaultOptions}
-                cacheOptions
+                cacheOptions={cacheOptions}
                 value={value}
                 autoFocus={autoFocus}
                 placeholder={placeholder}

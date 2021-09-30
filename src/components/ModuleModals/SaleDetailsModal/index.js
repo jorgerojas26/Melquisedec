@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
-import { FormContainer } from 'components/CommonLayout/main.layout';
+import {FormContainer} from 'components/CommonLayout/main.layout';
 import {
     HeaderContainer,
     BodyContainer,
@@ -10,7 +10,7 @@ import {
     FooterContainer,
     ButtonContainer,
 } from 'components/CommonLayout/form.layout';
-import { colors } from 'styles/theme';
+import {colors} from 'styles/theme';
 import * as L from './styles';
 import Modal from 'components/Modal';
 import Button from 'components/Button';
@@ -18,32 +18,32 @@ import SalesControlTable from 'components/ModuleTables/SalesControlTable';
 import ClientDetails from 'components/SaleDetails/ClientDetails';
 import PaymentDetails from 'components/SaleDetails/PaymentDetails';
 
-import { X, BookBookmark, XCircle } from 'phosphor-react';
+import {X, BookBookmark, XCircle} from 'phosphor-react';
 
 import InvoiceTotal from 'components/SaleDetails/TotalDetails/Invoice';
 import PaymentTotal from 'components/SaleDetails/TotalDetails/Payment';
 
-import { usePayment } from 'hooks/usePayment';
-import { useSaleProducts } from 'hooks/useSaleProducts';
+import {usePayment} from 'hooks/usePayment';
+import {useSaleProducts} from 'hooks/useSaleProducts';
 
 export const SaleDetailsModal = ({
     products,
-    client = { name: null, cedula: null, phoneNumber: null },
+    client = {name: null, cedula: null, phoneNumber: null},
     paymentsArray,
     show,
+    debtInfo,
     onClose,
-    onDebtSelect,
 }) => {
-    const { paymentInfo, setPaymentInfo, paymentTotal } = usePayment();
-    const { invoiceProducts, setInvoiceProducts, subtotal, saleTotal } = useSaleProducts();
-
+    const {paymentInfo, setPaymentInfo, paymentTotal} = usePayment();
+    const {invoiceProducts, setInvoiceProducts, subtotal, saleTotal} = useSaleProducts();
     useEffect(() => {
         if (products) {
             setInvoiceProducts(products);
         }
         if (paymentsArray) {
             setPaymentInfo(paymentsArray);
-        } // eslint-disable-next-line react-hooks/exhaustive-deps
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paymentsArray, products]);
 
     return (
@@ -61,7 +61,11 @@ export const SaleDetailsModal = ({
                     <L.MetadataContainer>
                         <L.ClientContainer>
                             <legend>Cliente</legend>
-                            <ClientDetails name={client.name} cedula={client.cedula} phoneNumber={client.phoneNumber} />
+                            <ClientDetails
+                                name={client && client.name}
+                                cedula={client && client.cedula}
+                                phoneNumber={client && client.phoneNumber}
+                            />
                         </L.ClientContainer>
                         <L.PaymentsContainer>
                             <legend>Pagos</legend>
@@ -79,10 +83,12 @@ export const SaleDetailsModal = ({
                 <FooterWrapper>
                     <FooterContainer>
                         <ButtonContainer color={colors.primary}>
-                            <Button type='submit'>
-                                <BookBookmark size={24} />
-                                Enviar
-                            </Button>
+                            {debtInfo && (
+                                <Button type='submit'>
+                                    <BookBookmark size={24} />
+                                    Pagar
+                                </Button>
+                            )}
                         </ButtonContainer>
                         <ButtonContainer color='red'>
                             <Button onClick={onClose}>

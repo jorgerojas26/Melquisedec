@@ -1,5 +1,4 @@
 import formatDate from 'utils/formatDate';
-import getProductName from 'utils/getProductName';
 
 export const COLUMNS = [
     {
@@ -12,9 +11,7 @@ export const COLUMNS = [
     },
     {
         Header: 'Producto',
-        accessor: (row) => {
-            return getProductName(row.product_variant);
-        },
+        accessor: 'product_variant.name',
     },
     {
         Header: 'Precio',

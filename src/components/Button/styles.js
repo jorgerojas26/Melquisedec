@@ -25,6 +25,10 @@ export const StyledButton = styled.button`
         align-items: center;
     }
 
+    svg {
+        margin-right: 3px;
+    }
+
     ${(props) => props.background && { background: props.background }}
     ${(props) => props.color && { color: props.color }}
 

@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import SearchInput from 'components/SearchInput';
 import { getProductVariants } from 'api/product_variants';
-import getProductName from 'utils/getProductName';
 
 const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isDisabled, onSelect }) => {
     const [selectedProduct, setSelectedProduct] = useState();
 
     useEffect(() => {
         if (value) {
-            setSelectedProduct({ label: getProductName(value), value });
+            setSelectedProduct({ label: value.name, value });
         } else {
             setSelectedProduct(null);
         }
@@ -23,7 +22,7 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
             const records = products.records.map((record) => {
                 const product = {
                     key: record.id,
-                    label: getProductName(record),
+                    label: record.name,
                     value: record,
                 };
                 return product;
@@ -35,7 +34,7 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
 
     const handleSelect = (option, { action }) => {
         if (action === 'select-option') {
-            setSelectedProduct({ label: getProductName(option.value), value });
+            setSelectedProduct({ label: option.value.name, value });
             onSelect(option.value, action);
         } else if (action === 'clear') {
             setSelectedProduct(null);

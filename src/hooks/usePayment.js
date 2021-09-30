@@ -18,26 +18,29 @@ export const usePayment = (defaultPayment, persistToLocalStorage = false) => {
 
     const summarizePaymentInfo = useCallback(
         (paymentInfo) => {
-            const paymentsGroupedByName = groupBy(paymentInfo, 'name');
+            if (currencyRates) {
+                const paymentsGroupedByName = groupBy(paymentInfo, 'name');
 
-            for (let key of Object.keys(paymentsGroupedByName)) {
-                const paymentsInfo = paymentsGroupedByName[key];
+                for (let key of Object.keys(paymentsGroupedByName)) {
+                    const paymentsInfo = paymentsGroupedByName[key];
 
-                paymentsGroupedByName[key] = paymentsInfo.reduce((accumulator, payment) => {
-                    if ((payment.currency && payment.currency === 'VES') || !payment.currency) {
-                        accumulator += payment.isChange ? -payment.amount || 0 : payment.amount || 0;
-                    } else if (payment.currency && payment.currency === 'USD') {
-                        accumulator += (payment.isChange ? -payment.amount || 0 : payment.amount || 0) * (currencyRates['USD'].value || 0);
-                    }
-                    return accumulator;
+                    paymentsGroupedByName[key] = paymentsInfo.reduce((accumulator, payment) => {
+                        if ((payment.currency && payment.currency === 'VES') || !payment.currency) {
+                            accumulator += payment.isChange ? -payment.amount || 0 : payment.amount || 0;
+                        } else if (payment.currency && payment.currency === 'USD') {
+                            accumulator +=
+                                (payment.isChange ? -payment.amount || 0 : payment.amount || 0) * (currencyRates['PAYMENT_VES'].value || 0);
+                        }
+                        return accumulator;
+                    }, 0);
+                }
+                const totalPayment = Object.keys(paymentsGroupedByName).reduce((accumulator, key) => {
+                    return accumulator + paymentsGroupedByName[key];
                 }, 0);
-            }
-            const totalPayment = Object.keys(paymentsGroupedByName).reduce((accumulator, key) => {
-                return accumulator + paymentsGroupedByName[key];
-            }, 0);
 
-            paymentsGroupedByName['Total'] = totalPayment;
-            return paymentsGroupedByName;
+                paymentsGroupedByName['Total'] = totalPayment;
+                return paymentsGroupedByName;
+            }
         },
         [currencyRates]
     );

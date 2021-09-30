@@ -6,7 +6,6 @@ import { COLUMNS } from './columns.js';
 
 const SalesControlTable = ({ onDeleteRow, onProductSelect, selectedRows, products }) => {
     const memoizedColumns = useMemo(() => COLUMNS, []);
-
     return (
         <Table
             onRowSelect={onProductSelect}

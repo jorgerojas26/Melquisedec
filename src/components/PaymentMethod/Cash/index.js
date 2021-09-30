@@ -16,8 +16,8 @@ const Cash = ({ inputValue, onChange, onDelete, disabled }) => {
                     placeholder={
                         inputValue.currency && inputValue.currency === 'USD'
                             ? `Monto - ${
-                                  currencyRates && currencyRates['USD'] && currencyRates['USD'].value
-                                      ? ((inputValue.amount || 0) * currencyRates['USD'].value).toLocaleString()
+                                  currencyRates && currencyRates['PAYMENT_VES'] && currencyRates['PAYMENT_VES'].value
+                                      ? ((inputValue.amount || 0) * currencyRates['PAYMENT_VES'].value).toLocaleString()
                                       : ''
                               } Bs`
                             : 'Monto'

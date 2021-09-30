@@ -51,7 +51,7 @@ export const useSale = () => {
     const { notification, showNotification } = useNotification();
 
     useEffect(() => {
-        const dt = selectedDebts.reduce((accumulator, current) => accumulator + (current.debt.converted_amount['USD'] || 0), 0);
+        const dt = selectedDebts.reduce((accumulator, current) => accumulator + (current.debt.converted_amount['PAYMENT_VES'] || 0), 0);
         setDebtTotal(dt);
         setPersistedSaleTotal(persistedSubtotal + dt);
     }, [selectedDebts, setDebtTotal, setPersistedSaleTotal, persistedSubtotal]);

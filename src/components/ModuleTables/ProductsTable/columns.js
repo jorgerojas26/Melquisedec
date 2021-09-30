@@ -1,4 +1,3 @@
-import getProductName from 'utils/getProductName';
 import formatDate from 'utils/formatDate';
 
 export const COLUMNS = [
@@ -8,9 +7,7 @@ export const COLUMNS = [
     },
     {
         Header: 'Nombre',
-        accessor: (row) => {
-            return getProductName(row);
-        },
+        accessor: 'name',
     },
     {
         Header: 'Precio $',
@@ -19,8 +16,8 @@ export const COLUMNS = [
     },
     {
         Header: 'Precio VES',
-        accessor: 'converted_price.SYSTEM_USD',
-        id: 'converted_price.SYSTEM_USD',
+        accessor: 'converted_price.PRICE_VES',
+        id: 'converted_price.PRICE_VES',
         Cell: (props) => {
             return props.value ? props.value.toLocaleString('es-VE') : '0';
         },
