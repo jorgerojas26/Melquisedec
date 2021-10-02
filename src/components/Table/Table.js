@@ -17,8 +17,8 @@ const Table = ({ children, ...props }) => {
     return <StyledTable {...props}>{children}</StyledTable>;
 };
 
-Table.TableContainer = ({ children }) => {
-    return <TableContainer>{children}</TableContainer>;
+Table.TableContainer = ({ children, maxHeight }) => {
+    return <TableContainer maxHeight={maxHeight}>{children}</TableContainer>;
 };
 
 Table.Head = ({ children, ...props }) => {

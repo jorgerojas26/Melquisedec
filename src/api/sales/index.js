@@ -12,7 +12,6 @@ export const getSales = async ({ page, filter }) => {
 
 export const createSale = async (saleData) => {
     const response = await axios.post(BASE_URL, saleData).catch((error) => error.response);
-    console.log(response);
     return response;
 };
 

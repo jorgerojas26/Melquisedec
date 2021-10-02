@@ -14,6 +14,7 @@ export const SeparatorWrapper = styled.div`
 export const ContentContainer = styled.div`
     flex: 1;
     height: 100%;
+    overflow: auto;
 `;
 
 export const ToolbarContainer = styled.div`
@@ -25,7 +26,9 @@ export const ToolbarContainer = styled.div`
 `;
 
 export const TableContainer = styled.div`
-    max-height: 500px;
+    @media (min-width: ${breakpoints.mobile}) {
+        max-height: 500px;
+    }
 `;
 
 export const FormContainer = styled.div`

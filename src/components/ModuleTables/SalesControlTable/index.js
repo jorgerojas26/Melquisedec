@@ -4,8 +4,9 @@ import Table from 'components/Table';
 
 import { COLUMNS } from './columns.js';
 
-const SalesControlTable = ({ onDeleteRow, onProductSelect, selectedRows, products }) => {
+const SalesControlTable = ({ onDeleteRow, onProductSelect, selectedRows, onFilter, maxHeight, products = [] }) => {
     const memoizedColumns = useMemo(() => COLUMNS, []);
+
     return (
         <Table
             onRowSelect={onProductSelect}
@@ -16,6 +17,9 @@ const SalesControlTable = ({ onDeleteRow, onProductSelect, selectedRows, product
             capitalize={[0]}
             theme='dark'
             onDeleteRow={onDeleteRow}
+            onFilter={onFilter}
+            filterPlaceholder='Buscar...'
+            maxHeight={maxHeight}
         />
     );
 };

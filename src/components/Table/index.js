@@ -23,6 +23,7 @@ const CustomTable = ({
     onDeleteRow,
     multiSelect,
     selectedRows = [],
+    maxHeight,
 }) => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
     const [selected, setSelected] = useState([]);
@@ -76,7 +77,7 @@ const CustomTable = ({
                     />
                 </Table.FilterContainer>
             )}
-            <Table.TableContainer>
+            <Table.TableContainer maxHeight={maxHeight}>
                 <Table {...getTableProps()}>
                     <Table.Head>
                         {headerGroups.map((headerGroup) => (

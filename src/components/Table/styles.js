@@ -7,9 +7,8 @@ export const StyledFilterContainer = styled.div`
 `;
 
 export const TableContainer = styled.div`
+    max-height: ${(props) => props.maxHeight || '500px'};
     overflow: auto;
-    max-height: 100%;
-    scrollbar-width: none;
 `;
 
 export const StyledLoadingContainer = styled.div`

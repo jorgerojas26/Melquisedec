@@ -12,7 +12,6 @@ export const getDebts = async ({ page, filter }) => {
 
 export const createDebt = async (debtData) => {
     const response = await axios.post(BASE_URL, debtData).catch((error) => error.response);
-    console.log(response);
     return response;
 };
 
