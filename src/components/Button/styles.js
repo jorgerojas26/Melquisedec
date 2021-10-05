@@ -14,6 +14,7 @@ export const StyledButton = styled.button`
 
     min-width: 0px;
     min-height: 0px;
+    height: 100%;
 
     :hover {
         opacity: 0.8;

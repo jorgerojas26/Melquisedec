@@ -27,7 +27,7 @@ const DebtsTable = ({
                 Header: 'Deuda Bs',
                 accessor: 'converted_amount.PAYMENT_VES',
                 Cell: ({ value }) => {
-                    return Math.round(value).toLocaleString() + ' Bs';
+                    return value;
                 },
             },
             {
@@ -35,6 +35,13 @@ const DebtsTable = ({
                 accessor: 'createdAt',
                 Cell: ({ value }) => {
                     return formatDate(value);
+                },
+            },
+            {
+                Header: 'Pagado',
+                accessor: 'paid_date',
+                Cell: ({ value }) => {
+                    return value ? formatDate(value) : 'No pagado';
                 },
             },
         ],
@@ -64,6 +71,7 @@ const DebtsTable = ({
                 columns={memoizedColumns}
                 onPaginate={setPage}
                 onFilter={setFilter}
+                filterPlaceholder='Buscar por nombre, cedula o teléfono del cliente...'
                 pageCount={data.pageCount}
             />
         </>

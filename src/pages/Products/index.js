@@ -82,14 +82,13 @@ const Products = () => {
                     />
                 </TableContainer>
                 <Modal
-                    backdrop
                     show={CRUDAction && CRUDAction !== 'refresh'}
                     handleClose={() => {
                         setCRUDAction(null);
                     }}
                 >
                     {(CRUDAction === 'create' || CRUDAction === 'edit') && (
-                        <FormContainer medium>
+                        <FormContainer width='650px'>
                             <ProductForm
                                 product={CRUDAction === 'edit' && selectedProduct && selectedProduct.product}
                                 action={CRUDAction}
@@ -99,7 +98,7 @@ const Products = () => {
                         </FormContainer>
                     )}
                     {CRUDAction === 'reassignStock' && (
-                        <FormContainer medium>
+                        <FormContainer width='500px' top='100px'>
                             <StockForm
                                 product={selectedProduct && selectedProduct.product}
                                 handleClose={() => setCRUDAction(null)}

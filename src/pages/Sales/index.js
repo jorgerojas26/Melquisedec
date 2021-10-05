@@ -60,10 +60,9 @@ const Sales = () => {
                     </L.TableContainer>
                     <SaleDetailsModal
                         show={CRUDAction === 'view'}
-                        products={selectedSale && selectedSale.products}
-                        client={selectedSale && selectedSale.client}
-                        paymentsArray={selectedSale && selectedSale.payment}
+                        details={selectedSale}
                         onClose={() => setCRUDAction(null)}
+                        onPayment={() => setCRUDAction('refresh')}
                     />
                     <Modal backdrop show={CRUDAction === 'delete'} handleClose={() => setCRUDAction(null)}>
                         <L.ConfirmContainer>

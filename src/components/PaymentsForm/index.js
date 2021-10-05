@@ -14,11 +14,12 @@ const PaymentsForm = ({
     onPaymentMethodSelect,
     paymentInfo,
     paymentMethods,
+    showTitle = true,
 }) => {
     return (
         <>
             <L.PaymentTitleContainer>
-                <h2>Datos de pago</h2>
+                <h2>{showTitle ? 'Datos de pago' : ''}</h2>
                 <L.AddPaymentContainer>
                     <PaymentMethods.Selector
                         paymentList={paymentMethods}

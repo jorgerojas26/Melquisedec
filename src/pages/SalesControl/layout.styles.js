@@ -9,6 +9,7 @@ export const MainContainer = styled.div`
 
 export const MetadataContainer = styled.div`
     flex: 0 0 40%;
+    border-top: 1px solid black;
 
     @media (min-width: ${breakpoints.laptop}) {
         flex-direction: row;
@@ -71,6 +72,7 @@ export const InvoiceTotalContainer = styled.div`
     align-items: flex-end;
     justify-content: center;
     margin-bottom: 5px;
+    width: 100%;
 
     font-size: 16px;
     font-weight: 800;
@@ -131,29 +133,27 @@ export const FooterContainer = styled.div`
 `;
 
 export const ActionsContainer = styled.div`
-    flex: 1;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    margin: 5px 0;
 
-    @media (min-width: ${breakpoints.tablet}) {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-end;
-        margin-bottom: 5px;
+    button {
+        padding: 10px;
     }
 `;
 
 export const TotalContainer = styled.fieldset`
     display: grid;
     grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
 
-    place-content: end;
     place-items: end;
 
-    border: 1px solid black;
     padding: 2px;
-    height: 100%;
+    min-height: 100%;
+    width: 100%;
 
     legend {
         color: ${colors.primary};
@@ -164,6 +164,6 @@ export const TotalContainer = styled.fieldset`
     }
 
     @media (min-width: ${breakpoints.tablet}) {
-        font-size: 24px;
+        font-size: 22px;
     }
 `;

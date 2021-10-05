@@ -26,7 +26,7 @@ const CurrencyForm = ({ currency, action, handleClose, onSubmit }) => {
             initialState: {
                 currency: '',
                 value: 0,
-                rounding: 1,
+                rounding: null,
                 ...currency,
             },
             action,

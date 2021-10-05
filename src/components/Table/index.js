@@ -24,8 +24,10 @@ const CustomTable = ({
     multiSelect,
     selectedRows = [],
     maxHeight,
+    filterHeight,
+    showFooter = false,
 }) => {
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+    const { getTableProps, getTableBodyProps, headerGroups, footerGroups, rows, prepareRow } = useTable({ columns, data });
     const [selected, setSelected] = useState([]);
 
     useEffect(() => {
@@ -69,7 +71,7 @@ const CustomTable = ({
     return (
         <>
             {onFilter && (
-                <Table.FilterContainer>
+                <Table.FilterContainer filterHeight={filterHeight}>
                     <TableFilterInput
                         onChange={(event) => onFilterDebounced(event.target.value)}
                         placeholder={filterPlaceholder}
@@ -129,6 +131,17 @@ const CustomTable = ({
                             );
                         })}
                     </Table.Body>
+                    {showFooter && (
+                        <Table.Foot>
+                            {footerGroups.map((group) => (
+                                <tr {...group.getFooterGroupProps()}>
+                                    {group.headers.map((column) => (
+                                        <td {...column.getFooterProps()}>{column.render('Footer')}</td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </Table.Foot>
+                    )}
                 </Table>
             </Table.TableContainer>
             {onPaginate && data.length > 0 && (

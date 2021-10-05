@@ -46,14 +46,14 @@ const DebtsPage = () => {
                     </L.TableContainer>
                 </L.ContentContainer>
             </L.SeparatorWrapper>
-            <SaleDetailsModal
-                show={showDetails}
-                products={debtDetails && debtDetails.sale.products}
-                client={debtDetails && debtDetails.sale.client}
-                paymentsArray={debtDetails && debtDetails.sale.payment}
-                debtInfo={debtDetails}
-                onClose={() => setShowDetails(false)}
-            />
+            {showDetails && (
+                <SaleDetailsModal
+                    show={showDetails}
+                    details={debtDetails && debtDetails.sale}
+                    onClose={() => setShowDetails(false)}
+                    onPayment={() => setCRUDAction('refresh')}
+                />
+            )}
         </L.Wrapper>
     );
 };

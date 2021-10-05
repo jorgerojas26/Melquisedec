@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors, breakpoints } from 'styles/theme';
 
 export const StyledFilterContainer = styled.div`
-    flex: 1 0 50px;
+    flex: 1 0 ${(props) => (props.filterHeight ? props.filterHeight : '50px')};
 `;
 
 export const TableContainer = styled.div`
@@ -49,13 +49,16 @@ export const StyledTable = styled.table`
 `;
 
 export const TD = styled.td`
-    padding: 10px;
     font-size: 17px;
 
     ${(props) =>
         props.capitalize && {
             textTransform: 'capitalize',
         }}
+
+    @media (min-width: ${breakpoints.laptop}) {
+        padding: 10px;
+    }
 `;
 
 export const TH = styled.th`
@@ -98,7 +101,17 @@ export const TR = styled.tr`
 
 export const THead = styled.thead``;
 
-export const TFoot = styled.tfoot``;
+export const TFoot = styled.tfoot`
+    position: sticky;
+    bottom: 0;
+    background: lightGrey;
+
+    td {
+        color: black !important;
+        font-weight: 800 !important;
+        padding: 5px 0;
+    }
+`;
 
 export const TBody = styled.tbody``;
 

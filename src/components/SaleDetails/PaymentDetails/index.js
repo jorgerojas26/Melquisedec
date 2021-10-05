@@ -4,7 +4,7 @@ import PaymentMethods from 'components/PaymentMethod';
 
 const PaymentDetails = ({ paymentInfo = [] }) => {
     return (
-        <div style={{ gap: '2px' }}>
+        <div style={{ gap: '1px' }}>
             {paymentInfo.map((payment) => {
                 return React.createElement(PaymentMethods[payment.payment_method_name || payment.name], {
                     key: payment.id,

@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
+import { colors } from 'styles/theme';
+
 export const TableContainer = styled.div`
     td {
         padding: 5px;
     }
-    max-height: 250px;
+    max-height: 150px;
     overflow: auto;
 `;
 
@@ -27,6 +29,22 @@ export const PaymentsContainer = styled.fieldset`
 
 export const TotalContainer = styled.div`
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
+    place-content: space-around;
+    min-height: 100%;
+`;
+
+export const SaleInfoTotal = styled.div`
+    flex-direction: row;
+`;
+
+export const DebtInfoTotal = styled.fieldset`
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 5px;
+    width: 100%;
+
+    legend {
+        color: ${colors.primary};
+        font-size: 22px;
+    }
 `;

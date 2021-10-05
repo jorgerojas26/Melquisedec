@@ -44,7 +44,7 @@ const SalesControl = () => {
         onProductDelete,
         onClientSelect,
         onDebtSelect,
-        addPaymentMethod,
+        onPaymentAdd,
         onPaymentInfoChange,
         onPaymentDelete,
         onSaleSubmit,
@@ -70,6 +70,21 @@ const SalesControl = () => {
             <SeparatorWrapper>
                 <ContentContainer>
                     <L.MainContainer>
+                        <L.ActionsContainer>
+                            <ButtonContainer color={colors.primary}>
+                                <Button loading={loading} onClick={onSaleSubmit}>
+                                    Enviar
+                                </Button>
+                            </ButtonContainer>
+                            <ButtonContainer color={colors.secondary}>
+                                <Button loading={loading} onClick={onSaveDebtHandler}>
+                                    Guardar Deuda
+                                </Button>
+                            </ButtonContainer>
+                            <ButtonContainer color='red'>
+                                <Button onClick={resetFields}>Reset</Button>
+                            </ButtonContainer>
+                        </L.ActionsContainer>
                         <L.MetadataContainer>
                             <L.ClientContainer>
                                 <h2>Datos del cliente</h2>
@@ -121,7 +136,7 @@ const SalesControl = () => {
                                     paymentMethods={paymentMethods || []}
                                     selectedPaymentMethod={selectedPaymentMethod}
                                     onPaymentInfoChange={onPaymentInfoChange}
-                                    onPaymentAdd={addPaymentMethod}
+                                    onPaymentAdd={onPaymentAdd}
                                     onPaymentDelete={onPaymentDelete}
                                     onPaymentMethodSelect={setSelectedPaymentMethod}
                                 />
@@ -147,23 +162,8 @@ const SalesControl = () => {
                                 <L.FooterContainer>
                                     <L.InvoiceTotalContainer>
                                         <InvoiceTotal subtotal={subtotal} debtTotal={debtTotal} invoiceTotal={saleTotal} />
-                                        <PaymentTotal paymentTotal={persistedPaymentTotal} />
+                                        <PaymentTotal twoRowsOnly paymentTotal={persistedPaymentTotal} />
                                     </L.InvoiceTotalContainer>
-                                    <L.ActionsContainer>
-                                        <ButtonContainer color={colors.primary}>
-                                            <Button loading={loading} onClick={onSaleSubmit}>
-                                                Enviar
-                                            </Button>
-                                        </ButtonContainer>
-                                        <ButtonContainer color={colors.secondary}>
-                                            <Button loading={loading} onClick={onSaveDebtHandler}>
-                                                Guardar Deuda
-                                            </Button>
-                                        </ButtonContainer>
-                                        <ButtonContainer color='red'>
-                                            <Button onClick={resetFields}>Reset</Button>
-                                        </ButtonContainer>
-                                    </L.ActionsContainer>
                                 </L.FooterContainer>
                             </L.InvoiceFormContainer>
                         </L.OrderDetailsContainer>

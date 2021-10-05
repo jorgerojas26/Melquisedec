@@ -124,3 +124,10 @@ export const TableContainer = styled.div`
         text-align: center;
     }
 `;
+
+export const LoadingDiv = styled.div`
+    align-items: center;
+    color: green;
+    font-size: 19px;
+    font-weight: 600;
+`;

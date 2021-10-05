@@ -49,8 +49,8 @@ Table.LoadingContainer = ({ children, data }) => {
     return <StyledLoadingContainer data={data}>{children}</StyledLoadingContainer>;
 };
 
-Table.FilterContainer = ({ children }) => {
-    return <StyledFilterContainer>{children}</StyledFilterContainer>;
+Table.FilterContainer = ({ children, filterHeight }) => {
+    return <StyledFilterContainer filterHeight={filterHeight}>{children}</StyledFilterContainer>;
 };
 
 Table.NoDataContainer = ({ children }) => {

@@ -49,12 +49,7 @@ const Supplyings = () => {
     return (
         <L.Wrapper>
             <L.ToolbarContainer>
-                <Toolbar 
-                onCreate={handleCRUD} 
-                onEdit={handleCRUD} 
-                onDelete={handleCRUD} 
-                recordSelected={selectedSupplying} 
-                />
+                <Toolbar onCreate={handleCRUD} onEdit={handleCRUD} onDelete={handleCRUD} recordSelected={selectedSupplying} />
             </L.ToolbarContainer>
             <L.ContentContainer>
                 <L.TableContainer>
@@ -90,5 +85,5 @@ const Supplyings = () => {
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </L.Wrapper>
     );
-};;
+};
 export default Supplyings;

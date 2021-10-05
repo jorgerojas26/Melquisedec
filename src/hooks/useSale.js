@@ -6,19 +6,9 @@ import { usePayment } from './usePayment';
 import { useSaleProducts } from 'hooks/useSaleProducts';
 
 import { createSale } from 'api/sales';
+import { useConfirm } from './useConfirm';
 
 export const useSale = () => {
-    const INITIAL_CONFIRM_STATE = useMemo(
-        () => ({
-            message: null,
-            actions: [],
-            state: null,
-            callback: null,
-            show: false,
-        }),
-        []
-    );
-
     const [loading, setLoading] = useState(false);
 
     const [selectedClient, setSelectedClient] = useLocalStorage('selectedClient', { id: null, cedula: null, phoneNumber: null });
@@ -44,9 +34,12 @@ export const useSale = () => {
         setPersistedPaymentTotal,
         persistedPaymentInfo,
         setPersistedPaymentInfo,
+        onPaymentInfoChange,
+        onPaymentAdd,
+        onPaymentDelete,
     } = usePayment({ name: 'POS', currency: 'VES' }, true);
 
-    const [confirmState, setConfirmState] = useState(INITIAL_CONFIRM_STATE);
+    const { confirmState, setConfirmState, INITIAL_CONFIRM_STATE } = useConfirm();
 
     const { notification, showNotification } = useNotification();
 
@@ -96,58 +89,6 @@ export const useSale = () => {
 
     const onDebtSelect = (debts) => {
         setSelectedDebts(debts);
-    };
-
-    const addPaymentMethod = (paymentMethod = { id: null, name: null }, isChange = false) => {
-        const id = persistedPaymentInfo.length + new Date().getTime();
-        let newPaymentInfo = [];
-
-        if (paymentMethod.name === 'POS') {
-            newPaymentInfo = [
-                ...persistedPaymentInfo,
-                { id, payment_method_id: Number(paymentMethod.id), name: paymentMethod.name, amount: null, currency: 'VES', isChange },
-            ];
-        } else if (paymentMethod.name === 'Cash') {
-            newPaymentInfo = [
-                ...persistedPaymentInfo,
-                { id, payment_method_id: paymentMethod.id, name: paymentMethod.name, amount: null, currency: 'VES', isChange },
-            ];
-        } else if (paymentMethod.name === 'Transfer') {
-            newPaymentInfo = [
-                ...persistedPaymentInfo,
-                {
-                    id,
-                    payment_method_id: paymentMethod.id,
-                    name: paymentMethod.name,
-                    amount: null,
-                    currency: 'VES',
-                    transaction_code: null,
-                    bankId: 1,
-                    isChange,
-                },
-            ];
-        } else if (paymentMethod.name === 'Paypal') {
-            newPaymentInfo = [
-                ...persistedPaymentInfo,
-                { id, payment_method_id: paymentMethod.id, name: paymentMethod.name, amount: null, currency: 'USD', code: null, isChange },
-            ];
-        }
-        setPersistedPaymentInfo(newPaymentInfo);
-    };
-
-    const onPaymentInfoChange = (value, key, id) => {
-        const newPaymentInfo = persistedPaymentInfo.map((info) => {
-            if (info.id === id) {
-                info[key] = value;
-            }
-            return info;
-        });
-        setPersistedPaymentInfo(newPaymentInfo);
-    };
-
-    const onPaymentDelete = (id) => {
-        const newPaymentInfo = persistedPaymentInfo.filter((info) => info.id !== id);
-        setPersistedPaymentInfo(newPaymentInfo);
     };
 
     const validateSale = () => {
@@ -276,7 +217,7 @@ export const useSale = () => {
         onProductDelete,
         onClientSelect,
         onDebtSelect,
-        addPaymentMethod,
+        onPaymentAdd,
         onPaymentInfoChange,
         onPaymentDelete,
         onSaleSubmit,

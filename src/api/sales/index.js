@@ -10,6 +10,11 @@ export const getSales = async ({ page, filter }) => {
     return response.data;
 };
 
+export const getSaleById = async (id) => {
+    const response = await axios.get(BASE_URL + `/${id}`).catch((error) => error.response);
+    return response.data;
+};
+
 export const createSale = async (saleData) => {
     const response = await axios.post(BASE_URL, saleData).catch((error) => error.response);
     return response;

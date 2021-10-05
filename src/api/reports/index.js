@@ -1,27 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = '/api/reports/sale';
+const BASE_URL = '/api/reports';
 
-export const getSuppliers = async ({ page, filter }) => {
-    let pageParam = page ? `?page=${page}` : '?';
-    let filterParams = filter ? `&filter=${filter}` : '';
+export const getSalesReport = async ({ from, to }) => {
+    let filterParams = from && to ? `?from=${from}&to=${to}` : '';
 
-    const response = await axios.get(BASE_URL + pageParam + filterParams).catch((error) => error.response);
-    return response.data;
-};
-
-export const createSupplier = async (supplierData) => {
-    const response = await axios.post(BASE_URL, supplierData).catch((error) => error.response);
-    console.log(response);
-    return response.data;
-};
-
-export const updateSupplier = async (id, supplierData) => {
-    const response = await axios.patch(BASE_URL + `/${id}`, supplierData).catch((error) => error.response);
-    return response.data;
-};
-
-export const deleteSupplier = async (id) => {
-    const response = await axios.delete(BASE_URL + `/${id}`).catch((error) => error.response);
+    const response = await axios.get(BASE_URL + '/sale' + filterParams).catch((error) => error.response);
     return response.data;
 };

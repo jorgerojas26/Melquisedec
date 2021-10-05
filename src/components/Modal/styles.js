@@ -7,10 +7,14 @@ export const StyledModal = styled.div`
     bottom: 0;
     left: 0;
 
+    width: 100%;
+    height: 100%;
+
     ${(props) =>
         props.backdrop &&
         `
         background: rgba(0, 0, 0, .6);
     `}
-    z-index: 3;
+
+    z-index: ${(props) => (props.zindex ? props.zindex : '3')};
 `;

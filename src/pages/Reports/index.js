@@ -1,9 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Wrapper, SeparatorWrapper, ContentContainer } from 'components/CommonLayout/main.layout';
 import * as L from './layout.styles.js';
-import ProductsTable from 'components/ModuleTables/SalesControlTable';
 import { DateTime } from 'luxon';
 import Button from 'components/Button';
+import { getSalesReport } from 'api/reports';
+import Notification from 'components/Notification';
+import { useNotification } from 'hooks/notification';
+import SalesReportTable from 'components/ModuleTables/ReportTables/Sales';
+import PaymentsReportTable from 'components/ModuleTables/ReportTables/Payments';
+import DebtsReportTable from 'components/ModuleTables/ReportTables/Debts';
+import { ResponsivePie } from '@nivo/pie';
+import { ResponsiveBar } from '@nivo/bar';
 
 const ReportsPage = () => {
     const [dates, setDates] = useState({
@@ -11,12 +18,54 @@ const ReportsPage = () => {
         to: DateTime.now().toISODate(),
     });
 
-    const [reportDetails, setReportDetails] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const { notification, showNotification } = useNotification();
+
+    const [reportDetails, setReportDetails] = useState();
+    const [chartData, setChartData] = useState();
+    const [paymentChartData, setPaymentChartData] = useState();
+    const [topSellChartData, setTopSellChartData] = useState();
+    const [hourlySalesChartData, setHourlySalesChartData] = useState();
 
     const handleClick = async (event) => {
         event.preventDefault();
+        if (!loading) {
+            setLoading(true);
+            const response = await getSalesReport({ from: dates.from, to: dates.to });
+            setLoading(false);
+
+            if (response.error) {
+                showNotification('error', response.error.message);
+            } else {
+                setReportDetails(null);
+                setReportDetails({ ...response });
+            }
+        }
     };
 
+    useEffect(() => {
+        if (reportDetails) {
+            const payment_chart_data = reportDetails.payment_report.reduce((acc, payment) => {
+                return [...acc, { id: payment.name + ' ' + payment.currency, label: payment.name, value: payment.usedCount }];
+            }, []);
+
+            setChartData((prevState) => ({ ...prevState, payment: payment_chart_data }));
+
+            let top_sell_chart_data = reportDetails.top_sell_products.reduce((acc, product) => {
+                return [...acc, { id: product.product, label: product.product, value: product.totalSold }];
+            }, []);
+
+            setChartData((prevState) => ({ ...prevState, top_sell: top_sell_chart_data }));
+
+            let hourly_sales_chart_data = reportDetails.hourly_sales_report.reduce((acc, hour) => {
+                return [...acc, { id: hour.hour, label: hour.hour, value: hour.total }];
+            }, []);
+
+            setChartData((prevState) => ({ ...prevState, hourly_sales: hourly_sales_chart_data }));
+        }
+    }, [reportDetails]);
+
+    console.log(chartData);
     return (
         <Wrapper>
             <SeparatorWrapper>
@@ -26,7 +75,7 @@ const ReportsPage = () => {
                             <span>Fecha: </span>
                             <input type='date' onChange={(event) => setDates({ ...dates, from: event.target.value })} value={dates.from} />
                             <input type='date' onChange={(event) => setDates({ ...dates, to: event.target.value })} value={dates.to} />
-                            <Button onClick={handleClick} background='green' color='white'>
+                            <Button loading={loading} onClick={handleClick} background='green' color='white'>
                                 Enviar
                             </Button>
                         </L.ControlsContainer>
@@ -41,124 +90,13 @@ const ReportsPage = () => {
                                         </L.CardHeader>
                                         <L.CardBody>
                                             <L.TableContainer>
-                                                <ProductsTable
-                                                    maxHeight='200px'
-                                                    onFilter={() => {}}
-                                                    products={[
-                                                        {
-                                                            name: 'Cafe Della Nonna 200g',
-                                                            converted_price: {
-                                                                PRICE_VES: '5.08',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'AAAAAAAAAAAAAA',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                    ]}
-                                                />
+                                                {reportDetails.sale_report.length > 0 && (
+                                                    <SalesReportTable
+                                                        data={reportDetails.sale_report}
+                                                        maxHeight='300px'
+                                                        onFilter={() => {}}
+                                                    />
+                                                )}
                                             </L.TableContainer>
                                         </L.CardBody>
                                     </L.CardContainer>
@@ -170,145 +108,105 @@ const ReportsPage = () => {
                                         </L.CardHeader>
                                         <L.CardBody>
                                             <L.TableContainer>
-                                                <ProductsTable
-                                                    maxHeight='200px'
-                                                    products={[
-                                                        {
-                                                            name: 'Cafe Della Nonna 200g',
-                                                            converted_price: {
-                                                                PRICE_VES: '5.08',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'Mantequilla Deline 250g',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                        {
-                                                            name: 'AAAAAAAAAAAAAA',
-                                                            converted_price: {
-                                                                PRICE_VES: '4.35',
-                                                            },
-                                                            quantity: 2,
-                                                        },
-                                                    ]}
-                                                />
+                                                {reportDetails.payment_report.length > 0 && (
+                                                    <PaymentsReportTable data={reportDetails.payment_report} maxHeight='200px' />
+                                                )}
                                             </L.TableContainer>
                                         </L.CardBody>
                                     </L.CardContainer>
                                     <L.CardContainer>
-                                        <L.CardHeader></L.CardHeader>
-                                        <L.CardBody></L.CardBody>
+                                        <L.CardHeader>
+                                            <h3>Deudas</h3>
+                                        </L.CardHeader>
+                                        <L.CardBody>
+                                            <L.TableContainer>
+                                                {reportDetails.debt_report.length > 0 && (
+                                                    <DebtsReportTable data={reportDetails.debt_report} maxHeight='200px' />
+                                                )}
+                                            </L.TableContainer>
+                                        </L.CardBody>
                                     </L.CardContainer>
                                 </L.PaymentsContainer>
-                                <L.DebtsContainer>
-                                    <L.CardContainer>
-                                        <L.CardHeader>
-                                            <h2>Deudas</h2>
-                                        </L.CardHeader>
-                                    </L.CardContainer>
-                                </L.DebtsContainer>
+                                <L.DebtsContainer></L.DebtsContainer>
                             </L.LeftWrapper>
                             <L.RightWrapper>
+                                <div>
+                                    <L.CardContainer>
+                                        <L.CardHeader>
+                                            <h3>Métodos de pago más usados</h3>
+                                        </L.CardHeader>
+                                        <L.CardBody>
+                                            {chartData && chartData.payment && (
+                                                <div style={{ height: '200px' }}>
+                                                    <ResponsivePie
+                                                        data={chartData.payment}
+                                                        margin={{ top: 20, bottom: 20, right: 100 }}
+                                                        enableArcLinkLabels={true}
+                                                        legends={[
+                                                            {
+                                                                anchor: 'right',
+                                                                direction: 'column',
+                                                                translateX: 30,
+                                                                translateY: 0,
+                                                                itemsSpacing: 30,
+                                                                itemWidth: 0,
+                                                                itemHeight: 0,
+                                                                itemTextColor: '#999',
+                                                            },
+                                                        ]}
+                                                    />
+                                                </div>
+                                            )}
+                                        </L.CardBody>
+                                    </L.CardContainer>
+                                </div>
+                                <div>
+                                    <L.CardContainer>
+                                        <L.CardHeader>
+                                            <h3>Horas más activas</h3>
+                                        </L.CardHeader>
+                                        <L.CardBody>
+                                            {chartData && chartData.hourly_sales && (
+                                                <div style={{ height: '200px' }}>
+                                                    <ResponsiveBar
+                                                        data={chartData.hourly_sales}
+                                                        margin={{ bottom: 45, top: 10 }}
+                                                        valueFormat={(value) => (value > 0 ? value : '')}
+                                                        axisBottom={{
+                                                            tickSize: 10,
+                                                            tickPadding: 5,
+                                                            tickRotation: 0,
+                                                            legend: 'Reloj 24 horas',
+                                                            legendPosition: 'middle',
+                                                            legendOffset: 35,
+                                                        }}
+                                                        enableGridX
+                                                    />
+                                                </div>
+                                            )}
+                                        </L.CardBody>
+                                    </L.CardContainer>
+                                </div>
                                 <L.TopContainer>
                                     <L.CardContainer>
                                         <L.CardHeader>
-                                            <h2>Top 5 productos</h2>
+                                            <h3>Productos más vendidos</h3>
                                         </L.CardHeader>
+                                        <L.CardBody>
+                                            {chartData && chartData.top_sell && (
+                                                <div style={{ height: '200px' }}>
+                                                    <ResponsiveBar
+                                                        data={chartData.top_sell}
+                                                        layout='horizontal'
+                                                        margin={{ left: 150, right: 10 }}
+                                                        groupMode='grouped'
+                                                        padding={0.7}
+                                                        enableGridX
+                                                        enableGridY
+                                                    />
+                                                </div>
+                                            )}
+                                        </L.CardBody>
                                     </L.CardContainer>
                                 </L.TopContainer>
                             </L.RightWrapper>
@@ -316,6 +214,7 @@ const ReportsPage = () => {
                     )}
                 </ContentContainer>
             </SeparatorWrapper>
+            {notification && <Notification type={notification.type}>{notification.message}</Notification>}
         </Wrapper>
     );
 };

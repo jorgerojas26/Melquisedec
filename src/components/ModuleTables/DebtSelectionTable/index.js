@@ -21,7 +21,7 @@ const DebtSelectionTable = ({ selectedRows, onDebtSelect, onShowDetailsClick, da
                 Header: 'Deuda Bs',
                 accessor: 'debt.converted_amount.PAYMENT_VES',
                 Cell: ({ value }) => {
-                    return Math.round(value).toLocaleString() + ' Bs';
+                    return value.toLocaleString() + ' Bs';
                 },
             },
             {

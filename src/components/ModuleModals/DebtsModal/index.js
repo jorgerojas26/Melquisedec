@@ -11,10 +11,11 @@ import SaleDetailsModal from 'components/ModuleModals/SaleDetailsModal';
 export const DebtsModal = ({ show, selectedDebts, client, onClose, onDebtSelect }) => {
     const [showDebtDetails, setShowDebtDetails] = useState(false);
     const [debtDetails, setDebtDetails] = useState({});
+
     return (
         <>
             <Modal backdrop show={showDebtDetails ? false : show} handleClose={onClose}>
-                <FormContainer medium>
+                <FormContainer width='500px'>
                     <HeaderContainer>
                         <CloseButtonContainer>
                             <Button onClick={onClose}>
@@ -44,14 +45,7 @@ export const DebtsModal = ({ show, selectedDebts, client, onClose, onDebtSelect 
                     </BodyContainer>
                 </FormContainer>
             </Modal>
-            <SaleDetailsModal
-                show={showDebtDetails}
-                onClose={() => setShowDebtDetails(false)}
-                products={debtDetails && debtDetails.products}
-                client={client}
-                debtInfo={debtDetails && debtDetails.debt}
-                paymentsArray={debtDetails && debtDetails.payment}
-            />
+            <SaleDetailsModal show={showDebtDetails} onClose={() => setShowDebtDetails(false)} details={debtDetails} />
         </>
     );
 };

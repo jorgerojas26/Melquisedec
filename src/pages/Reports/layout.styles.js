@@ -1,11 +1,14 @@
 import styled from 'styled-components';
-import { colors } from 'styles/theme';
+import { colors, breakpoints } from 'styles/theme';
 
 export const ContentWrapper = styled.div`
-    flex-direction: row;
     flex: 1;
     padding: 10px;
-    gap: 5%;
+    gap: 1%;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        flex-direction: row;
+    }
 `;
 
 export const ControlsWrapper = styled.div`
@@ -24,24 +27,30 @@ export const ControlsContainer = styled.div`
 `;
 
 export const LeftWrapper = styled.div`
-    flex: 1 1 55%;
     gap: 10px;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        flex: 1 1 65%;
+    }
 `;
 
 export const RightWrapper = styled.div`
-    flex: 1 1 40%;
-    gap: 10px;
+    gap: 20px;
+
+    @media (min-width: ${breakpoints.tablet}) {
+        flex: 1 1 34%;
+    }
 `;
 
 export const CardContainer = styled.div`
-    flex: 1;
+    flex-grow: 1;
     background: white;
     box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
     border-radius: 16px;
 `;
 
 export const CardHeader = styled.div`
-    flex: 0 1 50px;
+    flex: 0 0 50px;
     justify-content: center;
     background: ${colors.superLightGray};
 
@@ -67,11 +76,12 @@ export const TableContainer = styled.div`
             background: ${colors.superLightGray};
             color: black;
             border: none;
+            font-size: 16px;
         }
         td {
             color: #95a0a1;
             font-weight: 500;
-            border-right: 1px solid rgb(147, 185, 177, 0.2);
+            border-right: 1px solid ${colors.extraLightGray};
 
             :last-child {
                 border-right: none;
@@ -105,9 +115,12 @@ export const TableContainer = styled.div`
 export const SalesContainer = styled.div``;
 
 export const PaymentsContainer = styled.div`
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
+
+    @media (min-width: ${breakpoints.desktop}) {
+        flex-direction: row;
+    }
 `;
 
 export const DebtsContainer = styled.div``;
