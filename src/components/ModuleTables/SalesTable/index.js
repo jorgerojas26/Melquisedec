@@ -28,7 +28,7 @@ const SalesTable = ({ onSaleSelect, selectedRows, shouldRefresh, onError }) => {
             onRowSelect={onSaleSelect}
             selectedRows={selectedRows}
             columns={memoizedColumns}
-            filterPlaceholder='Buscar por cliente, producto, fecha...'
+            filterPlaceholder='Buscar por id, cliente, producto, fecha, COD transferencia...'
             filter={filter}
             onFilter={setFilter}
             onPaginate={setPage}

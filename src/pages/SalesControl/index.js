@@ -157,6 +157,7 @@ const SalesControl = () => {
                                         selectedRows={selectedProduct}
                                         products={invoiceProducts}
                                         onDeleteRow={onProductDelete}
+                                        maxHeight='2048px'
                                     />
                                 </L.TableContainer>
                                 <L.FooterContainer>
@@ -169,14 +170,14 @@ const SalesControl = () => {
                         </L.OrderDetailsContainer>
                     </L.MainContainer>
                 </ContentContainer>
-                <WidgetBox onClose={() => {}}>hola</WidgetBox>
+                <WidgetBox onClose={() => {}}></WidgetBox>
             </SeparatorWrapper>
             <DebtsModal
                 show={showDebts}
                 client={selectedClient}
                 onClose={() => setShowDebts(false)}
                 selectedDebts={selectedDebts}
-                onDebtSelect={onDebtSelect}
+                //onDebtSelect={onDebtSelect}
             />
             <Modal backdrop show={confirmState.show} handleClose={onConfirmClose}>
                 <ConfirmContainer>

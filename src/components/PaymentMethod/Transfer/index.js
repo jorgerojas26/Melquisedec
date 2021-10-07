@@ -9,10 +9,13 @@ const Transfer = ({ inputValue, onChange, onDelete, disabled }) => {
             <L.InputContainer>
                 <LabeledInput
                     value={inputValue.amount || ''}
-                    onValueChange={({ floatValue }) => onChange && onChange(floatValue, 'amount')}
+                    onValueChange={({ value }) => onChange && onChange(value, 'amount')}
                     placeholder='Monto'
                     thousandSeparator='.'
                     decimalSeparator=','
+                    decimalScale={2}
+                    fixedDecimalScale={true}
+                    isNumericString={true}
                     disabled={disabled}
                     autoFocus
                     as={NumericInput}
@@ -33,8 +36,8 @@ const Transfer = ({ inputValue, onChange, onDelete, disabled }) => {
                     value={inputValue.bankId}
                     disabled={disabled}
                 >
-                    <option value='1'>Banco de Venezuela</option>
-                    <option value='2'>Banco Provincial</option>
+                    <option value='1'>BDV</option>
+                    <option value='2'>BBVA</option>
                 </select>
             </L.SelectContainer>
         </L.Wrapper>

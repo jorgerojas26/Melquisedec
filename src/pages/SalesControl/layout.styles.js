@@ -112,6 +112,7 @@ export const ProductFormContainer = styled.div``;
 
 export const TableContainer = styled.div`
     flex: 1 1 100%;
+    overflow: auto;
 
     margin-bottom: 10px;
 
@@ -147,7 +148,6 @@ export const ActionsContainer = styled.div`
 export const TotalContainer = styled.fieldset`
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr;
 
     place-items: end;
 

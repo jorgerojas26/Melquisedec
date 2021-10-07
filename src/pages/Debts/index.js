@@ -51,7 +51,10 @@ const DebtsPage = () => {
                     show={showDetails}
                     details={debtDetails && debtDetails.sale}
                     onClose={() => setShowDetails(false)}
-                    onPayment={() => setCRUDAction('refresh')}
+                    onPayment={() => {
+                        setCRUDAction('refresh');
+                        setDebtDetails(null);
+                    }}
                 />
             )}
         </L.Wrapper>

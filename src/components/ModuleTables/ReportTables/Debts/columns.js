@@ -24,10 +24,17 @@ export const COLUMNS = [
         },
     },
     {
-        Header: 'Fecha',
+        Header: 'Creada',
         accessor: 'createdAt',
         Cell: ({ value }) => {
             return formatDate(value);
+        },
+    },
+    {
+        Header: 'Pagado',
+        accessor: 'paid_date',
+        Cell: ({ value }) => {
+            return value ? formatDate(value) : 'No pagado';
         },
     },
 ];

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useLocalStorage } from 'hooks/useLocalStorage';
 import { useNotification } from 'hooks/notification';
@@ -159,7 +159,7 @@ export const useSale = () => {
                     paymentInfo: fullDebt ? [] : persistedPaymentInfo,
                     status: 1,
                     saveAsDebt,
-                    paying_debts: selectedDebts.map((debt) => debt.id),
+                    //paying_debts: selectedDebts.map((debt) => debt.id),
                 });
                 setLoading(false);
 

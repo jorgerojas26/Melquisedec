@@ -31,7 +31,7 @@ const ProductForm = ({ product, action, handleClose, onSubmit }) => {
                     name: '',
                     price: 0,
                     profitPercent: 30,
-                    unitValue: '',
+                    unitValue: 1,
                     imagePath: null,
                 },
             ],

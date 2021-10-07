@@ -70,48 +70,6 @@ export const CardBody = styled.div`
     border-bottom-right-radius: 16px;
 `;
 
-export const TableContainer = styled.div`
-    table {
-        th {
-            background: ${colors.superLightGray};
-            color: black;
-            border: none;
-            font-size: 16px;
-        }
-        td {
-            color: #95a0a1;
-            font-weight: 500;
-            border-right: 1px solid ${colors.extraLightGray};
-
-            :last-child {
-                border-right: none;
-            }
-
-            :first-child {
-                padding: 0;
-            }
-
-            strong {
-                color: #556769;
-                font-weight: 500;
-            }
-
-            > svg {
-                display: inline-block;
-            }
-        }
-
-        tr {
-            background: none !important;
-            border-bottom: 1px solid rgb(147, 185, 177, 0.2);
-
-            :last-child {
-                border-bottom: none;
-            }
-        }
-    }
-`;
-
 export const SalesContainer = styled.div``;
 
 export const PaymentsContainer = styled.div`

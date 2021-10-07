@@ -39,28 +39,28 @@ export const COLUMNS = [
         Header: 'Bruto Bs',
         accessor: 'rawProfitVES',
         Cell: ({ value }) => {
-            return value ? value.toFixed(4) + ' Bs' : 0;
+            return value ? value.toFixed(2) + ' Bs' : 0;
         },
         Footer: ({ data }) => {
             let total = data.reduce((acc, product) => {
                 return acc + product.rawProfitVES;
             }, 0);
 
-            return total.toFixed(4) + ' Bs';
+            return total.toFixed(2) + ' Bs';
         },
     },
     {
         Header: 'Neto Bs',
         accessor: 'netProfitVES',
         Cell: ({ value }) => {
-            return value ? value.toFixed(4) + ' Bs' : 0;
+            return value ? value.toFixed(2) + ' Bs' : 0;
         },
         Footer: ({ data }) => {
             let total = data.reduce((acc, product) => {
                 return acc + product.netProfitVES;
             }, 0);
 
-            return total.toFixed(4) + ' Bs';
+            return total.toFixed(2) + ' Bs';
         },
     },
 ];

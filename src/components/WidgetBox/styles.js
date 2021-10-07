@@ -12,6 +12,7 @@ export const Container = styled.div`
     width: 100%;
     background: ${colors.extraLightGray};
     z-index: 2;
+    padding: 5px;
     box-shadow: ${colors.shadow} 0px 0px 15px, ${colors.shadow} 0px 0px 3px 1px;
 
     ${(props) =>
@@ -41,6 +42,7 @@ export const CloseButtonWrapper = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     height: 30px;
+    padding: 5px;
 
     @media (min-width: ${breakpoints.desktop}) {
         display: none;

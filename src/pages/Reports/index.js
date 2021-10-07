@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Wrapper, SeparatorWrapper, ContentContainer } from 'components/CommonLayout/main.layout';
+import { Wrapper, SeparatorWrapper, ContentContainer, ReportTableContainer } from 'components/CommonLayout/main.layout';
 import * as L from './layout.styles.js';
 import { DateTime } from 'luxon';
 import Button from 'components/Button';
@@ -9,6 +9,8 @@ import { useNotification } from 'hooks/notification';
 import SalesReportTable from 'components/ModuleTables/ReportTables/Sales';
 import PaymentsReportTable from 'components/ModuleTables/ReportTables/Payments';
 import DebtsReportTable from 'components/ModuleTables/ReportTables/Debts';
+import DebtPaymentsTable from 'components/ModuleTables/ReportTables/DebtPayments';
+
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveBar } from '@nivo/bar';
 
@@ -23,9 +25,6 @@ const ReportsPage = () => {
 
     const [reportDetails, setReportDetails] = useState();
     const [chartData, setChartData] = useState();
-    const [paymentChartData, setPaymentChartData] = useState();
-    const [topSellChartData, setTopSellChartData] = useState();
-    const [hourlySalesChartData, setHourlySalesChartData] = useState();
 
     const handleClick = async (event) => {
         event.preventDefault();
@@ -89,7 +88,7 @@ const ReportsPage = () => {
                                             <h3>Ventas</h3>
                                         </L.CardHeader>
                                         <L.CardBody>
-                                            <L.TableContainer>
+                                            <ReportTableContainer>
                                                 {reportDetails.sale_report.length > 0 && (
                                                     <SalesReportTable
                                                         data={reportDetails.sale_report}
@@ -97,7 +96,7 @@ const ReportsPage = () => {
                                                         onFilter={() => {}}
                                                     />
                                                 )}
-                                            </L.TableContainer>
+                                            </ReportTableContainer>
                                         </L.CardBody>
                                     </L.CardContainer>
                                 </L.SalesContainer>
@@ -107,11 +106,11 @@ const ReportsPage = () => {
                                             <h3>Pagos</h3>
                                         </L.CardHeader>
                                         <L.CardBody>
-                                            <L.TableContainer>
+                                            <ReportTableContainer>
                                                 {reportDetails.payment_report.length > 0 && (
                                                     <PaymentsReportTable data={reportDetails.payment_report} maxHeight='200px' />
                                                 )}
-                                            </L.TableContainer>
+                                            </ReportTableContainer>
                                         </L.CardBody>
                                     </L.CardContainer>
                                     <L.CardContainer>
@@ -119,14 +118,28 @@ const ReportsPage = () => {
                                             <h3>Deudas</h3>
                                         </L.CardHeader>
                                         <L.CardBody>
-                                            <L.TableContainer>
+                                            <ReportTableContainer>
                                                 {reportDetails.debt_report.length > 0 && (
                                                     <DebtsReportTable data={reportDetails.debt_report} maxHeight='200px' />
                                                 )}
-                                            </L.TableContainer>
+                                            </ReportTableContainer>
                                         </L.CardBody>
                                     </L.CardContainer>
                                 </L.PaymentsContainer>
+                                <div>
+                                    <L.CardContainer>
+                                        <L.CardHeader>
+                                            <h3>Pagos de deudas</h3>
+                                        </L.CardHeader>
+                                        <L.CardBody>
+                                            <ReportTableContainer>
+                                                {reportDetails.debt_payment_report.length > 0 && (
+                                                    <DebtPaymentsTable data={reportDetails.debt_payment_report} maxHeight='200px' />
+                                                )}
+                                            </ReportTableContainer>
+                                        </L.CardBody>
+                                    </L.CardContainer>
+                                </div>
                                 <L.DebtsContainer></L.DebtsContainer>
                             </L.LeftWrapper>
                             <L.RightWrapper>

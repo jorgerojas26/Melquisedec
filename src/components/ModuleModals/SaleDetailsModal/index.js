@@ -103,20 +103,56 @@ export const SaleDetailsModal = ({ show, details, onClose, onPayment = () => {} 
                                     <SalesControlTable products={invoiceProducts} />
                                 </L.TableContainer>
                                 <L.TotalContainer>
-                                    <L.DebtInfoTotal>
-                                        <legend>Deuda</legend>
-                                        <label>Fecha: </label>
-                                        <strong>
-                                            {saleDetails && saleDetails.debt && new Date(saleDetails.debt.createdAt).toLocaleString()}
-                                        </strong>
-                                        <label>Original:</label>
-                                        <strong>${saleDetails && saleDetails.debt && saleDetails.debt.original_amount.toFixed(2)}</strong>
-                                        <label>Actual:</label>
-                                        <strong>${saleDetails && saleDetails.debt && saleDetails.debt.current_amount.toFixed(2)}</strong>
-                                        <label>Estado:</label>
-                                        <strong>{saleDetails && saleDetails.debt && saleDetails.debt.paid ? 'Pagado' : 'No pagado'}</strong>
-                                    </L.DebtInfoTotal>
-                                    <PaymentTotal paymentTotal={paymentTotal} />
+                                    {saleDetails.debt && (
+                                        <L.DebtInfoTotal>
+                                            <legend>Deuda</legend>
+                                            <L.DebtLabel>
+                                                <label>Fecha:</label>
+                                            </L.DebtLabel>
+                                            <L.DebtValue>
+                                                <strong>
+                                                    {saleDetails &&
+                                                        saleDetails.debt &&
+                                                        new Date(saleDetails.debt.createdAt).toLocaleString()}
+                                                </strong>
+                                            </L.DebtValue>
+                                            <L.DebtLabel>
+                                                <label>Original:</label>
+                                            </L.DebtLabel>
+                                            <L.DebtValue>
+                                                <strong>
+                                                    ${saleDetails && saleDetails.debt && saleDetails.debt.original_amount.toFixed(2)}
+                                                </strong>
+                                            </L.DebtValue>
+                                            <L.DebtLabel>
+                                                <label>Actual:</label>
+                                            </L.DebtLabel>
+                                            <L.DebtValue>
+                                                <strong style={{ color: 'green' }}>
+                                                    ${saleDetails && saleDetails.debt && saleDetails.debt.current_amount.toFixed(2)}
+                                                </strong>
+                                                -
+                                                <strong>
+                                                    {saleDetails &&
+                                                        saleDetails.debt &&
+                                                        saleDetails.debt.converted_amount['PAYMENT_VES'].toFixed(2) + ' Bs'}
+                                                </strong>
+                                            </L.DebtValue>
+                                            <L.DebtLabel>
+                                                <label>Estado:</label>
+                                            </L.DebtLabel>
+                                            <L.DebtValue>
+                                                <strong>
+                                                    {saleDetails && saleDetails.debt && saleDetails.debt.paid ? (
+                                                        <span style={{ color: 'green' }}>Pagado</span>
+                                                    ) : (
+                                                        <span style={{ color: 'red' }}>No pagado</span>
+                                                    )}
+                                                </strong>
+                                            </L.DebtValue>
+                                        </L.DebtInfoTotal>
+                                    )}
+                                    <PaymentTotal twoRowsOnly paymentTotal={paymentTotal} />
                                     <InvoiceTotal subtotal={subtotal} invoiceTotal={saleTotal} />
                                 </L.TotalContainer>
                             </>
@@ -143,13 +179,15 @@ export const SaleDetailsModal = ({ show, details, onClose, onPayment = () => {} 
                     </FooterWrapper>
                 </FormContainer>
             </Modal>
-            <PaymentFormModal
-                show={showPaymentModal}
-                backdrop
-                handleClose={() => setShowPaymentModal(false)}
-                onSubmit={onPaymentSubmit}
-                sale={saleDetails}
-            />
+            {showPaymentModal && (
+                <PaymentFormModal
+                    show={showPaymentModal}
+                    backdrop
+                    handleClose={() => setShowPaymentModal(false)}
+                    onSubmit={onPaymentSubmit}
+                    sale={saleDetails}
+                />
+            )}
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </>
     );

@@ -37,7 +37,7 @@ export const COLUMNS = [
                     thousandSeparator='.'
                     suffix=' Bs'
                     displayType='text'
-                    value={row.converted_price['PRICE_VES'] * row.quantity}
+                    value={Number((row.converted_price['PRICE_VES'] * row.quantity).toFixed(2))}
                 />
             );
         },

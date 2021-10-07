@@ -12,7 +12,7 @@ const Cash = ({ inputValue, onChange, onDelete, disabled }) => {
             <L.InputContainer>
                 <LabeledInput
                     value={inputValue.amount || ''}
-                    onValueChange={({ floatValue }) => onChange && onChange(floatValue, 'amount')}
+                    onValueChange={({ value }) => onChange && onChange(value, 'amount')}
                     placeholder={
                         inputValue.currency && inputValue.currency === 'USD'
                             ? `Monto - ${
@@ -24,6 +24,9 @@ const Cash = ({ inputValue, onChange, onDelete, disabled }) => {
                     }
                     thousandSeparator='.'
                     decimalSeparator=','
+                    decimalScale={2}
+                    fixedDecimalScale={true}
+                    isNumericString={true}
                     disabled={disabled}
                     autoFocus
                     as={NumericInput}

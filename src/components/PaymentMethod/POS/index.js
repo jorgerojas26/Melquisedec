@@ -9,10 +9,13 @@ const POS = ({ inputValue, onChange, onDelete, disabled }) => {
             <L.InputContainer>
                 <LabeledInput
                     value={inputValue.amount || ''}
-                    onValueChange={({ floatValue }) => onChange && onChange(floatValue, 'amount')}
+                    onValueChange={({ value }) => onChange && onChange(value, 'amount')}
                     placeholder='Monto'
                     thousandSeparator='.'
                     decimalSeparator=','
+                    decimalScale={2}
+                    fixedDecimalScale={true}
+                    isNumericString={true}
                     disabled={disabled}
                     autoFocus
                     as={NumericInput}

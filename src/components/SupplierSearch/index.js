@@ -24,9 +24,14 @@ const SupplierSearch = ({ value, autoFocus, onSelect }) => {
         }
     };
 
-    const handleSelect = ({ label, value }) => {
-        setSelectedSupplier({ label, value });
-        onSelect(value);
+    const handleSelect = (option, { action }) => {
+        if (action === 'select-option') {
+            setSelectedSupplier({ label: option.label, value: option.value });
+            onSelect(option.value, action);
+        } else {
+            setSelectedSupplier(null);
+            onSelect(null, action);
+        }
     };
 
     return (

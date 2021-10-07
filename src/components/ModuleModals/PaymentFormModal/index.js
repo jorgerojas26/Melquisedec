@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Modal from 'components/Modal';
 import { FormContainer, ConfirmContainer } from 'components/CommonLayout/main.layout';
 import {
@@ -94,8 +93,8 @@ const PaymentFormModal = ({ show, handleClose, backdrop, onSubmit, sale }) => {
                             </div>
                         </BodyContainer>
                         <FooterWrapper>
-                            {errors && errors['undefined'] && <ErrorAlert>{errors['undefined']}</ErrorAlert>}
                             <FooterContainer>
+                                {errors && errors['paymentInfo'] && <ErrorAlert>{errors['paymentInfo']}</ErrorAlert>}
                                 <ButtonContainer color={colors.primary}>
                                     <Button onClick={paymentSubmitHandler} type='submit'>
                                         Enviar
@@ -108,16 +107,18 @@ const PaymentFormModal = ({ show, handleClose, backdrop, onSubmit, sale }) => {
                         </FooterWrapper>
                     </FormContainer>
                 </Modal>
-                <Modal backdrop show={confirmState.show} handleClose={() => setConfirmState({ ...confirmState, show: false })}>
-                    <ConfirmContainer>
-                        <ConfirmAlert
-                            additionalActions={confirmState.actions}
-                            message={confirmState.message}
-                            handleClose={() => setConfirmState({ ...confirmState, show: false })}
-                            callback={confirmState.callback}
-                        />
-                    </ConfirmContainer>
-                </Modal>
+                {confirmState.show && (
+                    <Modal backdrop show={confirmState.show} handleClose={() => setConfirmState({ ...confirmState, show: false })}>
+                        <ConfirmContainer>
+                            <ConfirmAlert
+                                additionalActions={confirmState.actions}
+                                message={confirmState.message}
+                                handleClose={() => setConfirmState({ ...confirmState, show: false })}
+                                callback={confirmState.callback}
+                            />
+                        </ConfirmContainer>
+                    </Modal>
+                )}
             </>
         )
     );

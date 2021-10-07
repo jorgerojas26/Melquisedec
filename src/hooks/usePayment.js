@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { usePaymentMethod } from './usePaymentMethod';
 import { useCurrencyRates } from 'hooks/useCurrencyRates';
 import { useLocalStorage } from 'hooks/useLocalStorage';
-import { create_payment_for_sale } from 'api/payments';
 
 import groupBy from 'utils/arrayGroup';
 
@@ -27,7 +26,7 @@ export const usePayment = (defaultPayment, persistToLocalStorage = false) => {
 
                     paymentsGroupedByName[key] = paymentsInfo.reduce((accumulator, payment) => {
                         if ((payment.currency && payment.currency === 'VES') || !payment.currency) {
-                            accumulator += payment.isChange ? -payment.amount || 0 : payment.amount || 0;
+                            accumulator += payment.isChange ? -Number(payment.amount) || 0 : Number(payment.amount) || 0;
                         } else if (payment.currency && payment.currency === 'USD') {
                             accumulator +=
                                 (payment.isChange ? -payment.amount || 0 : payment.amount || 0) * (currencyRates['PAYMENT_VES'].value || 0);

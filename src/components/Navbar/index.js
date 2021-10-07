@@ -14,6 +14,7 @@ import {
     ClipboardText,
     ShoppingCart,
     ShoppingCartSimple,
+    Swap,
     Money,
 } from 'phosphor-react';
 
@@ -40,7 +41,8 @@ const Navbar = () => {
                         <NavItem Icon={Package} title='Abastecimientos' to='/abastecimientos' dissapearonmobile />
                         <NavItem Icon={IdentificationCard} title='Proveedores' to='/proveedores' dissapearonmobile />
                         <NavItem Icon={User} title='Usuarios' to='/usuarios' dissapearonmobile />
-                        <NavItem Icon={Money} title='Tasas de cambio' to='/tasas-de-cambio' />
+                        <NavItem Icon={Swap} title='Tasas de cambio' to='/tasas-de-cambio' />
+                        <NavItem Icon={Money} title='Dinero' to='/dinero' />
                     </Nav>
                 </NavContainer>
             </NavWrapper>

@@ -1,12 +1,18 @@
 import axios from 'axios';
 
 const BASE_URL = '/api/clients';
+const REPORT_BASE_URL = '/api/reports/client';
 
 export const getClients = async ({ page, filter }) => {
     let pageParam = page ? `?page=${page}` : '?';
     let filterParams = filter ? `&filter=${filter}` : '';
 
     const response = await axios.get(BASE_URL + pageParam + filterParams).catch((error) => error.response);
+    return response.data;
+};
+
+export const getTopClients = async () => {
+    const response = await axios.get(`${REPORT_BASE_URL}/top`).catch((error) => error.response);
     return response.data;
 };
 

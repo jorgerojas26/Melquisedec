@@ -47,6 +47,7 @@ const HomePage = () => {
                         <Route path='/proveedores' component={SuppliersPage} />
                         <Route path='/usuarios' component={UsersPage} />
                         <Route path='/tasas-de-cambio' component={CurrenciesPage} />
+                        <Route path='/dinero' />
                     </Switch>
                 </L.Main>
                 <L.MainHeader>

@@ -68,8 +68,8 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
         return response;
     };
 
-    const onProductSelect = async (product) => {
-        if (!loadingRecentSupplyings && action === 'create') {
+    const onProductSelect = async (product, select_action) => {
+        if (!loadingRecentSupplyings && action === 'create' && select_action === 'select-option') {
             const response = await fetchRecentSupplyings(product.id);
 
             if (response && response.records.length > 0) {
@@ -92,7 +92,7 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
             }
             setSelectedProduct(product);
         } else {
-            setFormData({ ...formData, product_variant_id: product.id });
+            setFormData({ ...formData, product_variant_id: product ? product.id : null });
         }
     };
 
@@ -116,9 +116,9 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 <L.InputContainer>
                     <SupplierSearch
                         innerRef={supplierRef}
-                        onSelect={(supplier) => {
+                        onSelect={(supplier, action) => {
                             setSelectedSupplier(supplier);
-                            setFormData({ ...formData, supplierId: supplier.id });
+                            setFormData({ ...formData, supplierId: supplier ? supplier.id : null });
                             productRef.current.focus();
                         }}
                         value={selectedSupplier}
@@ -128,9 +128,9 @@ const SupplyingForm = ({ supplying, action, handleClose, onSubmit }) => {
                 </L.InputContainer>
                 <L.InputContainer>
                     <ProductSearch
+                        onSelect={onProductSelect}
                         isDisabled={productSearchDisabled}
                         innerRef={productRef}
-                        onSelect={onProductSelect}
                         value={selectedProduct}
                     />
                     {printError('product_variant_id')}
