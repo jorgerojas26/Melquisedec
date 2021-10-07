@@ -58,12 +58,14 @@ const Sales = () => {
                             onError={() => {}}
                         />
                     </L.TableContainer>
-                    <SaleDetailsModal
-                        show={CRUDAction === 'view'}
-                        details={selectedSale}
-                        onClose={() => setCRUDAction(null)}
-                        onPayment={() => setCRUDAction('refresh')}
-                    />
+                    {CRUDAction === 'view' && (
+                        <SaleDetailsModal
+                            show={CRUDAction === 'view'}
+                            details={selectedSale}
+                            onClose={() => setCRUDAction(null)}
+                            onPayment={() => setCRUDAction('refresh')}
+                        />
+                    )}
                     <Modal backdrop show={CRUDAction === 'delete'} handleClose={() => setCRUDAction(null)}>
                         <L.ConfirmContainer>
                             <ConfirmAlert handleClose={() => setCRUDAction(null)} callback={handleDelete} />

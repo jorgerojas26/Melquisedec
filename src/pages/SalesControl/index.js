@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import * as L from './layout.styles';
 import { colors } from 'styles/theme';
@@ -64,6 +64,19 @@ const SalesControl = () => {
     const clientSearchRef = useRef(null);
     const clientCedulaRef = useRef(null);
     const clientPhoneNumberRef = useRef(null);
+
+    useEffect(() => {
+        const listener = (event) => {
+            if (event.ctrlKey && event.keyCode === 13) {
+                onSaleSubmit(event);
+            }
+        };
+        document.body.addEventListener('keyup', listener);
+
+        return function cleanUp() {
+            document.body.removeEventListener('keyup', listener);
+        };
+    });
 
     return (
         <Wrapper>

@@ -24,7 +24,7 @@ export const COLUMNS = [
         Header: 'Total',
         accessor: 'converted_amount.PAYMENT_VES',
         Cell: ({ value }) => {
-            return value.toLocaleString();
+            return value ? value.toLocaleString() : value;
         },
     },
     {
