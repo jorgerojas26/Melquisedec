@@ -3,6 +3,7 @@ export const breakpoints = {
     tablet: '768px',
     laptop: '1024px',
     desktop: '1440px',
+    bigScreen: '1920px',
 };
 
 export const colors = {

@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     background: pink;
 
     @media (min-width: ${breakpoints.mobile}) {
-        grid-template-columns: minmax(70px, 270px) 1fr;
+        grid-template-columns: minmax(70px, 240px) 1fr;
     }
 `;
 

@@ -87,7 +87,7 @@ const SalesControl = () => {
                         </L.ActionsContainer>
                         <L.MetadataContainer>
                             <L.ClientContainer>
-                                <h2>Datos del cliente</h2>
+                                <h3>Datos del cliente</h3>
                                 <ClientSearch
                                     innerRef={clientSearchRef}
                                     value={selectedClient}

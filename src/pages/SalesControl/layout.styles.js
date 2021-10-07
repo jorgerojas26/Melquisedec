@@ -14,7 +14,7 @@ export const MetadataContainer = styled.div`
     @media (min-width: ${breakpoints.laptop}) {
         flex-direction: row;
         flex: 0 0 auto;
-        max-height: 22%;
+        max-height: 25%;
     }
 `;
 
@@ -30,7 +30,7 @@ export const ClientContainer = styled.div`
     gap: 5px;
     padding-bottom: 10px;
 
-    h2 {
+    h3 {
         margin: 5px 0 0 0;
     }
 
@@ -53,7 +53,7 @@ export const PaymentsContainer = styled.div`
     overflow: auto;
     padding-bottom: 10px;
 
-    h2 {
+    h3 {
         margin: 5px 0 0 0;
     }
 
@@ -137,11 +137,10 @@ export const ActionsContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     margin: 5px 0;
 
     button {
-        padding: 10px;
+        padding: 5px;
     }
 `;
 

@@ -49,11 +49,11 @@ export const FormContainer = styled.div`
     z-index: 4;
 
     @media (min-width: ${breakpoints.mobile}) {
-        left: 70px;
+        left: 50px;
     }
 
     @media (min-width: ${breakpoints.laptop}) {
-        left: 275px;
+        left: 240px;
     }
 `;
 

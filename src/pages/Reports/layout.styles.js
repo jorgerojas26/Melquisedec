@@ -6,7 +6,7 @@ export const ContentWrapper = styled.div`
     padding: 10px;
     gap: 1%;
 
-    @media (min-width: ${breakpoints.tablet}) {
+    @media (min-width: ${breakpoints.desktop}) {
         flex-direction: row;
     }
 `;

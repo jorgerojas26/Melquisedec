@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
     grid-template-rows: 50px 1fr;
     width: 100%;
     height: 100%;
+
     @media (min-width: ${breakpoints.mobile}) {
         grid-template-rows: 1fr;
-        grid-template-columns: 70px 1fr;
+        grid-template-columns: 50px 1fr;
     }
 
     @media (min-width: ${breakpoints.laptop}) {
-        grid-template-columns: 275px 1fr;
+        grid-template-columns: 240px 1fr;
     }
 `;
 
@@ -26,6 +27,10 @@ export const MainWrapper = styled.div`
     grid-template-rows: 1fr 50px;
 
     @media (min-width: ${breakpoints.mobile}) {
+        grid-template-rows: 30px 1fr;
+    }
+
+    @media (min-width: ${breakpoints.bigScreen}) {
         grid-template-rows: 50px 1fr;
     }
 `;
@@ -50,6 +55,7 @@ export const MainHeader = styled.div`
 `;
 
 export const Main = styled.main`
-    overflow: hidden;
+    min-height: 100%;
+    overflow: auto;
     background-image: url('../../assets/patterns/leaves-pattern.png');
 `;

@@ -13,7 +13,7 @@ const Modal = ({ children, backdrop, show = false, handleClose, zindex }) => {
     );
 };
 
-const PortalModal = ({ children, backdrop, show = false, handleClose, zindex }) => {
+const PortalModal = ({ children, backdrop = true, show = false, handleClose, zindex }) => {
     return ReactDom.createPortal(
         <Modal backdrop={backdrop} show={show} handleClose={handleClose} zindex={zindex}>
             {children}

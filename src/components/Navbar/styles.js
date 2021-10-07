@@ -62,7 +62,7 @@ export const NavLink = styled(Link)`
 
     user-select: none;
     pointer-events: auto;
-    online-style: none;
+    outline-style: none;
     text-decoration: none;
     cursor: pointer;
 
@@ -150,10 +150,9 @@ export const NavLinkText = styled.span`
 export const NavLinkContentWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    place-items: center;
+    place-content: center;
     width: 100%;
-    padding: 11px;
     transition-property: background-color, box-shadow;
     transition-duration: 0.2s;
 
@@ -167,7 +166,17 @@ export const NavLinkContentWrapper = styled.div`
         }
     }
 
-    @media (max-height: ${breakpoints.mobile}) {
+    @media (min-width: ${breakpoints.laptop}) {
+        place-items: start;
+        place-content: start;
+        padding: 2px;
+    }
+
+    @media (min-width: ${breakpoints.desktop}) {
         padding: 5px;
+    }
+
+    @media (min-width: ${breakpoints.bigScreen}) {
+        padding: 10px;
     }
 `;

@@ -19,7 +19,7 @@ const PaymentsForm = ({
     return (
         <>
             <L.PaymentTitleContainer>
-                <h2>{showTitle ? 'Datos de pago' : ''}</h2>
+                <h3>{showTitle ? 'Datos de pago' : ''}</h3>
                 <L.AddPaymentContainer>
                     <PaymentMethods.Selector
                         paymentList={paymentMethods}
