@@ -20,7 +20,7 @@ const SalesReportTable = ({ data, maxHeight }) => {
             filterPlaceholder='Buscar...'
             filterHeight='30px'
             maxHeight={maxHeight}
-            capitalize={[1]}
+            capitalize={[0]}
             showFooter
         />
     );
