@@ -209,10 +209,9 @@ const ReportsPage = () => {
                                             {chartData && chartData.top_sell && (
                                                 <div style={{ height: '200px' }}>
                                                     <ResponsiveBar
-                                                        data={chartData.top_sell}
+                                                        data={chartData.top_sell.reverse()}
                                                         layout='horizontal'
                                                         margin={{ left: 150, right: 10 }}
-                                                        groupMode='grouped'
                                                         padding={0.7}
                                                         enableGridX
                                                         enableGridY

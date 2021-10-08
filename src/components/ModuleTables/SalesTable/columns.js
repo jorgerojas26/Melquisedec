@@ -11,8 +11,8 @@ export const COLUMNS = [
             if (row.client) {
                 return (
                     <div>
-                        <span>{row.client.name}</span>
-                        <span>{Number(row.client.cedula).toLocaleString()}</span>
+                        <span>{row.client.name ? row.client.name : ''}</span>
+                        <span>{row.client.cedula ? Number(row.client.cedula).toLocaleString() : ''}</span>
                     </div>
                 );
             } else {
