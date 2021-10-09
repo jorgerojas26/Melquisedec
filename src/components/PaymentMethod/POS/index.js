@@ -17,7 +17,6 @@ const POS = ({ inputValue, onChange, onDelete, disabled }) => {
                     fixedDecimalScale={true}
                     isNumericString={true}
                     disabled={disabled}
-                    autoFocus
                     as={NumericInput}
                 />
             </L.InputContainer>

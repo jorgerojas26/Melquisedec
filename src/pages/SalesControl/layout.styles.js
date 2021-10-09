@@ -140,7 +140,7 @@ export const ActionsContainer = styled.div`
     margin: 5px 0;
 
     button {
-        padding: 5px;
+        padding: 10px;
     }
 `;
 
