@@ -77,7 +77,14 @@ const SaleProductForm = ({ productToEdit, productSearchRef, onSubmit }) => {
             <h4>Producto</h4>
             <h4>Cantidad</h4>
             <label></label>
-            <ProductSearch hideOutOfStock innerRef={productSearchRef} value={selectedProduct} onSelect={onProductSelect} autoFocus />
+            <ProductSearch
+                hideOutOfStock
+                innerRef={productSearchRef}
+                value={selectedProduct}
+                onSelect={onProductSelect}
+                showPriceOnName
+                autoFocus
+            />
             <L.QuantityInput
                 style={{ textAlign: 'center', fontSize: '16px' }}
                 onFocus={(event) => {

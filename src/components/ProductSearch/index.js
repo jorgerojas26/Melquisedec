@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import SearchInput from 'components/SearchInput';
 import { getProductVariants } from 'api/product_variants';
 
-const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isDisabled, onSelect }) => {
+const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isDisabled, showPriceOnName = false, onSelect }) => {
     const [selectedProduct, setSelectedProduct] = useState();
 
     useEffect(() => {
@@ -20,9 +20,13 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
             if (hideOutOfStock) products.records = products.records.filter((p) => p.stock > 0);
 
             const records = products.records.map((record) => {
+                let product_name = record.name;
+                if (showPriceOnName) {
+                    product_name = `${record.name} - ${record.converted_price['PRICE_VES']} Bs`;
+                }
                 const product = {
                     key: record.id,
-                    label: record.name,
+                    label: product_name,
                     value: record,
                 };
                 return product;
@@ -34,7 +38,7 @@ const ProductSearch = ({ hideOutOfStock, innerRef, value, autoFocus = false, isD
 
     const handleSelect = (option, { action }) => {
         if (action === 'select-option') {
-            setSelectedProduct({ label: option.value.name, value });
+            setSelectedProduct({ label: option.value.name, value: option.value });
             onSelect(option.value, action);
         } else if (action === 'clear') {
             setSelectedProduct(null);
