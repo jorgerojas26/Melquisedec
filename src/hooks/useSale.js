@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import { useLocalStorage } from 'hooks/useLocalStorage';
 import { useNotification } from 'hooks/notification';
 import { usePayment } from './usePayment';
 import { useSaleProducts } from 'hooks/useSaleProducts';
@@ -8,36 +7,29 @@ import { useSaleProducts } from 'hooks/useSaleProducts';
 import { createSale } from 'api/sales';
 import { useConfirm } from './useConfirm';
 
-export const useSale = () => {
+export const useSale = ({ onSubmitSuccess = () => {} }) => {
     const [loading, setLoading] = useState(false);
 
-    const [selectedClient, setSelectedClient] = useLocalStorage('selectedClient', { id: null, cedula: null, phoneNumber: null });
-    const [selectedProduct, setSelectedProduct] = useLocalStorage('selectedProduct', null);
+    const [selectedClient, setSelectedClient] = useState({ id: null, cedula: null, phoneNumber: null });
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const [selectedDebts, setSelectedDebts] = useLocalStorage('selectedDebts', []);
-    const [debtTotal, setDebtTotal] = useLocalStorage('debtTotal', 0);
+    const [selectedDebts, setSelectedDebts] = useState([]);
+    const [debtTotal, setDebtTotal] = useState(0);
 
-    const {
-        persistedInvoiceProducts,
-        setPersistedInvoiceProducts,
-        persistedSubtotal,
-        setPersistedSubtotal,
-        persistedSaleTotal,
-        setPersistedSaleTotal,
-    } = useSaleProducts(true);
+    const { invoiceProducts, setInvoiceProducts, subtotal, setSubtotal, saleTotal, setSaleTotal } = useSaleProducts();
 
     const {
         paymentMethods,
         selectedPaymentMethod,
         setSelectedPaymentMethod,
-        persistedPaymentTotal,
-        setPersistedPaymentTotal,
-        persistedPaymentInfo,
-        setPersistedPaymentInfo,
+        paymentTotal,
+        setPaymentTotal,
+        paymentInfo,
+        setPaymentInfo,
         onPaymentInfoChange,
         onPaymentAdd,
         onPaymentDelete,
-    } = usePayment({ name: 'POS', currency: 'VES' }, true);
+    } = usePayment({ name: 'POS', currency: 'VES' });
 
     const { confirmState, setConfirmState, INITIAL_CONFIRM_STATE } = useConfirm();
 
@@ -46,36 +38,36 @@ export const useSale = () => {
     useEffect(() => {
         const dt = selectedDebts.reduce((accumulator, current) => accumulator + (current.debt.converted_amount['PAYMENT_VES'] || 0), 0);
         setDebtTotal(dt);
-        setPersistedSaleTotal(persistedSubtotal + dt);
-    }, [selectedDebts, setDebtTotal, setPersistedSaleTotal, persistedSubtotal]);
+        setSaleTotal(subtotal + dt);
+    }, [selectedDebts, setDebtTotal, setSaleTotal, subtotal]);
 
     useEffect(() => {
-        setPersistedSaleTotal(persistedSubtotal + debtTotal);
-    }, [persistedSubtotal, setPersistedSaleTotal, debtTotal]);
+        setSaleTotal(subtotal + debtTotal);
+    }, [subtotal, setSaleTotal, debtTotal]);
 
     useEffect(() => {
-        if (persistedPaymentInfo.length === 1 && persistedPaymentInfo[0].name === 'POS') {
-            const payment = persistedPaymentInfo[0];
-            payment.amount = persistedSaleTotal;
-            setPersistedPaymentInfo([payment]);
+        if (paymentInfo.length === 1 && paymentInfo[0].name === 'POS') {
+            const payment = paymentInfo[0];
+            payment.amount = saleTotal;
+            setPaymentInfo([payment]);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [persistedSaleTotal]);
+    }, [saleTotal]);
 
     const onProductSelect = (product) => {
         setSelectedProduct(product);
     };
 
     const onProductSubmit = (product) => {
-        const products = persistedInvoiceProducts.filter((invoiceProduct) => invoiceProduct.id !== product.id);
-        setPersistedInvoiceProducts([product, ...products]);
+        const products = invoiceProducts.filter((invoiceProduct) => invoiceProduct.id !== product.id);
+        setInvoiceProducts([product, ...products]);
         setSelectedProduct(null);
     };
 
     const onProductDelete = (product) => {
-        const products = persistedInvoiceProducts.filter((invoiceProduct) => invoiceProduct.id !== product.id);
+        const products = invoiceProducts.filter((invoiceProduct) => invoiceProduct.id !== product.id);
         setSelectedProduct(null);
-        setPersistedInvoiceProducts([...products]);
+        setInvoiceProducts([...products]);
     };
 
     const onClientSelect = (client, action) => {
@@ -92,11 +84,11 @@ export const useSale = () => {
     };
 
     const validateSale = () => {
-        if (!persistedInvoiceProducts.length) {
+        if (!invoiceProducts.length) {
             showNotification('error', 'Tabla de productos vacía');
             return false;
         }
-        if (!persistedPaymentInfo.length || persistedPaymentTotal['Total'] < 0) {
+        if (!paymentInfo.length || paymentTotal['Total'] < 0) {
             showNotification('error', 'Información de pago es incorrecta');
             return false;
         }
@@ -107,13 +99,13 @@ export const useSale = () => {
         const confirmActions = [{ name: 'Guardar Deuda', color: 'orange', callback: () => submitSale(true) }];
         let message = '';
 
-        if (persistedPaymentTotal['Total'] < persistedSaleTotal) {
+        if (paymentTotal['Total'] < saleTotal) {
             message = 'El pago total es MENOR al total de la factura. ¿Deseas continuar sin guardar la deuda?';
-        } else if (persistedPaymentTotal['Total'] > persistedSaleTotal) {
+        } else if (paymentTotal['Total'] > saleTotal) {
             message = 'El pago total es MAYOR al total de la factura. ¿Deseas continuar sin guardar la deuda?';
         }
 
-        if (persistedPaymentTotal['Total'] !== persistedSaleTotal) {
+        if (paymentTotal['Total'] !== saleTotal) {
             setConfirmState({ ...confirmState, actions: confirmActions, message, show: true, callback: () => submitSale() });
         } else {
             submitSale();
@@ -150,13 +142,12 @@ export const useSale = () => {
 
     const submitSale = async (saveAsDebt = false, fullDebt = false) => {
         if (!loading) {
-            console.log(selectedDebts);
             try {
                 setLoading(true);
                 const response = await createSale({
                     clientId: selectedClient.id,
-                    products: persistedInvoiceProducts.map((product) => ({ id: product.id, quantity: product.quantity })),
-                    paymentInfo: fullDebt ? [] : persistedPaymentInfo,
+                    products: invoiceProducts.map((product) => ({ id: product.id, quantity: product.quantity })),
+                    paymentInfo: fullDebt ? [] : paymentInfo,
                     status: 1,
                     saveAsDebt,
                     //paying_debts: selectedDebts.map((debt) => debt.id),
@@ -166,6 +157,7 @@ export const useSale = () => {
                 if (response.status === 200) {
                     showNotification('success', 'La venta se ha procesado exitosamente.');
                     resetFields();
+                    onSubmitSuccess();
                 } else {
                     showNotification(
                         'error',
@@ -182,12 +174,12 @@ export const useSale = () => {
         setSelectedClient({ id: null, cedula: null, phoneNumber: null });
         setSelectedDebts([]);
         setSelectedProduct(null);
-        setPersistedInvoiceProducts([]);
-        setPersistedSubtotal(0);
+        setInvoiceProducts([]);
+        setSubtotal(0);
         setDebtTotal(0);
-        setPersistedSaleTotal(0);
-        setPersistedPaymentTotal(0);
-        setPersistedPaymentInfo([]);
+        setSaleTotal(0);
+        setPaymentTotal(0);
+        setPaymentInfo([]);
         setConfirmState(INITIAL_CONFIRM_STATE);
     };
 
@@ -204,14 +196,14 @@ export const useSale = () => {
         setSelectedClient,
         selectedProduct,
         selectedDebts,
-        invoiceProducts: persistedInvoiceProducts,
-        setInvoiceProducts: setPersistedInvoiceProducts,
-        subtotal: persistedSubtotal,
-        saleTotal: persistedSaleTotal,
+        invoiceProducts,
+        setInvoiceProducts,
+        subtotal,
+        saleTotal,
         debtTotal,
-        persistedPaymentTotal,
-        persistedPaymentInfo,
-        setPersistedPaymentInfo,
+        paymentTotal,
+        paymentInfo,
+        setPaymentInfo,
         onProductSelect,
         onProductSubmit,
         onProductDelete,

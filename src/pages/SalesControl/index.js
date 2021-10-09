@@ -37,13 +37,12 @@ const SalesControl = () => {
         subtotal,
         saleTotal,
         debtTotal,
-        persistedPaymentTotal,
-        persistedPaymentInfo,
+        paymentTotal,
+        paymentInfo,
         onProductSubmit,
         onProductSelect,
         onProductDelete,
         onClientSelect,
-        onDebtSelect,
         onPaymentAdd,
         onPaymentInfoChange,
         onPaymentDelete,
@@ -54,7 +53,12 @@ const SalesControl = () => {
         resetFields,
         confirmState,
         onConfirmClose,
-    } = useSale();
+    } = useSale({
+        onSubmitSuccess: () => {
+            productSearchRef.current.focus();
+        },
+    });
+    console.log(paymentInfo);
 
     const [showDebts, setShowDebts] = useState(false);
     const [clientSearchInput, setClientSearchInput] = useState('');
@@ -145,7 +149,7 @@ const SalesControl = () => {
                             </L.ClientContainer>
                             <L.PaymentsContainer>
                                 <PaymentsForm
-                                    paymentInfo={persistedPaymentInfo}
+                                    paymentInfo={paymentInfo}
                                     paymentMethods={paymentMethods || []}
                                     selectedPaymentMethod={selectedPaymentMethod}
                                     onPaymentInfoChange={onPaymentInfoChange}
@@ -176,7 +180,7 @@ const SalesControl = () => {
                                 <L.FooterContainer>
                                     <L.InvoiceTotalContainer>
                                         <InvoiceTotal subtotal={subtotal} debtTotal={debtTotal} invoiceTotal={saleTotal} />
-                                        <PaymentTotal twoRowsOnly paymentTotal={persistedPaymentTotal} />
+                                        <PaymentTotal twoRowsOnly paymentTotal={paymentTotal} />
                                     </L.InvoiceTotalContainer>
                                 </L.FooterContainer>
                             </L.InvoiceFormContainer>

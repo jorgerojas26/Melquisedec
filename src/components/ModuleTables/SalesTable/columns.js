@@ -34,4 +34,10 @@ export const COLUMNS = [
             return formatDate(value);
         },
     },
+    {
+        Header: 'Estado',
+        accessor: (row) => {
+            return row.status === 0 ? <span style={{ color: 'red' }}>Anulada</span> : <span style={{ color: 'green' }}>Confirmada</span>;
+        },
+    },
 ];
