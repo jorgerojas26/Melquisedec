@@ -64,7 +64,7 @@ const ReportsPage = () => {
         }
     }, [reportDetails]);
 
-    console.log(chartData);
+    console.log(reportDetails);
     return (
         <Wrapper>
             <SeparatorWrapper>

@@ -15,7 +15,7 @@ const PaymentDetails = ({ paymentInfo = [] }) => {
                         transaction_code: payment.transaction_code,
                         bankId: payment.bankId,
                         currency: payment.currency,
-                        isChange: payment.isChange,
+                        isChange: payment.isChange || payment.amount < 0,
                     },
                 });
             })}
