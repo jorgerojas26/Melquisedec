@@ -30,7 +30,7 @@ const StockForm = ({ product, handleClose, onSubmit }) => {
     const { formData, handleChange, handleNestedChange, handleSubmit, submitErrors, setSubmitErrors, printError } = useForm({
         initialState: {
             product_variant: [],
-            reasons: '',
+            reasons: 'Ajuste de inventario por falta de existencia física',
             ...product,
         },
         action: 'edit',

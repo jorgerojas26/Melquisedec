@@ -21,6 +21,7 @@ import Notification from 'components/Notification';
 import ConfirmAlert from 'components/ConfirmAlert';
 import ProductForm from './CRUDForm';
 import StockForm from './stockForm';
+import InventoryMovesModal from 'components/ModuleModals/InventoryMovesModal';
 import { deleteProductVariantApi } from 'api/product_variants';
 
 const Products = () => {
@@ -41,6 +42,8 @@ const Products = () => {
             setCRUDAction('delete');
         } else if (event.currentTarget.name === 'reassignStock') {
             setCRUDAction('reassignStock');
+        } else if (event.currentTarget.name === 'arbitraryMoves') {
+            setCRUDAction('arbitraryMoves');
         }
     };
 
@@ -65,6 +68,12 @@ const Products = () => {
                         onEdit={handleCRUD}
                         onDelete={handleCRUD}
                     >
+                        <ButtonContainer color={colors.secondary}>
+                            <Button name='arbitraryMoves' onClick={handleCRUD}>
+                                <Package size='24' />
+                                Movimientos Arbitrarios
+                            </Button>
+                        </ButtonContainer>
                         <ButtonContainer color={colors.brown}>
                             <Button name='reassignStock' onClick={handleCRUD} disabled={!selectedProduct}>
                                 <Package size='24' />
@@ -116,6 +125,7 @@ const Products = () => {
                         </ConfirmContainer>
                     )}
                 </Modal>
+                {CRUDAction === 'arbitraryMoves' && <InventoryMovesModal show={true} onClose={() => setCRUDAction(null)} />}
             </ContentContainer>
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </Wrapper>
