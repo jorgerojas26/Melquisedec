@@ -39,7 +39,7 @@ const CustomTable = ({
     }, [selectedRows]);
 
     const handleClick = (event, row) => {
-        if (event.target.tagName !== 'BUTTON') {
+        if (event.target.tagName !== 'BUTTON' && event.target.tagName !== 'svg') {
             const rowIsAlreadySelected = selected.some((r) => r.id === row.id);
 
             if (multiSelect) {

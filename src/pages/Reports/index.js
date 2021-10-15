@@ -13,6 +13,7 @@ import DebtPaymentsTable from 'components/ModuleTables/ReportTables/DebtPayments
 
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveBar } from '@nivo/bar';
+import AverageSales from 'components/Widgets/ProductWidgets/AverageSales/index.js';
 
 const ReportsPage = () => {
     const [dates, setDates] = useState({
@@ -143,63 +144,6 @@ const ReportsPage = () => {
                                 <L.DebtsContainer></L.DebtsContainer>
                             </L.LeftWrapper>
                             <L.RightWrapper>
-                                <div>
-                                    <L.CardContainer>
-                                        <L.CardHeader>
-                                            <h3>Métodos de pago más usados</h3>
-                                        </L.CardHeader>
-                                        <L.CardBody>
-                                            {chartData && chartData.payment && (
-                                                <div style={{ height: '200px' }}>
-                                                    <ResponsivePie
-                                                        data={chartData.payment}
-                                                        margin={{ top: 20, bottom: 20, right: 100 }}
-                                                        enableArcLinkLabels={true}
-                                                        legends={[
-                                                            {
-                                                                anchor: 'right',
-                                                                direction: 'column',
-                                                                translateX: 30,
-                                                                translateY: 0,
-                                                                itemsSpacing: 30,
-                                                                itemWidth: 0,
-                                                                itemHeight: 0,
-                                                                itemTextColor: '#999',
-                                                            },
-                                                        ]}
-                                                    />
-                                                </div>
-                                            )}
-                                        </L.CardBody>
-                                    </L.CardContainer>
-                                </div>
-                                <div>
-                                    <L.CardContainer>
-                                        <L.CardHeader>
-                                            <h3>Horas más activas</h3>
-                                        </L.CardHeader>
-                                        <L.CardBody>
-                                            {chartData && chartData.hourly_sales && (
-                                                <div style={{ height: '200px' }}>
-                                                    <ResponsiveBar
-                                                        data={chartData.hourly_sales}
-                                                        margin={{ bottom: 45, top: 10 }}
-                                                        valueFormat={(value) => (value > 0 ? value : '')}
-                                                        axisBottom={{
-                                                            tickSize: 10,
-                                                            tickPadding: 5,
-                                                            tickRotation: 0,
-                                                            legend: 'Reloj 24 horas',
-                                                            legendPosition: 'middle',
-                                                            legendOffset: 35,
-                                                        }}
-                                                        enableGridX
-                                                    />
-                                                </div>
-                                            )}
-                                        </L.CardBody>
-                                    </L.CardContainer>
-                                </div>
                                 <L.TopContainer>
                                     <L.CardContainer>
                                         <L.CardHeader>
@@ -221,6 +165,60 @@ const ReportsPage = () => {
                                         </L.CardBody>
                                     </L.CardContainer>
                                 </L.TopContainer>
+                                <L.CardContainer>
+                                    <L.CardHeader>
+                                        <h3>Horas más activas</h3>
+                                    </L.CardHeader>
+                                    <L.CardBody>
+                                        {chartData && chartData.hourly_sales && (
+                                            <div style={{ height: '200px' }}>
+                                                <ResponsiveBar
+                                                    data={chartData.hourly_sales}
+                                                    margin={{ bottom: 45, top: 10 }}
+                                                    valueFormat={(value) => (value > 0 ? value : '')}
+                                                    axisBottom={{
+                                                        tickSize: 10,
+                                                        tickPadding: 5,
+                                                        tickRotation: 0,
+                                                        legend: 'Reloj 24 horas',
+                                                        legendPosition: 'middle',
+                                                        legendOffset: 35,
+                                                    }}
+                                                    enableGridX
+                                                />
+                                            </div>
+                                        )}
+                                    </L.CardBody>
+                                </L.CardContainer>
+                                <L.CardContainer>
+                                    <L.CardHeader>
+                                        <h3>Métodos de pago más usados</h3>
+                                    </L.CardHeader>
+                                    <L.CardBody>
+                                        {chartData && chartData.payment && (
+                                            <div style={{ height: '200px' }}>
+                                                <ResponsivePie
+                                                    data={chartData.payment}
+                                                    margin={{ top: 20, bottom: 20, right: 100 }}
+                                                    enableArcLinkLabels={true}
+                                                    margin={{ top: 30, right: 20, bottom: 20, left: 20 }}
+                                                    innerRadius={0.5}
+                                                    padAngle={0.7}
+                                                    cornerRadius={3}
+                                                    activeOuterRadiusOffset={8}
+                                                    borderWidth={1}
+                                                    borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
+                                                    arcLinkLabelsSkipAngle={10}
+                                                    arcLinkLabelsTextColor='#333333'
+                                                    arcLinkLabelsThickness={2}
+                                                    arcLinkLabelsColor={{ from: 'color' }}
+                                                    arcLabelsSkipAngle={10}
+                                                    arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+                                                />
+                                            </div>
+                                        )}
+                                    </L.CardBody>
+                                </L.CardContainer>
                             </L.RightWrapper>
                         </L.ContentWrapper>
                     )}

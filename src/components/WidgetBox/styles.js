@@ -14,6 +14,7 @@ export const Container = styled.div`
     z-index: 2;
     padding: 5px;
     box-shadow: ${colors.shadow} 0px 0px 15px, ${colors.shadow} 0px 0px 3px 1px;
+    gap: 10px;
 
     ${(props) =>
         props.show && {

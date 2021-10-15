@@ -3,6 +3,8 @@ import {} from './styles';
 import WidgetBox from 'components/WidgetBox';
 import TopClientsTable from 'components/ModuleTables/TopClientsTable';
 import Card from 'components/Card';
+import DateRangeSelector from 'components/DateRangeSelector';
+
 import { getTopClients } from 'api/clients';
 
 const ClientWidgets = ({ show, onClose }) => {

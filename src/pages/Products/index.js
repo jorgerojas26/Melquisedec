@@ -7,22 +7,27 @@ import {
     TableContainer,
     FormContainer,
     ConfirmContainer,
+    SeparatorWrapper,
 } from 'components/CommonLayout/main.layout';
 
 import Modal from 'components/Modal';
 import Toolbar from 'components/Toolbar';
 import { ButtonContainer } from 'components/Toolbar/styles';
 import Button from 'components/Button';
-import { colors } from 'styles/theme';
 import { Package } from 'phosphor-react';
 import ProductsTable from 'components/ModuleTables/ProductsTable';
-import { useNotification } from 'hooks/notification';
 import Notification from 'components/Notification';
 import ConfirmAlert from 'components/ConfirmAlert';
 import ProductForm from './CRUDForm';
 import StockForm from './stockForm';
 import InventoryMovesModal from 'components/ModuleModals/InventoryMovesModal';
+import WidgetBox from 'components/WidgetBox';
+
 import { deleteProductVariantApi } from 'api/product_variants';
+import { useNotification } from 'hooks/notification';
+import { colors } from 'styles/theme';
+import CostFluctuation from 'components/Widgets/ProductWidgets/CostFluctuation';
+import AverageSales from 'components/Widgets/ProductWidgets/AverageSales';
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -60,73 +65,79 @@ const Products = () => {
     };
     return (
         <Wrapper>
-            <ContentContainer>
-                <ToolbarContainer>
-                    <Toolbar
-                        recordSelected={selectedProduct ? true : false}
-                        onCreate={handleCRUD}
-                        onEdit={handleCRUD}
-                        onDelete={handleCRUD}
+            <SeparatorWrapper>
+                <ContentContainer>
+                    <ToolbarContainer>
+                        <Toolbar
+                            recordSelected={selectedProduct ? true : false}
+                            onCreate={handleCRUD}
+                            onEdit={handleCRUD}
+                            onDelete={handleCRUD}
+                        >
+                            <ButtonContainer color={colors.secondary}>
+                                <Button name='arbitraryMoves' onClick={handleCRUD}>
+                                    <Package size='24' />
+                                    Movimientos Arbitrarios
+                                </Button>
+                            </ButtonContainer>
+                            <ButtonContainer color={colors.brown}>
+                                <Button name='reassignStock' onClick={handleCRUD} disabled={!selectedProduct}>
+                                    <Package size='24' />
+                                    Reasignar Stock
+                                </Button>
+                            </ButtonContainer>
+                        </Toolbar>
+                    </ToolbarContainer>
+                    <TableContainer>
+                        <ProductsTable
+                            shouldRefresh={CRUDAction === 'refresh'}
+                            selectedRows={selectedProduct}
+                            onProductSelect={setSelectedProduct}
+                            showNotification={showNotification}
+                        />
+                    </TableContainer>
+                    <Modal
+                        show={CRUDAction && CRUDAction !== 'refresh'}
+                        handleClose={() => {
+                            setCRUDAction(null);
+                        }}
                     >
-                        <ButtonContainer color={colors.secondary}>
-                            <Button name='arbitraryMoves' onClick={handleCRUD}>
-                                <Package size='24' />
-                                Movimientos Arbitrarios
-                            </Button>
-                        </ButtonContainer>
-                        <ButtonContainer color={colors.brown}>
-                            <Button name='reassignStock' onClick={handleCRUD} disabled={!selectedProduct}>
-                                <Package size='24' />
-                                Reasignar Stock
-                            </Button>
-                        </ButtonContainer>
-                    </Toolbar>
-                </ToolbarContainer>
-                <TableContainer>
-                    <ProductsTable
-                        shouldRefresh={CRUDAction === 'refresh'}
-                        selectedRows={selectedProduct}
-                        onProductSelect={setSelectedProduct}
-                        showNotification={showNotification}
-                    />
-                </TableContainer>
-                <Modal
-                    show={CRUDAction && CRUDAction !== 'refresh'}
-                    handleClose={() => {
-                        setCRUDAction(null);
-                    }}
-                >
-                    {(CRUDAction === 'create' || CRUDAction === 'edit') && (
-                        <FormContainer width='650px'>
-                            <ProductForm
-                                product={CRUDAction === 'edit' && selectedProduct && selectedProduct.product}
-                                action={CRUDAction}
-                                handleClose={() => setCRUDAction(null)}
-                                onSubmit={handleSubmit}
-                            />
-                        </FormContainer>
-                    )}
-                    {CRUDAction === 'reassignStock' && (
-                        <FormContainer width='500px' top='100px'>
-                            <StockForm
-                                product={selectedProduct && selectedProduct.product}
-                                handleClose={() => setCRUDAction(null)}
-                                onSubmit={handleSubmit}
-                            />
-                        </FormContainer>
-                    )}
-                    {CRUDAction === 'delete' && (
-                        <ConfirmContainer>
-                            <ConfirmAlert
-                                showNotification={showNotification}
-                                handleClose={() => setCRUDAction(null)}
-                                callback={handleDelete}
-                            />
-                        </ConfirmContainer>
-                    )}
-                </Modal>
-                {CRUDAction === 'arbitraryMoves' && <InventoryMovesModal show={true} onClose={() => setCRUDAction(null)} />}
-            </ContentContainer>
+                        {(CRUDAction === 'create' || CRUDAction === 'edit') && (
+                            <FormContainer width='650px'>
+                                <ProductForm
+                                    product={CRUDAction === 'edit' && selectedProduct && selectedProduct.product}
+                                    action={CRUDAction}
+                                    handleClose={() => setCRUDAction(null)}
+                                    onSubmit={handleSubmit}
+                                />
+                            </FormContainer>
+                        )}
+                        {CRUDAction === 'reassignStock' && (
+                            <FormContainer width='500px' top='100px'>
+                                <StockForm
+                                    product={selectedProduct && selectedProduct.product}
+                                    handleClose={() => setCRUDAction(null)}
+                                    onSubmit={handleSubmit}
+                                />
+                            </FormContainer>
+                        )}
+                        {CRUDAction === 'delete' && (
+                            <ConfirmContainer>
+                                <ConfirmAlert
+                                    showNotification={showNotification}
+                                    handleClose={() => setCRUDAction(null)}
+                                    callback={handleDelete}
+                                />
+                            </ConfirmContainer>
+                        )}
+                    </Modal>
+                    {CRUDAction === 'arbitraryMoves' && <InventoryMovesModal show={true} onClose={() => setCRUDAction(null)} />}
+                </ContentContainer>
+                <WidgetBox show={selectedProduct} handleClose={() => setSelectedProduct(null)}>
+                    <CostFluctuation productId={selectedProduct && selectedProduct.id} />
+                    <AverageSales productId={selectedProduct && selectedProduct.id} />
+                </WidgetBox>
+            </SeparatorWrapper>
             {notification && <Notification type={notification.type}>{notification.text}</Notification>}
         </Wrapper>
     );

@@ -11,14 +11,14 @@ export const COLUMNS = [
         Header: 'Bruto $',
         accessor: 'rawProfitUSD',
         Cell: ({ value }) => {
-            return value ? '$' + value.toFixed(4) : 0;
+            return value ? '$' + value.toFixed(2) : 0;
         },
         Footer: ({ data }) => {
             let total = data.reduce((acc, product) => {
                 return acc + product.rawProfitUSD;
             }, 0);
 
-            return '$' + total.toFixed(4);
+            return '$' + total.toFixed(2);
         },
     },
     {
@@ -32,7 +32,7 @@ export const COLUMNS = [
                 return acc + product.netProfitUSD;
             }, 0);
 
-            return '$' + total.toFixed(4);
+            return '$' + total.toFixed(2);
         },
     },
     {

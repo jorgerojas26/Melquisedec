@@ -15,6 +15,7 @@ import { useNotification } from 'hooks/notification';
 import Notification from 'components/Notification';
 
 import { deleteSale } from 'api/sales';
+import DailySales from 'components/Widgets/SaleWidgets/DailySales';
 
 const Sales = () => {
     const [selectedSale, setSelectedSale] = useState();
@@ -72,7 +73,9 @@ const Sales = () => {
                         </L.ConfirmContainer>
                     </Modal>
                 </L.ContentContainer>
-                <WidgetBox></WidgetBox>
+                <WidgetBox>
+                    <DailySales />
+                </WidgetBox>
             </L.SeparatorWrapper>
             {notification && <Notification type={notification.type}>{notification.message}</Notification>}
         </L.Wrapper>

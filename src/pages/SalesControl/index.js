@@ -173,7 +173,10 @@ const SalesControl = () => {
                                         onProductSelect={onProductSelect}
                                         selectedRows={selectedProduct}
                                         products={invoiceProducts}
-                                        onDeleteRow={onProductDelete}
+                                        onDeleteRow={(product) => {
+                                            onProductDelete(product);
+                                            productSearchRef.current.focus();
+                                        }}
                                         maxHeight='2048px'
                                     />
                                 </L.TableContainer>

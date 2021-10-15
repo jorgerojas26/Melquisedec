@@ -78,6 +78,7 @@ export const PaymentsContainer = styled.div`
 
     @media (min-width: ${breakpoints.desktop}) {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 `;
 
