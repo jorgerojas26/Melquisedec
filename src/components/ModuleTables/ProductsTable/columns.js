@@ -22,6 +22,7 @@ export const COLUMNS = [
             return props.value ? props.value.toLocaleString('es-VE') : '0';
         },
     },
+    /*
     {
         Header: '% Ganancia',
         accessor: 'profitPercent',
@@ -30,10 +31,12 @@ export const COLUMNS = [
         Header: 'Valor Unidad',
         accessor: 'unitValue',
     },
+    */
     {
         Header: 'Stock',
         accessor: 'stock',
     },
+    /*
     {
         Header: 'Creado',
         accessor: 'createdAt',
@@ -41,4 +44,5 @@ export const COLUMNS = [
             return formatDate(value);
         },
     },
+    */
 ];

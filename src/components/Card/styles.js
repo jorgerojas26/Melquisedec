@@ -20,7 +20,12 @@ export const Header = styled.div`
     border-top-right-radius: 16px;
     border-bottom: 1px solid ${colors.lightGray};
 
-    h2 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin: 0;
     }
 `;

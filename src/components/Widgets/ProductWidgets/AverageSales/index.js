@@ -28,7 +28,7 @@ const AverageSales = ({ productId }) => {
     return (
         <Card>
             <Card.Header>
-                <h2>Promedio ventas semanal</h2>
+                <h3>Promedio ventas semanal</h3>
                 <small>Últimos 3 meses</small>
             </Card.Header>
             <Card.Body>

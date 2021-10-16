@@ -28,7 +28,7 @@ const CostFluctuation = ({ productId }) => {
     return (
         <Card>
             <Card.Header>
-                <h2>Promedio costo mensual</h2>
+                <h3>Promedio costo mensual</h3>
             </Card.Header>
             <Card.Body>
                 {loading && 'Cargando...'}
