@@ -68,7 +68,8 @@ const MoneyUpdateAmount = ({ action, money, handleClose, onSubmit }) => {
                         name='amount'
                         thousandSeparator='.'
                         decimalSeparator=','
-                        decimalScale={0}
+                        decimalScale={2}
+                        fixedDecimalScale={true}
                         errorborder={hasError('amount')}
                         autoFocus
                         required
