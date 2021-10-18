@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export const usePaginatedResource = ({ page, filter, fetching, count, fetchOnMount = true }) => {
+export const usePaginatedResource = ({ page = 1, filter = '', fetching, count, fetchOnMount = true }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);

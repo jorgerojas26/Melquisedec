@@ -69,6 +69,7 @@ export const useForm = ({
 
             if (!loading) {
                 setLoading(true);
+                delete formData.createdAt;
                 try {
                     if (action === 'create') {
                         response = await createResource(formData);

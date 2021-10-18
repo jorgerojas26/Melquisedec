@@ -18,6 +18,7 @@ import CurrenciesPage from 'pages/Currencies';
 import SalesPage from 'pages/Sales';
 import DebtsPage from 'pages/Debts';
 import ReportsPage from 'pages/Reports';
+import MoneyPage from 'pages/Money';
 
 import { useRedirectToActiveLocation } from 'hooks/redirect';
 import { useCurrencyRates } from 'hooks/useCurrencyRates';
@@ -47,7 +48,7 @@ const HomePage = () => {
                         <Route path='/proveedores' component={SuppliersPage} />
                         <Route path='/usuarios' component={UsersPage} />
                         <Route path='/tasas-de-cambio' component={CurrenciesPage} />
-                        <Route path='/dinero' />
+                        <Route path='/dinero' component={MoneyPage} />
                     </Switch>
                 </L.Main>
                 <L.MainHeader>

@@ -23,7 +23,7 @@ const CustomTable = ({
     onDeleteRow,
     multiSelect,
     selectedRows = [],
-    maxHeight,
+    maxHeight = '500px',
     filterHeight,
     showFooter = false,
 }) => {
