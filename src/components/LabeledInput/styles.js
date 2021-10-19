@@ -52,6 +52,7 @@ export const StyledInput = styled.input`
     min-height: 0px;
 
     height: 100%;
+    width: 100%;
     border: 0;
     outline: 0;
 

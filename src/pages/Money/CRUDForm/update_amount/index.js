@@ -22,7 +22,7 @@ import moneySchema from 'validations/schemas/money';
 import { useEffect } from 'react';
 
 const MoneyUpdateAmount = ({ action, money, handleClose, onSubmit }) => {
-    const { loading, handleSubmit, formData, setFormData, printError, hasError } = useForm({
+    const { loading, handleSubmit, handleChange, handleNumericInput, formData, setFormData, printError, hasError } = useForm({
         initialState: {
             id: null,
             payment_method_id: null,
@@ -40,15 +40,7 @@ const MoneyUpdateAmount = ({ action, money, handleClose, onSubmit }) => {
         if (money) setFormData({ ...formData, id: money.id, payment_method_id: money.payment_method.id, currency: money.currency });
     }, [money]);
 
-    const handleChange = (event) => {
-        if (action === 'add' && event.target.name === 'amount') {
-            setFormData({ ...formData, amount: Number(money.amount) + Number(event.target.value) });
-        } else if (action === 'sub' && event.target.name === 'amount') {
-            setFormData({ ...formData, amount: Number(money.amount) - Number(event.target.value) });
-        } else {
-            setFormData({ ...formData, [event.target.name]: event.target.value });
-        }
-    };
+    console.log(formData);
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -63,7 +55,7 @@ const MoneyUpdateAmount = ({ action, money, handleClose, onSubmit }) => {
             <BodyContainer>
                 <InputContainer>
                     <LabeledInput
-                        onChange={handleChange}
+                        onValueChange={({ value }) => handleNumericInput(value, 'amount')}
                         placeholder='Total'
                         name='amount'
                         thousandSeparator='.'
