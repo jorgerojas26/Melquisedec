@@ -59,9 +59,10 @@ export const useForm = ({
         return errors[path];
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event, data) => {
+        const actual_data = data ? data : formData;
         event.preventDefault();
-        const errors = await validateSchema(formData, schema);
+        const errors = await validateSchema(actual_data, schema);
         handleErrors(errors);
 
         if (!errors.length) {
@@ -69,12 +70,12 @@ export const useForm = ({
 
             if (!loading) {
                 setLoading(true);
-                delete formData.createdAt;
+                delete actual_data.createdAt;
                 try {
                     if (action === 'create') {
-                        response = await createResource(formData);
+                        response = await createResource(actual_data);
                     } else if (action === 'edit') {
-                        response = await editResource(formData.id, formData);
+                        response = await editResource(actual_data.id, actual_data);
                     }
                 } catch (error) {
                     console.log(error);
@@ -83,7 +84,7 @@ export const useForm = ({
                 if (response.error) {
                     handleErrors(response.error);
                 } else {
-                    onSubmitSuccess && onSubmitSuccess(successMessage[action], formData);
+                    onSubmitSuccess && onSubmitSuccess(successMessage[action], actual_data);
                 }
                 setLoading(false);
             }

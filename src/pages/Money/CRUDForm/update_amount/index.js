@@ -40,10 +40,19 @@ const MoneyUpdateAmount = ({ action, money, handleClose, onSubmit }) => {
         if (money) setFormData({ ...formData, id: money.id, payment_method_id: money.payment_method.id, currency: money.currency });
     }, [money]);
 
-    console.log(formData);
-
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form
+            onSubmit={(event) =>
+                handleSubmit(event, {
+                    id: formData.id,
+                    payment_method_id: formData.payment_method_id,
+                    amount:
+                        action === 'add' ? Number(money.amount) + Number(formData.amount) : Number(money.amount) - Number(formData.amount),
+                    currency: formData.currency,
+                    reasons: formData.reasons,
+                })
+            }
+        >
             <HeaderContainer>
                 <CloseButtonContainer>
                     <Button onClick={handleClose}>

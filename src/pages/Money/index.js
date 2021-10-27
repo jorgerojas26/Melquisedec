@@ -1,27 +1,24 @@
+import { useState } from 'react';
+
 import * as L from 'components/CommonLayout/main.layout';
 import Toolbar from 'components/Toolbar';
-import { useState } from 'react';
 import Modal from 'components/Modal';
-import { useNotification } from 'hooks/notification';
-import { Notification } from 'phosphor-react';
+import Notification from 'components/Notification';
 import MoneyTable from 'components/ModuleTables/MoneyTable';
-import MoneyCreateForm from './CRUDForm/create';
 import { ButtonContainer } from 'components/Toolbar/styles';
 import Button from 'components/Button';
 import { Plus, Minus } from 'phosphor-react';
 import MoneyUpdateAmount from './CRUDForm/update_amount';
+import { useNotification } from 'hooks/notification';
 
 const MoneyPage = () => {
     const [selectedMoney, setSelectedMoney] = useState(null);
     const [CRUDAction, setCRUDAction] = useState(null);
     const { notification, showNotification } = useNotification();
 
-    const handleCRUD = (event) => {
-        setCRUDAction(event.currentTarget.name);
-    };
-
     const handleSubmit = (submitMessage) => {
         showNotification('success', submitMessage, 2000);
+        setSelectedMoney(null);
         setCRUDAction('refresh');
     };
 
