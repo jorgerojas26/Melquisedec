@@ -26,6 +26,7 @@ import WidgetBox from 'components/WidgetBox';
 import { deleteProductVariantApi } from 'api/product_variants';
 import { useNotification } from 'hooks/notification';
 import { colors } from 'styles/theme';
+
 import CostFluctuation from 'components/Widgets/ProductWidgets/CostFluctuation';
 import AverageSales from 'components/Widgets/ProductWidgets/AverageSales';
 
@@ -63,6 +64,7 @@ const Products = () => {
         setSelectedProduct(null);
         return response;
     };
+
     return (
         <Wrapper>
             <SeparatorWrapper>

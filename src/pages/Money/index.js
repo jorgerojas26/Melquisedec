@@ -7,9 +7,12 @@ import Notification from 'components/Notification';
 import MoneyTable from 'components/ModuleTables/MoneyTable';
 import { ButtonContainer } from 'components/Toolbar/styles';
 import Button from 'components/Button';
-import { Plus, Minus } from 'phosphor-react';
+import { Plus, Minus, FileSearch } from 'phosphor-react';
 import MoneyUpdateAmount from './CRUDForm/update_amount';
 import { useNotification } from 'hooks/notification';
+import MoneyHistoryTable from 'components/ModuleTables/MoneyHistory';
+import { HeaderContainer, BodyContainer, CloseButtonContainer, TitleContainer } from 'components/CommonLayout/form.layout';
+import { X } from 'phosphor-react';
 
 const MoneyPage = () => {
     const [selectedMoney, setSelectedMoney] = useState(null);
@@ -28,6 +31,12 @@ const MoneyPage = () => {
                 <L.ContentContainer>
                     <L.ToolbarContainer>
                         <Toolbar recordSelected={selectedMoney}>
+                            <ButtonContainer color='brown'>
+                                <Button onClick={() => setCRUDAction('history')}>
+                                    <FileSearch size='20px' />
+                                    Historial
+                                </Button>
+                            </ButtonContainer>
                             <ButtonContainer color='orange'>
                                 <Button onClick={() => setCRUDAction('add')} disabled={!selectedMoney}>
                                     <Plus size='20px' />
@@ -59,6 +68,21 @@ const MoneyPage = () => {
                                     onSubmit={handleSubmit}
                                     handleClose={() => setCRUDAction(null)}
                                 />
+                            </L.FormContainer>
+                        )}
+                        {CRUDAction === 'history' && (
+                            <L.FormContainer width='1000px'>
+                                <HeaderContainer>
+                                    <CloseButtonContainer>
+                                        <Button onClick={() => setCRUDAction(null)}>
+                                            <X />
+                                        </Button>
+                                    </CloseButtonContainer>
+                                    <TitleContainer>Historial de cambios</TitleContainer>
+                                </HeaderContainer>
+                                <BodyContainer>
+                                    <MoneyHistoryTable />
+                                </BodyContainer>
                             </L.FormContainer>
                         )}
                     </Modal>
